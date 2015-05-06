@@ -1,3 +1,8 @@
+.content {
+  margin: auto;
+  width: 75%;
+}
+
 .top-bar {
     background: #097054;
 }
@@ -45,7 +50,13 @@ fieldset legend {
 }
 
 #welcome-title {
+  margin-top: 1em;
   text-align: center;
+  font-family: Tahoma;
+}
+
+#welcome-logo {
+  margin-top: -0.5em;
 }
 
 #login-welcome-login {
