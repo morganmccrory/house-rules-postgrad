@@ -17106,3 +17106,3074 @@ Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae92
 
 
 Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:20:20 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 12:23:08 -0500
+Processing by UsersController#welcome as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (2.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 557ms (Views: 554.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/main.self-d7348898e05d71507215ac1eea4737dfd3781bbdc1810c55f0811ed1a6b193cc.css?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 12:23:09 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 12:23:10 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 12:23:10 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:23:10 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 12:23:10 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 12:23:10 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 12:23:10 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:23:10 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 12:23:10 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 12:24:16 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 516ms (Views: 513.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 12:24:17 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 12:53:39 -0500
+
+ExecJS::ProgramError (Error: Parse Error: Line 119: Expected corresponding JSX closing tag for img):
+  throwError@(execjs):5124:30
+  parseJSXElement@(execjs):9457:27
+  parseJSXChild@(execjs):9377:36
+  parseJSXElement@(execjs):9451:44
+  parseJSXChild@(execjs):9377:36
+  parseJSXElement@(execjs):9451:44
+  parseJSXChild@(execjs):9377:36
+  parseJSXElement@(execjs):9451:44
+  parseJSXChild@(execjs):9377:36
+  parseJSXElement@(execjs):9451:44
+  parsePrimaryExpression@(execjs):5883:35
+  parseLeftHandSideExpressionAllowCall@(execjs):5967:83
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6074:38
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseExpression@(execjs):6534:41
+  parseGroupExpression@(execjs):5775:31
+  parsePrimaryExpression@(execjs):5868:40
+  parseLeftHandSideExpressionAllowCall@(execjs):5967:83
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6074:38
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseExpression@(execjs):6534:41
+  parseReturnStatement@(execjs):7722:43
+  parseStatement@(execjs):7948:44
+  parseSourceElement@(execjs):8709:38
+  parseFunctionSourceElements@(execjs):8049:47
+  parseFunctionExpression@(execjs):8332:43
+  parsePrimaryExpression@(execjs):5831:47
+  parseLeftHandSideExpressionAllowCall@(execjs):5967:83
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6074:38
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseObjectProperty@(execjs):5494:50
+  parseObjectInitialiser@(execjs):5697:47
+  parsePrimaryExpression@(execjs):5864:42
+  parseLeftHandSideExpressionAllowCall@(execjs):5967:83
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6074:38
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseSpreadOrAssignmentExpression@(execjs):5922:41
+  parseArguments@(execjs):5898:56
+  parseLeftHandSideExpressionAllowCall@(execjs):5971:38
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6037:42
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseVariableDeclaration@(execjs):7116:45
+  parseVariableDeclarationList@(execjs):7126:47
+  parseVariableStatement@(execjs):7141:52
+  parseStatement@(execjs):7956:46
+  parseSourceElement@(execjs):8709:38
+  parseProgramElement@(execjs):8757:34
+  parseProgramElements@(execjs):8789:48
+  parseProgram@(execjs):8802:36
+  parse@(execjs):9964:35
+  getAstForSource@(execjs):12510:26
+  transform@(execjs):12533:26
+  innerTransform@(execjs):435:19
+  transformWithDetails@(execjs):375:32
+  transformReact@(execjs):52:41
+  (execjs):15925:12
+  (execjs):15929:21
+  (execjs):1:46
+  global code@(execjs):1:58
+  execjs (2.5.2) lib/execjs/external_runtime.rb:39:in `exec'
+  execjs (2.5.2) lib/execjs/external_runtime.rb:21:in `eval'
+  execjs (2.5.2) lib/execjs/external_runtime.rb:46:in `call'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/jsx.rb:33:in `transform'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/jsx/template.rb:13:in `evaluate'
+  tilt (1.4.1) lib/tilt/template.rb:103:in `render'
+  sprockets (3.0.1) lib/sprockets/legacy_tilt_processor.rb:25:in `call'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:73:in `call_processor'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:55:in `block in call_processors'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:54:in `reverse_each'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:54:in `call_processors'
+  sprockets (3.0.1) lib/sprockets/loader.rb:103:in `load_asset_by_uri'
+  sprockets (3.0.1) lib/sprockets/loader.rb:40:in `block in load'
+  sprockets (3.0.1) lib/sprockets/loader.rb:170:in `fetch_asset_from_dependency_cache'
+  sprockets (3.0.1) lib/sprockets/loader.rb:33:in `load'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:20:in `block in initialize'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:47:in `yield'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:47:in `load'
+  sprockets (3.0.1) lib/sprockets/bundle.rb:23:in `block in call'
+  sprockets (3.0.1) lib/sprockets/utils.rb:183:in `dfs'
+  sprockets (3.0.1) lib/sprockets/bundle.rb:24:in `call'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:73:in `call_processor'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:55:in `block in call_processors'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:54:in `reverse_each'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:54:in `call_processors'
+  sprockets (3.0.1) lib/sprockets/loader.rb:103:in `load_asset_by_uri'
+  sprockets (3.0.1) lib/sprockets/loader.rb:40:in `block in load'
+  sprockets (3.0.1) lib/sprockets/loader.rb:170:in `fetch_asset_from_dependency_cache'
+  sprockets (3.0.1) lib/sprockets/loader.rb:33:in `load'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:20:in `block in initialize'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:47:in `yield'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:47:in `load'
+  sprockets (3.0.1) lib/sprockets/base.rb:63:in `find_asset'
+  sprockets (3.0.1) lib/sprockets/environment.rb:30:in `find_asset'
+  sprockets (3.0.1) lib/sprockets/base.rb:89:in `[]'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/rails/railtie.rb:68:in `block (3 levels) in <class:Railtie>'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/rails/railtie.rb:67:in `map'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/rails/railtie.rb:67:in `block (2 levels) in <class:Railtie>'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/renderer.rb:70:in `call'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/renderer.rb:70:in `setup_combined_js'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/renderer.rb:75:in `reset_combined_js!'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/renderer.rb:22:in `setup!'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/rails/railtie.rb:74:in `block (2 levels) in <class:Railtie>'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:446:in `instance_exec'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:446:in `block in make_lambda'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:192:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:192:in `block in simple'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_prepare_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:83:in `prepare!'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:71:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.0ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (36.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (82.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 12:53:54 -0500
+
+ExecJS::ProgramError (Error: Parse Error: Line 119: Unexpected token ILLEGAL):
+  throwError@(execjs):5124:30
+  getEscapedIdentifier@(execjs):2992:27
+  scanIdentifier@(execjs):3055:70
+  advance@(execjs):4019:34
+  lex@(execjs):4051:28
+  parseJSXAttributeValue@(execjs):9289:67
+  parseJSXAttribute@(execjs):9363:96
+  parseJSXOpeningElement@(execjs):9417:46
+  parseJSXElement@(execjs):9442:48
+  parseJSXChild@(execjs):9377:36
+  parseJSXElement@(execjs):9451:44
+  parseJSXChild@(execjs):9377:36
+  parseJSXElement@(execjs):9451:44
+  parseJSXChild@(execjs):9377:36
+  parseJSXElement@(execjs):9451:44
+  parseJSXChild@(execjs):9377:36
+  parseJSXElement@(execjs):9451:44
+  parsePrimaryExpression@(execjs):5883:35
+  parseLeftHandSideExpressionAllowCall@(execjs):5967:83
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6074:38
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseExpression@(execjs):6534:41
+  parseGroupExpression@(execjs):5775:31
+  parsePrimaryExpression@(execjs):5868:40
+  parseLeftHandSideExpressionAllowCall@(execjs):5967:83
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6074:38
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseExpression@(execjs):6534:41
+  parseReturnStatement@(execjs):7722:43
+  parseStatement@(execjs):7948:44
+  parseSourceElement@(execjs):8709:38
+  parseFunctionSourceElements@(execjs):8049:47
+  parseFunctionExpression@(execjs):8332:43
+  parsePrimaryExpression@(execjs):5831:47
+  parseLeftHandSideExpressionAllowCall@(execjs):5967:83
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6074:38
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseObjectProperty@(execjs):5494:50
+  parseObjectInitialiser@(execjs):5697:47
+  parsePrimaryExpression@(execjs):5864:42
+  parseLeftHandSideExpressionAllowCall@(execjs):5967:83
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6074:38
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseSpreadOrAssignmentExpression@(execjs):5922:41
+  parseArguments@(execjs):5898:56
+  parseLeftHandSideExpressionAllowCall@(execjs):5971:38
+  parsePostfixExpression@(execjs):6007:56
+  parseUnaryExpression@(execjs):6037:42
+  parseBinaryExpression@(execjs):6164:36
+  parseConditionalExpression@(execjs):6224:37
+  parseAssignmentExpression@(execjs):6477:42
+  parseVariableDeclaration@(execjs):7116:45
+  parseVariableDeclarationList@(execjs):7126:47
+  parseVariableStatement@(execjs):7141:52
+  parseStatement@(execjs):7956:46
+  parseSourceElement@(execjs):8709:38
+  parseProgramElement@(execjs):8757:34
+  parseProgramElements@(execjs):8789:48
+  parseProgram@(execjs):8802:36
+  parse@(execjs):9964:35
+  getAstForSource@(execjs):12510:26
+  transform@(execjs):12533:26
+  innerTransform@(execjs):435:19
+  transformWithDetails@(execjs):375:32
+  transformReact@(execjs):52:41
+  (execjs):15925:12
+  (execjs):15929:21
+  (execjs):1:46
+  global code@(execjs):1:58
+  execjs (2.5.2) lib/execjs/external_runtime.rb:39:in `exec'
+  execjs (2.5.2) lib/execjs/external_runtime.rb:21:in `eval'
+  execjs (2.5.2) lib/execjs/external_runtime.rb:46:in `call'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/jsx.rb:33:in `transform'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/jsx/template.rb:13:in `evaluate'
+  tilt (1.4.1) lib/tilt/template.rb:103:in `render'
+  sprockets (3.0.1) lib/sprockets/legacy_tilt_processor.rb:25:in `call'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:73:in `call_processor'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:55:in `block in call_processors'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:54:in `reverse_each'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:54:in `call_processors'
+  sprockets (3.0.1) lib/sprockets/loader.rb:103:in `load_asset_by_uri'
+  sprockets (3.0.1) lib/sprockets/loader.rb:40:in `block in load'
+  sprockets (3.0.1) lib/sprockets/loader.rb:170:in `fetch_asset_from_dependency_cache'
+  sprockets (3.0.1) lib/sprockets/loader.rb:33:in `load'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:20:in `block in initialize'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:47:in `yield'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:47:in `load'
+  sprockets (3.0.1) lib/sprockets/bundle.rb:23:in `block in call'
+  sprockets (3.0.1) lib/sprockets/utils.rb:183:in `dfs'
+  sprockets (3.0.1) lib/sprockets/bundle.rb:24:in `call'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:73:in `call_processor'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:55:in `block in call_processors'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:54:in `reverse_each'
+  sprockets (3.0.1) lib/sprockets/processor_utils.rb:54:in `call_processors'
+  sprockets (3.0.1) lib/sprockets/loader.rb:103:in `load_asset_by_uri'
+  sprockets (3.0.1) lib/sprockets/loader.rb:40:in `block in load'
+  sprockets (3.0.1) lib/sprockets/loader.rb:170:in `fetch_asset_from_dependency_cache'
+  sprockets (3.0.1) lib/sprockets/loader.rb:33:in `load'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:20:in `block in initialize'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:47:in `yield'
+  sprockets (3.0.1) lib/sprockets/cached_environment.rb:47:in `load'
+  sprockets (3.0.1) lib/sprockets/base.rb:63:in `find_asset'
+  sprockets (3.0.1) lib/sprockets/environment.rb:30:in `find_asset'
+  sprockets (3.0.1) lib/sprockets/base.rb:89:in `[]'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/rails/railtie.rb:68:in `block (3 levels) in <class:Railtie>'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/rails/railtie.rb:67:in `map'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/rails/railtie.rb:67:in `block (2 levels) in <class:Railtie>'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/renderer.rb:70:in `call'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/renderer.rb:70:in `setup_combined_js'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/renderer.rb:75:in `reset_combined_js!'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/renderer.rb:22:in `setup!'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/bundler/gems/react-rails-ff564e82f6df/lib/react/rails/railtie.rb:74:in `block (2 levels) in <class:Railtie>'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:446:in `instance_exec'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:446:in `block in make_lambda'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:192:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:192:in `block in simple'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `block in call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `each'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:504:in `call'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:92:in `_run_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:776:in `_run_prepare_callbacks'
+  activesupport (4.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:83:in `prepare!'
+  actionpack (4.2.1) lib/action_dispatch/middleware/reloader.rb:71:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (26.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (56.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 12:54:02 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (22.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 1059ms (Views: 1014.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-da108bd0af86ef045a797ce49b0d7cfc39199def0786dd6e238c5665e32830b3.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 12:54:04 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 12:54:05 -0500
+
+
+Started GET "/images/house-rules.jpg" for ::1 at 2015-05-06 12:54:05 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (134.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (285.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (26.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (57.9ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 12:54:11 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (3.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 363ms (Views: 359.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/images/house-rules.jpg" for ::1 at 2015-05-06 12:54:12 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.3ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.0ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (184.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (54.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (89.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 12:54:36 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (2.8ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 975ms (Views: 942.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-61e17dffb18551aedc31c5b88b16d28664521a6a65630a0160894655f9ad9f71.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 12:54:38 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 12:54:39 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 12:54:39 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:54:39 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 12:54:39 -0500
+
+
+Started GET "/images/house-rules.jpg" for ::1 at 2015-05-06 12:54:39 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (7.9ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (248.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (27.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (59.9ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 12:54:52 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 927ms (Views: 893.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 12:54:54 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-b0b3dd5d6abc879ed1c5fe469019b3960c54f2b437af5470163a527ba4b94613.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 12:54:55 -0500
+
+
+Started GET "/house-rules.jpg" for ::1 at 2015-05-06 12:54:55 -0500
+
+ActionController::RoutingError (No route matches [GET] "/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (11.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (149.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.9ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (4.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (75.9ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (111.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 12:55:48 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (3.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 954ms (Views: 919.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-9e2c1a67c454fa8141a2d27d287738c75798203513f88691eb5619c283ce1d0d.js?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 12:55:50 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 12:55:51 -0500
+
+
+Started GET "/assets/images/house-rules.jpg" for ::1 at 2015-05-06 12:55:51 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (15.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (154.3ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (48.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (103.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 12:58:35 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 963ms (Views: 933.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 12:58:37 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 12:58:37 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 12:58:37 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 12:58:37 -0500
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 12:58:37 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 12:58:37 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 12:58:37 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 12:58:37 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 12:58:37 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-1e97e36003da91ee16f6c78528114c60838fad2260939145f79fa08d89294308.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 12:58:38 -0500
+
+
+Started GET "/images/house-rules.jpg" for ::1 at 2015-05-06 12:58:39 -0500
+
+ActionController::RoutingError (No route matches [GET] "/images/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.0ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (165.0ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (27.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (58.1ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 13:04:15 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (22.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 802ms (Views: 757.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:04:17 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-b0b3dd5d6abc879ed1c5fe469019b3960c54f2b437af5470163a527ba4b94613.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:04:18 -0500
+
+
+Started GET "/house-rules.jpg" for ::1 at 2015-05-06 13:04:18 -0500
+
+ActionController::RoutingError (No route matches [GET] "/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (12.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (123.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (62.7ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 13:04:20 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (2.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 249ms (Views: 246.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-b0b3dd5d6abc879ed1c5fe469019b3960c54f2b437af5470163a527ba4b94613.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:04:21 -0500
+
+
+Started GET "/house-rules.jpg" for ::1 at 2015-05-06 13:04:22 -0500
+
+ActionController::RoutingError (No route matches [GET] "/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (47.3ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (213.9ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (57.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (94.8ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 13:04:32 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (2.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 909ms (Views: 878.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-97215bac3845872c5d8113f4bf3afddb7e81f9ef8d68c39e56859733d60608de.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:04:34 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:04:35 -0500
+
+
+Started GET "/house-rules.jpg" for ::1 at 2015-05-06 13:04:35 -0500
+
+ActionController::RoutingError (No route matches [GET] "/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.9ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (105.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (28.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (59.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 13:04:36 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 317ms (Views: 314.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-97215bac3845872c5d8113f4bf3afddb7e81f9ef8d68c39e56859733d60608de.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:04:37 -0500
+
+
+Started GET "/house-rules.jpg" for ::1 at 2015-05-06 13:04:37 -0500
+
+ActionController::RoutingError (No route matches [GET] "/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (9.0ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (98.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (29.3ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (62.4ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 13:06:41 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (3.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 979ms (Views: 945.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-97215bac3845872c5d8113f4bf3afddb7e81f9ef8d68c39e56859733d60608de.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:06:43 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:06:44 -0500
+
+
+Started GET "/house-rules.jpg" for ::1 at 2015-05-06 13:06:44 -0500
+
+ActionController::RoutingError (No route matches [GET] "/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (8.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (99.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (26.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (57.0ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 13:06:45 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (2.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 431ms (Views: 428.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-97215bac3845872c5d8113f4bf3afddb7e81f9ef8d68c39e56859733d60608de.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:06:46 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:06:47 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:06:47 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:06:47 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:06:47 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:06:47 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:06:47 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:06:47 -0500
+
+
+Started GET "/house-rules.jpg" for ::1 at 2015-05-06 13:06:47 -0500
+
+ActionController::RoutingError (No route matches [GET] "/house-rules.jpg"):
+  actionpack (4.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.1.2) lib/web_console/middleware.rb:37:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.1) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.1) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.0) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.0) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.1) lib/action_dispatch/middleware/static.rb:113:in `call'
+  rack (1.6.0) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.1) lib/rails/engine.rb:518:in `call'
+  railties (4.2.1) lib/rails/application.rb:164:in `call'
+  rack (1.6.0) lib/rack/lock.rb:17:in `call'
+  rack (1.6.0) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.0) lib/rack/handler/webrick.rb:89:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb (10.9ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/actionpack-4.2.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (95.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.3ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/console.js.erb within layouts/javascript (31.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/morganmccrory/.rbenv/versions/2.1.5/lib/ruby/gems/2.1.0/gems/web-console-2.1.2/lib/web_console/templates/index.html.erb (65.2ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 13:07:55 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (2.9ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 922ms (Views: 886.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/react_components/Header.react.self-575d9219ae4a0f355eb9b50f1700bbd42d35ef93b77c934819ff074f717c1a90.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/main.self-c7ecdfe406e4c60850c6eb0e6b91602653abd163a04b4515e140aa917b153a4c.css?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:07:57 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:07:58 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 13:09:48 -0500
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (3.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 622ms (Views: 588.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:09:48 -0500
+
+
+Started GET "/assets/main.self-6ff5c813c0cd5f643a079d3a89f95a55ddd99232d54cb5585c24985a1572c8fd.css?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-575d9219ae4a0f355eb9b50f1700bbd42d35ef93b77c934819ff074f717c1a90.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:09:49 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:09:50 -0500
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:09:50 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 13:10:39 -0500
+Processing by UsersController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (2.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 492ms (Views: 489.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/house-rules-logo-7821c4f98b95510c6e84196101717777244bffe45341baeeea7da7cefb219465.png" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/main.self-63d1cc6d5bedc3fa72b305a2c8a9ed8e2769f97f14906c0eab6d665d6934b546.css?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:10:39 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-575d9219ae4a0f355eb9b50f1700bbd42d35ef93b77c934819ff074f717c1a90.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:10:40 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 13:10:52 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (2.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 286ms (Views: 283.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:10:52 -0500

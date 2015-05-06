@@ -36,17 +36,10 @@ fieldset legend {
   background: #d5e8ff;
 }
 
-.top-logo a {
-  color: #B0B0B0;
-  position: absolute;
+.top-logo {
+  display: block;
   margin: auto;
-  font-size: 18px;
-}
-
-.top-logo a:hover {
-  color:#F0F0F0;
-  text-align: center;
-  font-size: 18px;
+  width: 205px;
 }
 
 #welcome-title {
