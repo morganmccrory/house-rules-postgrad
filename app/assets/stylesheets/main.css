@@ -32,10 +32,6 @@ body {
   font-size: 18px;
 }
 
-fieldset legend {
-  background: #d5e8ff;
-}
-
 .top-logo {
   display: block;
   margin: auto;
@@ -88,6 +84,10 @@ fieldset legend {
 
   color:#F0F0F0;
   background-color: #097054;
+}
+
+.right li {
+  border-left: 1px solid white;
 }
 
 .menu {
