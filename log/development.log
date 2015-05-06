@@ -20177,3 +20177,392 @@ Completed 200 OK in 286ms (Views: 283.9ms | ActiveRecord: 0.7ms)
 
 
 Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:10:52 -0500
+
+
+Started GET "/login" for ::1 at 2015-05-06 13:21:00 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (747.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 1293ms (Views: 1290.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:21:02 -0500
+
+
+Started POST "/login" for ::1 at 2015-05-06 13:21:19 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WFfMjpQ0HOU87d5i1FXDBzHVsNRMXFupJbn+hC90Ini+CkPyiThoHrcs80JduSu4hAGlRbvd3uHWLs+A480eCg==", "session"=>{"email"=>"paul@paul.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[35mUser Load (16.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT 1  [["email", "paul@paul.com"]]
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 529ms (Views: 335.1ms | ActiveRecord: 74.4ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:21:20 -0500
+
+
+Started GET "/signup" for ::1 at 2015-05-06 13:21:22 -0500
+Processing by UsersController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/new.html.erb within layouts/application (39.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 334ms (Views: 330.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:21:22 -0500
+
+
+Started POST "/users" for ::1 at 2015-05-06 13:21:58 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0KgkzfqRdLJzsTR+0k0eFwm/QyXpA0aTyJO6RqPWuxA29aux550ASfhwGV5bofaovGtWtB6Cw9s7BItCb2+HYg==", "user"=>{"first_name"=>"Morgan", "last_name"=>"McCrory", "phone"=>"773-458-4352", "email"=>"morganmccrory@gmail.com", "password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ff7716cc3a0 @tempfile=#<Tempfile:/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/RackMultipart20150506-2437-1npj0ap.jpg>, @original_filename="meandtyler.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"meandtyler.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/eebbc00e95a568cae2b09aa87d3ccb9420150506-2437-pqkabh.jpg'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/eebbc00e95a568cae2b09aa87d3ccb9420150506-2437-lkfp08.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/eebbc00e95a568cae2b09aa87d3ccb9420150506-2437-lkfp08.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  [1m[35m (0.2ms)[0m  BEGIN
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/eebbc00e95a568cae2b09aa87d3ccb9420150506-2437-l046ep.jpg'
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 925ms (Views: 362.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:21:59 -0500
+
+
+Started POST "/users" for ::1 at 2015-05-06 13:22:15 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7DdMkBOts0Vr6i2mnfTGWzab1AwMU7gcWxvrjbBxXBUKasPsDqHHvuArAIYUGC7kg0/BnfvSPVSojNqJfMhgZw==", "user"=>{"first_name"=>"Morgan", "last_name"=>"McCrory", "phone"=>"773-458-4352", "email"=>"morganmccrory@gmail.com", "password"=>"[FILTERED]", "avatar"=>#<ActionDispatch::Http::UploadedFile:0x007ff77604bd50 @tempfile=#<Tempfile:/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/RackMultipart20150506-2437-yji2hw.jpg>, @original_filename="meandtyler.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"user[avatar]\"; filename=\"meandtyler.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Submit"}
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/eebbc00e95a568cae2b09aa87d3ccb9420150506-2437-tgl23n.jpg'
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/eebbc00e95a568cae2b09aa87d3ccb9420150506-2437-xs7zaa.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+Command :: PATH=/usr/local/bin/:$PATH; identify -format '%wx%h,%[exif:orientation]' '/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/eebbc00e95a568cae2b09aa87d3ccb9420150506-2437-xs7zaa.jpg[0]' 2>/dev/null
+[paperclip] An error was received while processing: #<Paperclip::Errors::CommandNotFoundError: Could not run the `identify` command. Please install ImageMagick.>
+  [1m[35m (0.3ms)[0m  BEGIN
+Command :: PATH=/usr/local/bin/:$PATH; file -b --mime '/var/folders/2l/836wcfh96xzfsh79rhf4wv2m0000gn/T/eebbc00e95a568cae2b09aa87d3ccb9420150506-2437-e6ljy3.jpg'
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (5.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 495ms (Views: 317.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:22:16 -0500
+
+
+Started POST "/users" for ::1 at 2015-05-06 13:22:27 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Z369oc1Ep0kBWL65rGz7jlHQumbhJNzlEKNDBYpnofSBIzLd0EjTsoqZk5klgBMx5ASv9xalWa3jNHIBRt6dhg==", "user"=>{"first_name"=>"Morgan", "last_name"=>"McCrory", "phone"=>"773-458-4352", "email"=>"morganmccrory@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (26.5ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "phone", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Morgan"], ["last_name", "McCrory"], ["email", "morganmccrory@gmail.com"], ["phone", "773-458-4352"], ["password_digest", "$2a$10$Lf6Vyl2qYPofOinNapWDQ.SjNu6YU4qfz.sXaSFGvZMZZlT4Pj17q"], ["created_at", "2015-05-06 18:22:27.851873"], ["updated_at", "2015-05-06 18:22:27.851873"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 196ms (ActiveRecord: 28.0ms)
+
+
+Started GET "/users/3" for ::1 at 2015-05-06 13:22:27 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36mHouse Load (19.6ms)[0m  [1mSELECT "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (177.7ms)
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 3]]
+  [1m[36mNotification Load (0.9ms)[0m  [1mSELECT  "notifications".* FROM "notifications"  ORDER BY "notifications"."id" ASC LIMIT 1[0m
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 3]]
+Completed 200 OK in 578ms (Views: 546.5ms | ActiveRecord: 27.9ms)
+
+
+Started GET "/assets/rsz_missing-b2e8f6e2e26c635d838725a7fbee3a1ea00b7f5c0152004c5b7d6996407f5923.jpg" for ::1 at 2015-05-06 13:22:28 -0500
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:22:28 -0500
+
+
+Started GET "/houses/new" for ::1 at 2015-05-06 13:22:48 -0500
+Processing by HousesController#new as HTML
+  Rendered houses/_form.html (7.5ms)
+  Rendered houses/new.html.erb within layouts/application (9.6ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications"  ORDER BY "notifications"."id" ASC LIMIT 1
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 3]]
+Completed 200 OK in 313ms (Views: 285.3ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:22:48 -0500
+
+
+Started POST "/houses" for ::1 at 2015-05-06 13:23:03 -0500
+Processing by HousesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MmMlJtHL7nC8AgyvxZDdlRdrymMLPpW2iSAu+wb8kP3UPqpazMeaizfDIY9MfDUqor/f8vy/EP56tx//ykWsjw==", "house"=>{"name"=>"my house", "house_key"=>"12345678", "address"=>{"street"=>"something", "city"=>"somewhere", "state"=>"il", "zip_code"=>"60613"}}, "commit"=>"Save Change"}
+  [1m[36mUser Load (5.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mHouse Load (0.8ms)[0m  SELECT "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  [["user_id", 3]]
+Unpermitted parameter: address
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "houses" ("name", "house_key", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "my house"], ["house_key", "12345678"], ["created_at", "2015-05-06 18:23:03.579801"], ["updated_at", "2015-05-06 18:23:03.579801"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mAddress Load (0.7ms)[0m  SELECT  "addresses".* FROM "addresses" WHERE "addresses"."addressable_id" = $1 AND "addresses"."addressable_type" = $2 LIMIT 1  [["addressable_id", 2], ["addressable_type", "House"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip_code", "addressable_id", "addressable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["street", "something"], ["city", "somewhere"], ["state", "il"], ["zip_code", 60613], ["addressable_id", 2], ["addressable_type", "House"], ["created_at", "2015-05-06 18:23:03.626693"], ["updated_at", "2015-05-06 18:23:03.626693"]]
+  [1m[36m (15.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "housing_assignments" ("user_id", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["house_id", 2], ["created_at", "2015-05-06 18:23:03.661439"], ["updated_at", "2015-05-06 18:23:03.661439"]]
+  [1m[35m (15.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "notifications" ("alert", "category", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["alert", "You have successfully created my house!"], ["category", ""], ["house_id", 2], ["created_at", "2015-05-06 18:23:03.681401"], ["updated_at", "2015-05-06 18:23:03.681401"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mHousingAssignment Load (0.3ms)[0m  SELECT "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1  [["house_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 2], ["user_id", 3], ["created_at", "2015-05-06 18:23:03.699271"], ["updated_at", "2015-05-06 18:23:03.699271"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/houses/2
+Completed 302 Found in 137ms (ActiveRecord: 47.1ms)
+
+
+Started GET "/houses/2" for ::1 at 2015-05-06 13:23:03 -0500
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 3]]
+  [1m[36mHouse Load (0.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mAddress Load (0.3ms)[0m  SELECT  "addresses".* FROM "addresses" WHERE "addresses"."addressable_id" = $1 AND "addresses"."addressable_type" = $2 LIMIT 1  [["addressable_id", 2], ["addressable_type", "House"]]
+  [1m[36mHousingAssignment Load (0.7ms)[0m  [1mSELECT  "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."user_id" = $1 AND "housing_assignments"."house_id" = $2 LIMIT 1[0m  [["user_id", 3], ["house_id", 2]]
+  Rendered houses/_form.html (4.9ms)
+  Rendered houses/show.html.erb within layouts/application (8.3ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35m (0.2ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 3]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 3]]
+Completed 200 OK in 365ms (Views: 346.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:23:04 -0500
+
+
+Started GET "/houses/2/bills" for ::1 at 2015-05-06 13:23:10 -0500
+Processing by BillsController#index as HTML
+  Parameters: {"id"=>"2"}
+  Rendered bills/index.html.erb within layouts/application (42.4ms)
+  [1m[35mUser Load (2.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+  [1m[36m (0.8ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 3]]
+  [1m[36m (1.2ms)[0m  [1mSELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35mNotification Load (0.6ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 3]]
+Completed 200 OK in 475ms (Views: 467.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/under_construction-cdaf6c9317ab56c1309d160b70bbdb0fbcc90c2d7bfd5cbf2bcb8e4150083325.gif" for ::1 at 2015-05-06 13:23:11 -0500
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:23:11 -0500
+
+
+Started GET "/houses/2/bills" for ::1 at 2015-05-06 13:28:10 -0500
+Processing by BillsController#index as HTML
+  Parameters: {"id"=>"2"}
+  Rendered bills/index.html.erb within layouts/application (2.8ms)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[35m (0.3ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 3]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35mHouse Load (0.6ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 3]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 3]]
+Completed 200 OK in 800ms (Views: 796.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/main.self-bd77c1f570bcfa8f9b43704900d7e8f627c542f3857e964462dd1e59c0b6a19d.css?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/under_construction-cdaf6c9317ab56c1309d160b70bbdb0fbcc90c2d7bfd5cbf2bcb8e4150083325.gif" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 13:28:11 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-575d9219ae4a0f355eb9b50f1700bbd42d35ef93b77c934819ff074f717c1a90.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:28:12 -0500
+
+
+Started DELETE "/logout" for ::1 at 2015-05-06 13:28:24 -0500
+Processing by SessionsController#destroy as HTML
+  [1m[35mUser Load (2.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 3]]
+Redirected to http://localhost:3000/login
+Completed 302 Found in 5ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/login" for ::1 at 2015-05-06 13:28:24 -0500
+Processing by SessionsController#new as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 494ms (Views: 486.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:28:25 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 13:28:28 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (12.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 330ms (Views: 326.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-06 13:28:29 -0500
