@@ -1,0 +1,7 @@
+<h2>Issue for "<%= @item.name %>"</h2>
+<br>
+
+<%= form_for :issue, url: "/houses/#{@house.id}/items/#{@item.id}/issues/item_issue_create" do |f|%>
+  Reason: <br><%= f.text_area :name %><br><br>
+  <%= f.submit "Submit", :class => "button"  %>
+<%end%>

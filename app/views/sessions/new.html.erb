@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="small-6 large-2 columns"><br></div>
+  <div class="small-6 large-8 columns">
+    <h1>Log in</h1>
+    <% if flash[:error] %>
+    <%= flash[:error] %>
+    <% end %>
+    <%= form_for(:session, url: login_path) do |f| %>
+    <fieldset>
+    <legend>Login</legend>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+    <%= f.submit "Log in", class: "button", id: "login-welcome-login"%>
+    <a href="/signup" id="login-sign-up" class="button success">Sign up</a>
+    </fieldset>
+    <% end %>
+  </div>
+  <div class="small-12 large-2 columns"><br></div>
+</div>

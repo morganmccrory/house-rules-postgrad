@@ -1,0 +1,9 @@
+
+  <%= form_for :chore, url: house_chores_path(@house) do |f| %>
+  <fieldset>
+  <legend>Chores</legend>
+  <%= f.label :task %>
+  <%= f.text_field :task, :class => "chore_fields" %>
+  <%= f.submit "Add Chore", :class => "button radius" %>
+  </fieldset>
+  <% end %>

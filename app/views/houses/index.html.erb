@@ -1,0 +1,12 @@
+<div class="row">
+<div class="large-3 columns"><br />
+  </div>
+  <div class="large-6 columns">
+Join a House
+<br><br>
+<% @houses.each do |house| %>
+<%= house.name %> <%= link_to "Join", "/houses/#{house.id}/join" %><br>
+<% end %>
+  </div>
+  <div class="large-3 columns"><br /></div>
+</div>

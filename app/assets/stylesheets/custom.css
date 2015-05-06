@@ -1,0 +1,160 @@
+.edit-house-form-div {
+display: none;
+}
+.chore {
+position: relative;
+border-style: groove;
+border-color: rgba(0, 140, 186, 0.27);
+border-width: .25em;
+width: 20em;
+height: auto;
+display: inline-block;
+margin-top: 1%;
+margin-bottom: 1%;
+margin-left: 3%;
+margin-right: 3%;
+padding: 2px;
+overflow: none;
+}
+.chore_task {
+position: relative;
+margin-right: 0%;
+margin-left: 0%;
+text-align: center;
+padding-top: 0em;
+padding-right: 1em;
+width: 50%;
+float: right;
+}
+.chore_task h5 {
+position: relative;
+margin-right: 0%;
+margin-left: 0%;
+text-align: center;
+padding-top: 0em;
+}
+#chore_list{
+position: relative;
+margin-left: 15%;
+margin-right: 5%;
+}
+.chore_issue{
+position: absolute;
+float: left;
+margin: .5%;
+}
+.delete_chore {
+position: relative;
+float: right;
+margin: .5%;
+}
+#chore_title {
+position: relative;
+text-align: center;
+margin-right: 20%
+}
+.user_chore_count {
+clear: both;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+border-collapse: collapse;
+padding-bottom: 1em;
+}
+.user_chore_count  th{
+background-color: #4E99A3;
+}
+.user_chore_count tr{
+background-color: #0BBCE3;
+}
+.user_chore_count td {
+text-align: center;
+}
+#chore_form{
+position: relative;
+margin: 10%;
+clear: both;
+}
+h4#chore_form{
+position: fixed;
+float: right;
+}
+ul.button-group.round.even-4{
+position: relative;
+margin-right: auto;
+margin-left: 1%;
+top: 1em;
+}
+.user_logs{
+position: relative;
+margin-top: 2%;
+margin-left: 10%;
+float: left;
+margin-top: 2%;
+}
+.return_chore{
+position: relative;
+margin-left: 65%;
+clear: both;
+}
+#chore_log{
+top: 1em;
+position: relative;
+margin-left: auto;
+margin-right: auto;
+clear: both;
+}
+#logged_chore_title{
+margin-left: auto;
+margin-right: auto;
+}
+.chrore img.issue_mark {
+opacity: 0.4;
+}
+form.chore_issue{
+display: none;
+position: relative;
+}
+#Bills {
+position: relative;
+margin-left: 35% ;
+}
+img.coming_soon {
+opacity: .4;
+}
+div#Bills h2{
+margin-left: 10% ;
+}
+.chore_issues li {
+list-style-type: none;
+text-align: center;
+}
+.view_issues{
+display:none;
+}
+.view_chore_issues{
+display: block;
+position: relative;
+margin: auto;
+}
+.view_issues{
+position: relative;
+margin: auto;
+text-align: center;
+}
+.view_promises{
+display:none;
+position: relative;
+margin: auto;
+text-align: center;
+}
+.view_chore_promise{
+display: block;
+overflow: none;
+position: relative;
+margin-right: 25%;
+}
+.promise_issues{
+margin-left: 35%;
+margin-right: 30%;
+}

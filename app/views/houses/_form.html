@@ -1,0 +1,20 @@
+  <%= form_for @house do |f|%>
+    <fieldset>
+    <legend>House Information</legend>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :house_key %>
+    <%= f.text_field :house_key %>
+    <%= f.fields_for (@address || Address.new) do |address_form| %>
+    <%= f.label :street %>
+    <%= address_form.text_field :street %>
+    <%= f.label :city %>
+    <%= address_form.text_field :city %>
+    <%= f.label :state%>
+    <%= address_form.text_field :state %>
+    <%= f.label :zip_code%>
+    <%= address_form.text_field :zip_code %>
+    <% end %>
+    <%= f.submit "Save Change", :class => "button"  %>
+    </fieldset>
+    <% end %>

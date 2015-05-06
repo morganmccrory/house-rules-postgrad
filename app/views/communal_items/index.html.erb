@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="small-6 large-2 columns"><br></div>
+  <div class="small-6 large-8 columns">
+    <% if @items.empty? %>
+      <h3 class="header-empty">There is nothing in your inventory.<br>
+      Let's go to the mall!</h3>
+    <% else %>
+        <h1 class="item-title">Inventory</h1>
+          <div class="fridge-today"><span class="today">OUT OF STOCK</span></div>
+          <% @items_out.each do |item| %>
+          <div class="each-item">
+             <div class="item-issues"><%= image_tag("issue-mark-not-square.png", size: "50x50", class: "issue-mark")%></div> <span class="item-name" id="out"><%= item.name.split.map(&:capitalize).join(' ') %></span>
+             <%= render partial: "item", locals: { item: item } %>
+            <hr>
+          </div>
+          <% end %>
+
+          <div class="fridge-today"><span class="today">LOW STOCK</span></div>
+          <% @items_low.each do |item| %>
+          <div class="each-item">
+            <span class="item-name" id="low"><%= image_tag("issue-mark-not-square.png", size: "50x50", class: "issue-mark")%> <%= item.name.split.map(&:capitalize).join(' ') %></span>
+            <%= render partial: "item", locals: { item: item } %>
+            <hr>
+          </div>
+          <% end %>
+
+          <div class="fridge-today"><span class="today">IN STOCK</span></div>
+            <% @items_high.each do |item| %>
+            <div class="each-item">
+              <span class="item-name" id="high"><%= image_tag("issue-mark-not-square.png", size: "50x50", class: "issue-mark")%> <%= item.name.split.map(&:capitalize).join(' ') %></span>
+              <%= render partial: "item", locals: { item: item } %>
+              <hr>
+            </div>
+            <% end %>
+
+
+    <% end %>
+
+
+    <%= form_for :communal_item, url: house_communal_items_path(@house) do |f| %>
+    <fieldset>
+      <legend>New Communal Item</legend>
+      Name: <%= f.text_field :name %>
+      Brand: <%= f.text_field :brand %>
+      Quantity: <%= f.text_field :quantity %>
+      Stock Level:
+      <%= f.select :stock_level, options_for_select([ "high", "low", "out"]) %>
+      <%= f.submit "New Item", :class => "button"  %>
+    </fieldset>
+    <% end %>
+  </div>
+  <div class="small-12 large-2 columns"><br></div>
+</div>
+

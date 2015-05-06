@@ -1,0 +1,17 @@
+<table class="message-table">
+  <tr>
+    <td valign="top" class="message-pic"><%= image_tag message.author.avatar.url(:thumb) %>
+    </td>
+    <td valign="middle" class="message-text"><span id="fridge-author"><%= message.author.first_name.capitalize %> <%= message.author.last_name.capitalize[0] %>.</span> <span id="fridge-title">posted <%= time_ago_in_words(message.created_at) %> ago </span><br>
+      <% unless message.picture.nil? %>
+      <%= image_tag message.picture.picture_content.url(:medium) %>
+      <% end %>
+      <%= message.content %>
+    </td>
+    <td valign="bottom" class="message-delete">
+      <% if message.author == current_user %>
+      <%= link_to "Delete", house_message_path(@house, message), method: :delete, data: {confirm: "Are you sure?"}%>
+    </td>
+    <% end %>
+  </tr>
+</table>

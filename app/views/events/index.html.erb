@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="small-6 large-2 columns"><br></div>
+  <div class="small-6 large-8 columns">
+
+    <div id="event_list">
+      <% if @events.empty? %>
+      <h3 class="header-empty">Your house has has no events!<br>
+      Maybe you should throw a party?</h3>
+      <% else %>
+      <% @events_by_date.each do |date, events_in_date| %>
+        <% if (date.year == @today.year) && (date.month == @today.month) && (date.day == @today.day) %>
+        <div class="fridge-today"><span class="today"> Today </span></div>
+        <% elsif (date.year == @today.year) && (date.month == @today.month) && (date.day - @today.day == 1) %>
+        <div class="fridge-today"><span class="today"> Tomorrow </span></div>
+        <% else %>
+        <div class="fridge-today"><span class="today"> <b><%= Date::MONTHNAMES[date.month] %> <%=date.day%>, <%=date.year%></b> </span></div>
+        <% end %>
+        <% events_in_date.each do |event| %>
+        <%= render partial: "event", locals: {event: event} %>
+        <% end %>
+      <% end %>
+      <% end %>
+    </div>
+    <div>
+      <%= render 'events/form' %>
+    </div>
+
+  </div>
+  <div class="small-12 large-2 columns"><br></div>
+</div>

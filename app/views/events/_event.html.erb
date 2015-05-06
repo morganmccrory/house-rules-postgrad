@@ -1,0 +1,26 @@
+<div class="each-event">
+
+      <%= image_tag("issue-mark.png", size: "50x50", class: "issue-mark")%> <span class="item-name"> <%= event.name.split.map(&:capitalize).join(' ') %></span> <br>
+      <div class="item-info">
+      <b>Created by: </b><%= link_to "@#{event.user.first_name.capitalize}", user_path(event.user) %><br>
+      <b>Description:</b> <%= event.description %><br>
+      <b>When:</b> <%= Date::MONTHNAMES[event.date.month] %> <%=event.date.day%>, <%=event.date.year%> <%=event.date.strftime("at %I:%M %p") %></span><br>
+
+      <%= link_to 'Edit', edit_house_event_path(@house, event) %> /
+      <%= link_to "Delete", house_event_path(@house, event), method: :delete,
+      data: {confirm: "Are you sure?"}, :class => "destroy_event"%>
+      <br>
+
+      <%= form_for :issue, url: "/houses/#{@house.id}/events/#{event.id}/issue", html: { class: "event_issue"} do |f| %>
+      <%= f.text_area :reason, :placeholder => "Reason" %>
+      <%= f.submit "Submit Issue", class: "button tiny" %>
+      <% end %>
+      <div class="issue_body">
+      <% if event.issues %>
+      <% event.issues.each do |issue| %>
+      <%= render partial: "issue", locals: { issue: issue, house: @house, event: event }, layout: false %>
+      <% end %>
+      <% end %>
+      </div>
+      </div>
+      </div>

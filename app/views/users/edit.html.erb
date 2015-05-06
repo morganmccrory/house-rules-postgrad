@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="large-3 columns"><br />
+  </div>
+  <div class="large-6 columns">
+
+  <%= form_for @user, :html => { :multipart => true }, method: :patch do |f| %>
+  <p>
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </p>
+  <p>
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name %>
+  </p>
+  <p>
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password %><br>
+    <%= f.password_field :password %>
+  </p>
+  <p>
+    <%= f.label "Password Confirmation" %><br>
+    <%= f.password_field :password_confirmation %>
+  </p>
+  <p>
+    <%= f.label :avatar %><br>
+    <%= f.file_field :avatar %>
+  </p>
+
+  <p>
+    <%= f.submit "Save Change", :class => "button"  %>
+  </p>
+
+  <% end %>
+  </div>
+  <div class="large-3 columns"><br /></div>
+</div>
+

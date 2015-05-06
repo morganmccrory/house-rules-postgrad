@@ -1,0 +1,20 @@
+  <table class="rule-table"><tr>
+  	<td class="rule-parts"><%= image_tag("old-issue-mark.png", size: "50x50", class: "issue-mark")%> </td>
+  	<td><span class="rule-content"><%= rule.content %></span><br>
+  	<%= form_for :issue, url: "/houses/#{@house.id}/rules/#{rule.id}/issue", html: { class: "rule_issue"} do |f| %>
+    <%= f.text_area :reason, :placeholder => "Reason" %>
+    <%= f.submit "Submit Issue", class: "button tiny" %>
+  <% end %>
+  <div class="rule-issue">
+  <% if rule.issues %>
+    <% rule.issues.each do |issue| %>
+        <%= render partial: "issue", locals: { issue: issue} %>
+    <% end %>
+  <% end %>
+</div>
+</td>
+  	<td class="rule-parts"><%= link_to "Delete", house_rule_path(@house, rule), method: :delete, class: "delete-button" %></td>
+  	<td class="rule-parts"><%= link_to 'Edit', edit_house_rule_path(@house, rule) %></td>
+</tr>
+  </table>
+

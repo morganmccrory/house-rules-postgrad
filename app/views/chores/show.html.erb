@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="large-3 columns"><br />
+  </div>
+
+    <h3 id="logged_chore_title">Logs for <%=@chore.task %> </h3>
+    <%= link_to "Return to Chores", house_chores_path(@house, @chores), :class => ["button round tiny", "return_chore"] %>
+    <div id="chore_log">
+      <% @logged_users.each do |user| %>
+      <table class="user_logs">
+        <% logs =  user.chore_logs.where(chore_id: @chore.id ) %>
+        <caption><%= user.first_name%>'s Log</caption>
+        <thead>
+          <th>
+            Date Completed
+          </th>
+          <th>
+            Completed <%= logs.size %> times
+          </th>
+        </thead>
+        <tbody>
+          <% logs.each do |log| %>
+          <tr>
+            <td>
+              <%= log.created_at.strftime("%a %b %d, %Y") %>
+            </td>
+            <td>
+              <%= link_to "Delete", chore_log_path(log),:class => ["button round tiny", "delete_log"],  method: :delete %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <% end %>
+    </div>
+    </div>

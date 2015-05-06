@@ -1,0 +1,8 @@
+   <h5><%= chore.task %></h5> <br>
+    Completed :<%= chore.chore_logs.size %> <br>
+    <a href="/chores/<%= chore.id %>" class="button radius">View Log</a>
+    <a href="/chores/<%= chore.id %>/chore_logs"  class="button radius">Complete</a>
+    <a href="/chores/<%= chore.id %>/edit" class="button tiny">Edit</a>
+   <a href="/chores/<%= chore.id %>" class="button tiny">Delete</a>
+    <%= button_to "Delete", chore_path(chore), method: :delete,
+    data: {confirm: "Are you sure?"} %><br>

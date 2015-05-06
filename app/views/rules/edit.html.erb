@@ -1,0 +1,7 @@
+<div id="edit_rule" >
+  <h3>Edit <%= @user.first_name %>'s Rule</h3>
+  <%= form_for [@house, @rule], method: :patch do |f| %>
+  <%= f.text_area :content %>
+  <%= f.submit "Update Rule", :class => "button"  %>
+  <% end %>
+</div>

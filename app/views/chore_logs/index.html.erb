@@ -1,0 +1,16 @@
+
+<% if @chore_logs != nil %>
+<h4>Completed Chores: </h4>
+<% @house.users.each do |user| %>
+<%= user.first_name + " " + user.last_name%><br>
+<ul>
+  <% user.chores.uniq.each do |chore| %>
+  <li><%= chore.task + " "%><%= link_to 'Mark Complete', house_chore_chore_logs_path(@house, chore), method: :post %>
+
+    <%= link_to "I didn't do it this much...", house_chore_chore_log_path(@house, chore, chore.chore_logs.last), method: :delete%></li>
+    <ul><li><%= "Times completed: " + chore.chore_logs.count.to_s %></li></ul>
+
+    <% end %>
+  </ul>
+  <% end %>
+  <% end %>

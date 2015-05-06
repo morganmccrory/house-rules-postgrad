@@ -1,0 +1,19 @@
+<div class="row">
+<div class="large-3 columns"><br />
+  </div>
+  <div class="large-6 columns">
+<%= form_for [@house, @event], method: :patch do |f| %>
+<fieldset>
+    <legend>Edit this Event</legend>
+  <%= f.label :name, "Event name" %>
+  <%= f.text_field :name %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :date %>
+  <%= f.datetime_local_field :date %>
+  <%= f.submit "Update Event", :class => "button"  %>
+  </fieldset>
+  <% end %>
+  </div>
+  <div class="large-3 columns"><br /></div>
+</div>

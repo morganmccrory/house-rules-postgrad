@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>House Rules</title>
+
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+</head>
+<body>
+  <% if current_user%>
+    <% if current_user.user_notifications.count == 0 %>
+      <% @notes = nil %>
+      <% @notifications = [Notification.first] %>
+    <script type="text/javascript">window.showNotificationAlert = false;</script>
+    <% else %>
+    <script type="text/javascript">window.showNotificationAlert = true;</script>
+      <% @notes = current_user.user_notifications.count %>
+        <% @user_notifications = current_user.user_notifications.pluck(:notification_id) %>
+          <% @notifications = [] %>
+          <% @user_notifications.each do |notify| %>
+            <% @notifications << Notification.find(notify) %>
+          <% end %>
+    <% end %>
+  <% end %>
+
+  <%= react_component('Header', isLoggedIn: !!current_user, email: current_user.try(:email), houseName: current_user.try(:houses).try(:first).try(:name), houseID: current_user.try(:houses).try(:first).try(:id), userID: current_user.try(:id), notes: @notes, notifications: @notifications) %>
+
+
+  <div class="content">
+    <%= yield %>
+  </div>
+
+  <% unless params[:js] == "broken" %>
+    <%= javascript_include_tag "application" %>
+  <% end %>
+
+  <% if Rails.env.production? %>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-17358351-6', 'sample-react-rails-app.herokuapp.com');
+      ga('send', 'pageview');
+    </script>
+  <% end %>
+</body>
+</html>

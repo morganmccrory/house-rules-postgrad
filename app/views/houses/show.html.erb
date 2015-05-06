@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="small-6 large-2 columns"><br></div>
+  <div class="small-6 large-8 columns">
+<fieldset>
+<h1><%= @house.name %>!</h1>
+<%= @house.address.street%><br>
+<%= @house.address.city+ " " %><%= @house.address.state + " " %><%= @house.address.zip_code%><br><br>
+House Key: <%= @house.house_key %><br>
+
+
+<%= link_to "Edit your house information", edit_house_path(@house), :id => "edit-house-link" %><br>
+<div id="edit-house-form-div">
+<%= render 'houses/form' %>
+</div><br>
+
+
+<% if @house.property_manager == nil %>
+<%= link_to "Add Property Management Info", new_house_property_manager_path(@house) %>
+<% else %>
+Your property manager:<br>
+<%= @house.property_manager.name %><br>
+<%= @house.property_manager.address.street%><br>
+<%= @house.property_manager.address.city+ " " %><%= @house.property_manager.address.state + " " %><%= @house.property_manager.address.zip_code%>
+<%= link_to "Edit", edit_house_property_manager_path(@house, @property_manager), :id => "edit-house-manager-link" %>
+<div id="edit-house-manager-form-div">
+<%= render 'property_managers/form' %>
+</div>
+<% end %>
+</fieldset>
+
+  </div>
+  <div class="small-12 large-2 columns"><br></div>
+</div>

@@ -1,0 +1,2 @@
+module ChoreLogsHelper
+end

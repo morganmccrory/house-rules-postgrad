@@ -1,0 +1,7 @@
+<div class="page_header"><h2>Join "<%= @house.name %>"</h2></div>
+<br>
+
+<%= form_for :join do |f|%>
+House Key: <br><%= f.text_field :house_key %><br><br>
+  <%= f.submit "Join", :class => "button"  %>
+<%end%>

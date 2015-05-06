@@ -1,0 +1,72 @@
+<br>
+<div class="item-info">
+<b>Brand: </b><%= item.brand.capitalize %> <b>Qty: </b><%= item.quantity %><br>
+<%= link_to("Edit", edit_house_communal_item_path(@house, item)) %> /
+<%= link_to("Delete", house_communal_item_path(@house, item), method: :delete) %>
+</div>
+<br>
+<span class="item-stock-level"></span>
+<% stock_levels = @stock_levels - [item.stock_level] %>
+
+
+<% if item.stock_level != "high" %>
+  <% if item.user_promise %>
+    <% if item.user_promise.fulfilled == false %>
+        <div class="user-promise">
+        <strong><%= @user.first_name.capitalize %></strong> will get it next!
+        <%= form_for :promise, url: "/houses/#{@house.id}/communal_items/#{item.id}/promise_fulfilled", html: { class: "promise"} do |f| %>
+          <%= f.submit "I Got It!" , class: "submit-promise" %>
+        <% end %>
+        </div>
+    <% end %>
+
+  <% else %>
+    <div class="promise-status">
+      <%= form_for :promise, url: "/houses/#{@house.id}/communal_items/#{item.id}/promise", html: { class: "promise"} do |f| %>
+        <%= f.submit "I'll get it next!" , class: "submit-promise" %>
+      <% end %>
+    </div>
+
+    <div class="stock-status">Change Stock Status:<br>
+    <%= form_for :item, url: "/houses/#{@house.id}/communal_items/#{item.id}/#{stock_levels[1]}", html: { class: "stock-level-form"} do |f| %>
+    <%= f.submit "#{stock_levels[1]}" , class: "submit-promise" %>
+    <% end %>
+
+      <%= form_for :item, url: "/houses/#{@house.id}/communal_items/#{item.id}/#{stock_levels[0]}",  html: { class: "stock-level-form"} do |f| %>
+      <%= f.submit "#{stock_levels[0]}" , class: "submit-promise" %>
+      <% end %>
+    </div>
+  <% end %>
+
+<% else %>
+  <div class="stock-status">Change Stock Status:<br>
+    <%= form_for :item, url: "/houses/#{@house.id}/communal_items/#{item.id}/#{stock_levels[0]}",  html: { class: "stock-level-form"} do |f| %>
+        <%= f.submit "#{stock_levels[0]}" , class: "submit-promise" %>
+    <% end %>
+    <%= form_for :item, url: "/houses/#{@house.id}/communal_items/#{item.id}/#{stock_levels[1]}", html: { class: "stock-level-form"} do |f| %>
+        <%= f.submit "#{stock_levels[1]}" , class: "submit-promise" %>
+    <% end %>
+  </div>
+<% end %>
+
+  <div class="issue_box">
+    <div class="issue_form">
+  <%= form_for :issue, url: "/houses/#{@house.id}/communal_items/#{item.id}/issue", html: { class: "item_issue"} do |f| %>
+    <%= f.text_area :reason, :placeholder => "Reason"%>
+    <%= f.submit "Submit Issue", class: "button tiny" %>
+  <% end %>
+  </div>
+
+  <div class="issue-body">
+    <% if item.issues %>
+      <div id="issue-intro"></div>
+      <div class="issue-content">
+      <% item.issues.each do |issue| %>
+        <%= render partial: "issue", locals: { issue: issue} %>
+      <% end %>
+      </div>
+    <% end %>
+    </div>
+
+  </div>
+<br>

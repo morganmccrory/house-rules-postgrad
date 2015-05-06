@@ -1,0 +1,9 @@
+<h1 class="item-title">Your Notifications</h1>
+
+<% if @notifications.length > 0 %>
+  <% @notifications.each do |notification| %>
+    <%= notification.alert %>
+  <% end %>
+<% else %>
+  You have no new notifications!
+<% end %>

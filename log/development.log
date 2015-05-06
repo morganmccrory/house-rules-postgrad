@@ -1,0 +1,2252 @@
+  [1m[36m (39.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20150416210314)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (22.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "first_name" character varying, "last_name" character varying, "email" character varying, "password_digest" character varying, "phone" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (15.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150416210314"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAddresses (20150416210715)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (4.9ms)[0m  [1mCREATE TABLE "addresses" ("id" serial primary key, "street" character varying, "city" character varying, "state" character varying, "zip_code" integer, "addressable_id" integer, "addressable_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.4ms)[0m  CREATE  INDEX  "index_addresses_on_addressable_type_and_addressable_id" ON "addresses"  ("addressable_type", "addressable_id")
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416210715"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to CreatePropertyManagers (20150416210951)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.1ms)[0m  CREATE TABLE "property_managers" ("id" serial primary key, "name" character varying, "phone" character varying, "email" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416210951"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Migrating to CreateHouses (20150416211341)
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.2ms)[0m  CREATE TABLE "houses" ("id" serial primary key, "name" character varying, "house_key" character varying, "property_manager_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_houses_on_property_manager_id" ON "houses"  ("property_manager_id")[0m
+  [1m[35m (40.0ms)[0m  ALTER TABLE "houses" ADD CONSTRAINT "fk_rails_fca970acce"
+FOREIGN KEY ("property_manager_id")
+  REFERENCES "property_managers" ("id")
+
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416211341"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to CreateHousingAssignments (20150416211419)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "housing_assignments" ("id" serial primary key, "user_id" integer, "house_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_housing_assignments_on_user_id" ON "housing_assignments"  ("user_id")[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_housing_assignments_on_house_id" ON "housing_assignments"  ("house_id")
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "housing_assignments" ADD CONSTRAINT "fk_rails_c9acd19e64"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "housing_assignments" ADD CONSTRAINT "fk_rails_940a2b850f"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416211419"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+Migrating to CreateRules (20150416211922)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.5ms)[0m  CREATE TABLE "rules" ("id" serial primary key, "content" character varying, "house_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_rules_on_house_id" ON "rules"  ("house_id")[0m
+  [1m[35m (1.9ms)[0m  ALTER TABLE "rules" ADD CONSTRAINT "fk_rails_1c32061911"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416211922"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Migrating to CreateChores (20150416211959)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (15.1ms)[0m  CREATE TABLE "chores" ("id" serial primary key, "task" character varying, "house_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_chores_on_house_id" ON "chores"  ("house_id")[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "chores" ADD CONSTRAINT "fk_rails_afe0a63c1d"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416211959"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Migrating to CreateChoreLogs (20150416212124)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (3.2ms)[0m  CREATE TABLE "chore_logs" ("id" serial primary key, "user_id" integer, "chore_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_chore_logs_on_user_id" ON "chore_logs"  ("user_id")[0m
+  [1m[35m (1.6ms)[0m  CREATE  INDEX  "index_chore_logs_on_chore_id" ON "chore_logs"  ("chore_id")
+  [1m[36m (1.3ms)[0m  [1mALTER TABLE "chore_logs" ADD CONSTRAINT "fk_rails_7000e176e9"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  ALTER TABLE "chore_logs" ADD CONSTRAINT "fk_rails_61500d5c17"
+FOREIGN KEY ("chore_id")
+  REFERENCES "chores" ("id")
+
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416212124"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Migrating to CreateEvents (20150416212247)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (5.2ms)[0m  CREATE TABLE "events" ("id" serial primary key, "user_id" integer, "name" character varying, "date" timestamp, "description" character varying, "house_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.0ms)[0m  [1mCREATE  INDEX  "index_events_on_house_id" ON "events"  ("house_id")[0m
+  [1m[35m (1.4ms)[0m  ALTER TABLE "events" ADD CONSTRAINT "fk_rails_eae0ba1967"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416212247"]]
+  [1m[35m (1.0ms)[0m  COMMIT
+Migrating to CreateCommunalItems (20150416212642)
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35m (6.4ms)[0m  CREATE TABLE "communal_items" ("id" serial primary key, "name" character varying, "brand" character varying, "quantity" integer, "stock_level" character varying, "house_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.3ms)[0m  [1mCREATE  INDEX  "index_communal_items_on_house_id" ON "communal_items"  ("house_id")[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "communal_items" ADD CONSTRAINT "fk_rails_a48b235da7"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416212642"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Migrating to CreateMessages (20150416212824)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.3ms)[0m  CREATE TABLE "messages" ("id" serial primary key, "content" character varying, "author_id" integer, "house_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_messages_on_house_id" ON "messages"  ("house_id")[0m
+  [1m[35m (1.3ms)[0m  ALTER TABLE "messages" ADD CONSTRAINT "fk_rails_eb35b7ba55"
+FOREIGN KEY ("house_id")
+  REFERENCES "houses" ("id")
+
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416212824"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to CreateIssues (20150416213117)
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (4.6ms)[0m  CREATE TABLE "issues" ("id" serial primary key, "reason" character varying, "user_id" integer, "issuable_id" integer, "issuable_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.5ms)[0m  [1mCREATE  INDEX  "index_issues_on_user_id" ON "issues"  ("user_id")[0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_issues_on_issuable_type_and_issuable_id" ON "issues"  ("issuable_type", "issuable_id")
+  [1m[36m (1.5ms)[0m  [1mALTER TABLE "issues" ADD CONSTRAINT "fk_rails_f8f1052133"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150416213117"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserPromises (20150416213208)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "user_promises" ("id" serial primary key, "fulfilled" boolean DEFAULT 'f', "user_id" integer, "promisable_id" integer, "promisable_type" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE  INDEX  "index_user_promises_on_user_id" ON "user_promises"  ("user_id")
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_user_promises_on_promisable_type_and_promisable_id" ON "user_promises"  ("promisable_type", "promisable_id")[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "user_promises" ADD CONSTRAINT "fk_rails_3b54a6f768"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ($1)[0m  [["version", "20150416213208"]]
+  [1m[35m (1.1ms)[0m  COMMIT
+Migrating to AddAttachmentAvatarToUsers (20150417175305)
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "avatar_file_name" character varying
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "avatar_content_type" character varying[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "users" ADD "avatar_file_size" integer
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "users" ADD "avatar_updated_at" timestamp[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150417175305"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreatePictures (20150422194507)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.2ms)[0m  [1mCREATE TABLE "pictures" ("id" serial primary key, "picture_content_file_name" character varying, "picture_content_content_type" character varying, "picture_content_file_size" integer, "picture_content_updated_at" timestamp, "message_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150422194507"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to CreateNotifications (20150423030538)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "notifications" ("id" serial primary key, "alert" character varying, "category" character varying, "house_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150423030538"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserNotifications (20150423031307)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (3.2ms)[0m  [1mCREATE TABLE "user_notifications" ("id" serial primary key, "user_id" integer, "notification_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.1ms)[0m  CREATE  INDEX  "index_user_notifications_on_user_id" ON "user_notifications"  ("user_id")
+  [1m[36m (1.1ms)[0m  [1mCREATE  INDEX  "index_user_notifications_on_notification_id" ON "user_notifications"  ("notification_id")[0m
+  [1m[35m (1.5ms)[0m  ALTER TABLE "user_notifications" ADD CONSTRAINT "fk_rails_cdbff2ee9e"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+
+  [1m[36m (1.9ms)[0m  [1mALTER TABLE "user_notifications" ADD CONSTRAINT "fk_rails_d238d8ef07"
+FOREIGN KEY ("notification_id")
+  REFERENCES "notifications" ("id")
+[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20150423031307"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (3.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'addresses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (3.0ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'chore_logs'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'chores'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'communal_items'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'events'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'houses'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'housing_assignments'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'issues'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'messages'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.7ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'notifications'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'pictures'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'property_managers'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (2.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'rules'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_notifications'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (3.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_promises'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (2.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "phone", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["first_name", "Paul"], ["last_name", "clegg"], ["email", "paul@paul.com"], ["password_digest", "$2a$10$ZT5pN6MLFJEa2TclDmtWNOs1LAJl/PV8aQSzubcpow2JS5kWOLFb2"], ["phone", "773-355-1422"], ["created_at", "2015-05-06 14:57:39.803700"], ["updated_at", "2015-05-06 14:57:39.803700"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["first_name", "Zach"], ["last_name", "Harris"], ["email", "z@z.com"], ["password_digest", "$2a$10$.kmsaoJ3C18sesTMSUVngOnegz5Q9/DBGo6UFJAcLdqMCJSRrqHqi"], ["created_at", "2015-05-06 14:57:39.903843"], ["updated_at", "2015-05-06 14:57:39.903843"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (16.2ms)[0m  [1mINSERT INTO "addresses" ("street", "city", "state", "zip_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["street", "1462 W Carmen Ave Apt 2"], ["city", "Chicago"], ["state", "IL"], ["zip_code", 60640], ["created_at", "2015-05-06 14:57:39.944309"], ["updated_at", "2015-05-06 14:57:39.944309"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "addresses" ("street", "city", "state", "zip_code", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["street", "4950 N Marine Dr Apt 103"], ["city", "Chicago"], ["state", "IL"], ["zip_code", 60640], ["created_at", "2015-05-06 14:57:39.964928"], ["updated_at", "2015-05-06 14:57:39.964928"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (16.8ms)[0m  [1mINSERT INTO "property_managers" ("name", "phone", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "tom"], ["phone", "773-606-6186"], ["email", "tom@tom.com"], ["created_at", "2015-05-06 14:57:39.992433"], ["updated_at", "2015-05-06 14:57:39.992433"]]
+  [1m[35mSQL (0.5ms)[0m  UPDATE "addresses" SET "addressable_type" = $1, "addressable_id" = $2, "updated_at" = $3 WHERE "addresses"."id" = $4  [["addressable_type", "PropertyManager"], ["addressable_id", 1], ["updated_at", "2015-05-06 14:57:40.012300"], ["id", 1]]
+  [1m[36m (15.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (16.5ms)[0m  [1mINSERT INTO "houses" ("name", "house_key", "property_manager_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "The Hater House"], ["house_key", "igeekallweek"], ["property_manager_id", 1], ["created_at", "2015-05-06 14:57:40.106953"], ["updated_at", "2015-05-06 14:57:40.106953"]]
+  [1m[35mSQL (0.4ms)[0m  UPDATE "addresses" SET "addressable_type" = $1, "addressable_id" = $2, "updated_at" = $3 WHERE "addresses"."id" = $4  [["addressable_type", "House"], ["addressable_id", 1], ["updated_at", "2015-05-06 14:57:40.126463"], ["id", 2]]
+  [1m[36mSQL (32.6ms)[0m  [1mINSERT INTO "housing_assignments" ("user_id", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["house_id", 1], ["created_at", "2015-05-06 14:57:40.140477"], ["updated_at", "2015-05-06 14:57:40.140477"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "housing_assignments" ("house_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["house_id", 1], ["user_id", 2], ["created_at", "2015-05-06 14:57:40.177055"], ["updated_at", "2015-05-06 14:57:40.177055"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "rules" ("content", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["content", "Flush the toilet"], ["house_id", 1], ["created_at", "2015-05-06 14:57:40.191907"], ["updated_at", "2015-05-06 14:57:40.191907"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "chores" ("task", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["task", "Do the dishes"], ["house_id", 1], ["created_at", "2015-05-06 14:57:40.208546"], ["updated_at", "2015-05-06 14:57:40.208546"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "chores" ("task", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["task", "Mop the floor"], ["house_id", 1], ["created_at", "2015-05-06 14:57:40.221627"], ["updated_at", "2015-05-06 14:57:40.221627"]]
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "chore_logs" ("user_id", "chore_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 1], ["chore_id", 2], ["created_at", "2015-05-06 14:57:40.232265"], ["updated_at", "2015-05-06 14:57:40.232265"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "chores" ("task", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["task", "Build an app in React.js"], ["house_id", 1], ["created_at", "2015-05-06 14:57:40.238150"], ["updated_at", "2015-05-06 14:57:40.238150"]]
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "chore_logs" ("user_id", "chore_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 2], ["chore_id", 3], ["created_at", "2015-05-06 14:57:40.241332"], ["updated_at", "2015-05-06 14:57:40.241332"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "events" ("name", "date", "description", "house_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Halloween Party"], ["date", "2013-09-12 22:49:27.000000"], ["description", "Costume party!!"], ["house_id", 1], ["user_id", 1], ["created_at", "2015-05-06 14:57:40.262509"], ["updated_at", "2015-05-06 14:57:40.262509"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "communal_items" ("name", "brand", "quantity", "house_id", "stock_level", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"  [["name", "toilet paper"], ["brand", "charmin"], ["quantity", 12], ["house_id", 1], ["stock_level", "low"], ["created_at", "2015-05-06 14:57:40.280712"], ["updated_at", "2015-05-06 14:57:40.280712"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "messages" ("content", "house_id", "author_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["content", "You're the best!!"], ["house_id", 1], ["author_id", 1], ["created_at", "2015-05-06 14:57:40.297322"], ["updated_at", "2015-05-06 14:57:40.297322"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "issues" ("reason", "user_id", "issuable_id", "issuable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["reason", "I HATE PAUL!!"], ["user_id", 1], ["issuable_id", 1], ["issuable_type", "Chore"], ["created_at", "2015-05-06 14:57:40.315535"], ["updated_at", "2015-05-06 14:57:40.315535"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "issues" ("reason", "user_id", "issuable_id", "issuable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["reason", "I hate paper towel"], ["user_id", 1], ["issuable_id", 1], ["issuable_type", "CommunalItem"], ["created_at", "2015-05-06 14:57:40.322813"], ["updated_at", "2015-05-06 14:57:40.322813"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "issues" ("reason", "user_id", "issuable_id", "issuable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["reason", "I hate halloween"], ["user_id", 1], ["issuable_id", 1], ["issuable_type", "Event"], ["created_at", "2015-05-06 14:57:40.328641"], ["updated_at", "2015-05-06 14:57:40.328641"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "issues" ("reason", "user_id", "issuable_id", "issuable_type", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["reason", "I hate flushing!!"], ["user_id", 1], ["issuable_id", 1], ["issuable_type", "Rule"], ["created_at", "2015-05-06 14:57:40.334230"], ["updated_at", "2015-05-06 14:57:40.334230"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "user_promises" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["user_id", 1], ["created_at", "2015-05-06 14:57:40.348330"], ["updated_at", "2015-05-06 14:57:40.348330"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUserPromise Load (0.4ms)[0m  SELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1  [["promisable_id", 1], ["promisable_type", "Chore"]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "user_promises" SET "promisable_id" = $1, "promisable_type" = $2, "updated_at" = $3 WHERE "user_promises"."id" = $4  [["promisable_id", 1], ["promisable_type", "Chore"], ["updated_at", "2015-05-06 14:57:40.360103"], ["id", 1]]
+  [1m[36m (15.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "user_promises" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2015-05-06 14:57:40.379723"], ["updated_at", "2015-05-06 14:57:40.379723"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUserPromise Load (0.4ms)[0m  [1mSELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1[0m  [["promisable_id", 1], ["promisable_type", "CommunalItem"]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE "user_promises" SET "promisable_id" = $1, "promisable_type" = $2, "updated_at" = $3 WHERE "user_promises"."id" = $4[0m  [["promisable_id", 1], ["promisable_type", "CommunalItem"], ["updated_at", "2015-05-06 14:57:40.386399"], ["id", 2]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chores" ("task", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["task", "Take out trash if it smells"], ["house_id", 1], ["created_at", "2015-05-06 14:57:40.389789"], ["updated_at", "2015-05-06 14:57:40.389789"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "chores" ("task", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["task", "Wash your face"], ["house_id", 1], ["created_at", "2015-05-06 14:57:40.393071"], ["updated_at", "2015-05-06 14:57:40.393071"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "chores" ("task", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["task", "Get out of my face"], ["house_id", 1], ["created_at", "2015-05-06 14:57:40.396035"], ["updated_at", "2015-05-06 14:57:40.396035"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "chores" ("task", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["task", "Say hello like a fucking normal person"], ["house_id", 1], ["created_at", "2015-05-06 14:57:40.398986"], ["updated_at", "2015-05-06 14:57:40.398986"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "notifications" ("alert", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["alert", "You have no new notifications."], ["category", ""], ["created_at", "2015-05-06 14:57:40.414150"], ["updated_at", "2015-05-06 14:57:40.414150"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for ::1 at 2015-05-06 09:58:15 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#welcome as HTML
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[35mUser Load (1.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (15.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 3727ms (Views: 3630.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 09:58:19 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 09:58:19 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 09:58:19 -0500
+
+
+Started GET "/assets/custom.self-d873f7788599529376afc8b592d7bca0f0172acb2a5e79aa5b3857ec28f313d5.css?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/main.self-730bd4599622ea303fac005c2d44fedb57cb2ae05c8561b7eae386c822418209.css?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 09:58:20 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 09:59:23 -0500
+Processing by UsersController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 257ms (Views: 254.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2015-05-06 10:44:10 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 811ms (Views: 807.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/main.self-89bdedcd2e120516452bd08922af8551620a6f24d3f26292072accd4ac32cd5b.css?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:44:11 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:44:12 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:44:15 -0500
+Processing by UsersController#welcome as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 228ms (Views: 226.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:44:15 -0500
+
+
+Started GET "/assets/main.self-89bdedcd2e120516452bd08922af8551620a6f24d3f26292072accd4ac32cd5b.css?body=1" for ::1 at 2015-05-06 10:44:15 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:44:15 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:44:15 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:44:15 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:44:15 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:44:15 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:44:15 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:44:16 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:45:38 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 262ms (Views: 259.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/main.self-89bdedcd2e120516452bd08922af8551620a6f24d3f26292072accd4ac32cd5b.css?body=1" for ::1 at 2015-05-06 10:45:38 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:45:38 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:45:38 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:45:38 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:45:38 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:45:38 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:45:38 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:45:38 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:45:39 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:45:40 -0500
+Processing by UsersController#welcome as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 307ms (Views: 303.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/main.self-89bdedcd2e120516452bd08922af8551620a6f24d3f26292072accd4ac32cd5b.css?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:45:41 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:46:04 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 466ms (Views: 463.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/main.self-1f778dcbba50c90a9daf9648b2a0f8fbb492fd13c09dfb92caf93282cffca55d.css?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:46:05 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:46:07 -0500
+Processing by UsersController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 278ms (Views: 275.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/main.self-1f778dcbba50c90a9daf9648b2a0f8fbb492fd13c09dfb92caf93282cffca55d.css?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:46:08 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:46:10 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 292ms (Views: 289.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/main.self-1f778dcbba50c90a9daf9648b2a0f8fbb492fd13c09dfb92caf93282cffca55d.css?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:46:11 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:47:25 -0500
+Processing by UsersController#welcome as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 454ms (Views: 451.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/main.self-3a3474ecfc9b77beed952309970d74cb32c7b950b771829134070c33199e576b.css?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:47:26 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:47:28 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 256ms (Views: 252.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/main.self-3a3474ecfc9b77beed952309970d74cb32c7b950b771829134070c33199e576b.css?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:47:29 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:47:47 -0500
+Processing by UsersController#welcome as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (0.4ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 468ms (Views: 465.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/main.self-d17744209e4248e94ad7617783533fadf307f7e5308fb60a20d1427b36fb1ca9.css?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:47:47 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:47:48 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:47:50 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 259ms (Views: 256.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/main.self-d17744209e4248e94ad7617783533fadf307f7e5308fb60a20d1427b36fb1ca9.css?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:47:51 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:48:28 -0500
+Processing by UsersController#welcome as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+Completed 200 OK in 485ms (Views: 482.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/main.self-3d4542237e86234bfefdcb27f5908168dee72c3b9479ef2ad071f9d57bcae238.css?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:48:29 -0500
+
+
+Started GET "/" for ::1 at 2015-05-06 10:49:15 -0500
+Processing by UsersController#welcome as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  Rendered users/welcome.html.erb within layouts/application (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1[0m
+  [1m[35mCACHE (16.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT 1
+Completed 200 OK in 466ms (Views: 446.7ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/assets/application.self-d6776fd1bf56ee04ef5ff98b5f0052803b046924a06d432118065be688951975.css?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/main.self-0fdc5f2279e4c2f1405767754fc1229a30f3676fc5a379881c1d7d3f17e3a44d.css?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/application.self-6d5ca736756d3782b16b8884f9417508f4ceae93e5ad52af5fa97822c69eba0a.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/events.self-605fb5a63ecca26253e8457e252b19b66794a6c5c00679aca53a715e1fc13755.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/fridge.self-fb80c93864a8d9562286780c5e2e4c7d0aa7541fd691658c0feaff09314e8742.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-7735855ec36aa26e8b51797e80f086d72f3be6c9930b43505fd8029fa26bd4f9.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/events/_event.self-0cd003714a433a7f1e20e87345aeb18c03a548a327cd12eb192bf28983c47c54.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/events/_event_box.self-b8a78126374de03474645c0e74901149554009ef4b677d3dda140bfb8b41e1a2.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/events/_event_form.self-f85e51de935a4aea62efb6a361bdba64d00657ee08b160b2221fa32f73615629.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/events/_event_list.self-77139f6bb3cb60423a9b758e6bd9e78d1fd3405469f827ff3cb55128ab6728d4.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/messages/_message.self-f68759bc833a432386d7d8d25c4284ac4d3c62af8d9ab487cd36b1cb9407bc53.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/messages/_message_box.self-96970d84007efd225558ca19131be74bff6852ac1a41ed66d1e600eebc777d5f.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/messages/_message_list.self-adfc2659d73db8ddb71d240e2d7ef7bb70f438ddd91f63816a28f6ba3805cb3d.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/rules/_rule.self-efe43c2afaa1e56c33651689fb776aaa18841167fa5ca527f8563983997beaed.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/messages/_message_form.self-104b05b7f81e186536f0439a331dcdb95d34d3cfbfaa3d706879b8612359f414.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_box.self-0ebac093ccdd1693105495c1104620e1d1b523bca4bf394635d9f6b6524cf4f9.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_list.self-34866a7a4acbd682a88a9ec98406db98867cee783d8d4c337bc150f7aebde1a9.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/rules/_rule_form.self-96293fdfec5116df6060dadde2203818c9a8f1c56c8fbc004b0781dd9bdb8d99.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/react_components/user.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/rules.self-0382bf1d54d89b39e1a4516fbe30c494fb10b90b27cba4fd6dd615c226b3b471.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-06 10:49:16 -0500

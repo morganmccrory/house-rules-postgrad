@@ -1,0 +1,13 @@
+<div class="row">
+<div class="large-3 columns"><br />
+  </div>
+  <div class="large-6 columns">
+  <%= form_for @chore, method: :patch do |f| %>
+  <%= f.label :task %>
+  <%= f.text_area :task %><br><br>
+  <%= f.submit "Update Chore", :class => "button"  %>
+  <% end %>
+  </div>
+  <div class="large-3 columns"><br /></div>
+</div>
+

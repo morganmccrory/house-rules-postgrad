@@ -1,0 +1,22 @@
+      <%= form_for [@house, @property_manager || PropertyManager.new] do |f|%>
+      <fieldset>
+      <legend>Property Manager's Information</legend>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <%= f.fields_for @address || Address.new do |address_form| %>
+      <%= f.label :street %>
+      <%= address_form.text_field :street %>
+      <%= f.label :city %>
+      <%= address_form.text_field :city %>
+      <%= f.label :state%>
+      <%= address_form.text_field :state %>
+      <%= f.label :zip_code%>
+      <%= address_form.text_field :zip_code %>
+      <%end%>
+      <%= f.submit "Save Change", :class => "button"  %>
+      </fieldset>
+      <% end %>

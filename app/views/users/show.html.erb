@@ -1,0 +1,80 @@
+<div class="row">
+  <div class="small-6 large-2 columns"><br></div>
+  <div class="small-6 large-8 columns">
+
+<% if current_user == @user %>
+
+  <table class="user-table">
+    <tr><td>
+    <h2>Hi, <%= current_user.first_name%>!</h2>
+    <% if @user.avatar.url !="/images/original/missing.png"%>
+      <%= image_tag @user.avatar.url %>
+    <%end%>
+    </td>
+    </tr>
+    <tr><td>
+    <%= link_to "Edit Your Information", edit_user_path(@user), :id => "edit_user_info_user_page" %>
+    <div id="edit_user_info_user_page_form">
+    <%= form_for @user, :html => { :multipart => true }, method: :patch do |f| %>
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name %>
+
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name %>
+        <%= f.label :phone %>
+        <%= f.text_field :phone %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.label "Password Confirmation" %>
+        <%= f.password_field :password_confirmation %>
+        <%= f.label :avatar %>
+        <%= f.file_field :avatar %>
+        <%= f.submit "Save Change", :class => "button"  %>
+      <% end %>
+    </div>
+    </td></tr>
+    <tr>
+    <br><br>
+    <div class="user-house"><td>
+    <% if @user.houses.length != 0 %>
+    <h4>Your House:</h4>
+    <% end %>
+    <% @user.houses.each do |house| %>
+    <%= link_to(house.name, house_messages_path(house)) %>
+    <% end %>
+    <% if @user.houses.length == 0 %>
+    <%= link_to "New House", new_house_path %>
+    <br><br><br>
+
+      <form id="search-form">
+        <div class="row">
+        <div class="large-12 columns">
+          <div class="row collapse">
+            <div class="small-10 columns">
+              <input id="search" type="text" placeholder="Search House">
+            </div>
+            <div class="small-2 columns">
+              <a href="#" class="button postfix">Go</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form>
+    <%end%>
+    <%end%> </div></td></tr>
+  </table>
+      <section id="houses-container">
+      </section>
+
+  </div>
+  <div class="small-12 large-2 columns"><br></div>
+</div>
+
+
+
+
+
+
+

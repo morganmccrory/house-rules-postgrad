@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="small-6 large-2 columns"><br></div>
+  <div class="small-6 large-8 columns">
+      <div id="rule_list">
+        <% if @rules.empty? %>
+        <h3 class="header-empty">There are no rules in your house.<br>
+        I see you like to live dangerously.</h3>
+        <% else %>
+        <h1 class="rule-title">Rules</h1>
+        <%= render @rules %>
+        <%end%>
+      </div>
+    <%= render 'rules/form' %>
+    <div class="rule-length"></div>
+
+
+  </div>
+  <div class="small-12 large-2 columns"><br></div>
+</div>
+
+
+
+
+
+

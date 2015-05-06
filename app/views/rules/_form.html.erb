@@ -1,0 +1,7 @@
+  <%= form_for [@house, @rule || Rule.new], remote: true do |f| %>
+  <fieldset>
+  <legend>Rules</legend>
+  <%= f.text_area :content, :class => "rule_fields" %>
+  <%= f.submit "Create Rule", :class => "button"  %>
+  </fieldset>
+  <% end %>
