@@ -12,22 +12,4 @@ $(document).ready(function() {
     }).on("ajax:error", function(e, xhr, status, error) {
       return $(fridge).append("<p class='message-content-valid'>Message length must be 6</p>");
     });
-
-$(document).on("click", ".delete-button", function(e) {
-    e.preventDefault();
-    var parent = $(this).parent().parent().parent().parent();
-    var url = $(this).attr("id")
-    $.ajax({
-      type: 'DELETE',
-      url: url,
-      beforeSend: function() {
-        parent.css("background-color", "#fff5b1");
-      },
-      success: function() {
-        parent.slideUp(300,function() {
-          parent.remove();
-        });
-      }
-    });
-  });
 });

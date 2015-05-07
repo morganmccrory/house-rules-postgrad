@@ -52,3 +52,11 @@
   width: 15%;
   display: inline-block;
 }
+
+.rule-issue {
+  display: none;
+}
+
+form.rule_issue {
+  display: none;
+}

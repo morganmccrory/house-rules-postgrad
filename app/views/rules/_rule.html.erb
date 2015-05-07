@@ -10,6 +10,8 @@
         <% rule.issues.each do |issue| %>
           <%= render partial: "issue", locals: { issue: issue} %>
         <% end %>
+      <% else %>
+        <p>There are no issues to display!</p>
       <% end %>
     </div>
   </td>
@@ -18,7 +20,7 @@
     <ul>
       <li>Edit</li>
       <li><%= link_to "Delete", house_rule_path(@house, rule), class: "delete-button",  id:"/houses/#{@house.id}/rules/#{rule.id}", remote: true %></li>
-      <li>View Issues</li>
+      <li><%= link_to "View Issues", house_rule_path(@house, rule), class: "issue-button", remote: true %></li>
       <li>Create Issue</li>
     </ul>
   </div>

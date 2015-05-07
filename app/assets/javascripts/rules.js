@@ -1,24 +1,18 @@
 $(document).ready(function() {
 
+var count = 1
+
   $(".options-button").on("click", function(e){ // binding onclick
         e.preventDefault();
-        $(".options-parts").slideDown(200)
+        if( count%2 != 0 ){
+          $(this).next(".options-parts").slideDown(200);
+          count += 1;
+        } else {
+          $(this).next(".options-parts").slideUp(100);
+          count += 1;
+        }
          e.stopPropagation();
      });
-
-     $("body").click(function () { // binding onclick to body
-         $(".options-parts").slideUp(100); // hiding popups
-     });
-
-  $(document).on("click", "img.issue-mark", function(e){
-  	e.preventDefault();
-  	var form = $(this).parent().parent().find("form.rule_issue");
-   if (form.css("display")=="none"){
-    form.css("display", "block");
-  } else {
-    form.css("display", "none");
-  }
-});
 
   $("form.rule_issue").submit(function(e){
    e.preventDefault();
@@ -47,5 +41,28 @@ $(document).ready(function() {
     $(".rule-length").css("display", "none")
   }).on("ajax:error", function(e, xhr, status, error) {
     return $("#new_rule").prepend("<p class='rule-length'>Must be a length of 6 or greater.</p>");
+  });
+
+  $(".options-parts").on("click", ".delete-button", function(e) {
+    e.preventDefault();
+    var parent = $(this).parent().parent().parent().parent().parent().parent().parent();
+    var url = $(this).attr("id")
+    $.ajax({
+      type: 'DELETE',
+      url: url,
+      beforeSend: function() {
+        parent.css("background-color", "#fff5b1");
+      },
+      success: function() {
+        parent.slideUp(300,function() {
+          parent.remove();
+        });
+      }
+    });
+  });
+
+  $(".options-parts").on("click", ".issue-button", function(e) {
+    e.preventDefault();
+    $(this).parent().parent().parent().parent().parent().find(".rule-issue").slideDown(200);
   });
 });
