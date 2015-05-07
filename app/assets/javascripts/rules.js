@@ -1,5 +1,15 @@
 $(document).ready(function() {
 
+  $(".options-button").on("click", function(e){ // binding onclick
+        e.preventDefault();
+        $(".options-parts").slideDown(200)
+         e.stopPropagation();
+     });
+
+     $("body").click(function () { // binding onclick to body
+         $(".options-parts").slideUp(100); // hiding popups
+     });
+
   $(document).on("click", "img.issue-mark", function(e){
   	e.preventDefault();
   	var form = $(this).parent().parent().find("form.rule_issue");
@@ -26,32 +36,16 @@ $(document).ready(function() {
    });
  });
 
+  var list = $("#rule-list")
+
   $(".new_rule").on("ajax:success", function(e, data, status, xhr) {
-    $("#rule_list").append(xhr.responseText);
-    $("#rule_list").find(".rule-table:last").hide();
-    $("#rule_list").find(".rule-table:last").show(1000);
-    $(".rule_fields").val("")
+    list.append(xhr.responseText);
+    list.find(".header-empty").hide();
+    list.find(".rule-table:last").hide();
+    list.find(".rule-table:last").show(1000);
+    $(".rule-fields").val("")
     $(".rule-length").css("display", "none")
-    return console.log("stuff", xhr.responseText);
   }).on("ajax:error", function(e, xhr, status, error) {
     return $("#new_rule").prepend("<p class='rule-length'>Must be a length of 6 or greater.</p>");
-  });
-
-  $('.delete-button').click(function(e) {
-    e.preventDefault();
-    var parent = $(this).parent().parent().parent().parent();
-    var url = $(this).attr("id")
-    $.ajax({
-      type: 'DELETE',
-      url: url,
-      beforeSend: function() {
-        parent.css("background-color", "#E6E6FA");
-      },
-      success: function() {
-        parent.slideUp(300,function() {
-          parent.remove();
-        });
-      }
-    });
   });
 });

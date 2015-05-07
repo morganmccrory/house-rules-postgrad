@@ -1,0 +1,54 @@
+.options-button {
+  float: right;
+}
+
+.options-parts {
+  margin-top: 2em;
+  display:none;
+}
+
+.options-parts ul {
+  list-style-type: none;
+  text-align: right;
+  width: 100px;
+  font-size: 11pt;
+  float: right;
+}
+
+.options-parts ul a {
+  color: #FF9900;
+}
+
+.options-parts ul a:hover {
+  color: #FFDE00;
+}
+
+.rule-table {
+  width: 100%;
+}
+
+.rule-content {
+  width: 70%;
+  font-size: 20px;
+}
+
+.rule-parts {
+  width: 10%;
+}
+
+#rule-list {
+  margin-top: 1em;
+}
+
+.rule-fields {
+  width: 84.9%;
+  margin-right: -5px;
+  margin-top: 12px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#rule-button {
+  width: 15%;
+  display: inline-block;
+}

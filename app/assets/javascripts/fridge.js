@@ -14,7 +14,6 @@ $(document).ready(function() {
     });
 
 $(document).on("click", ".delete-button", function(e) {
-  // $('.delete-button').click(function(e) {
     e.preventDefault();
     var parent = $(this).parent().parent().parent().parent();
     var url = $(this).attr("id")
@@ -22,7 +21,7 @@ $(document).on("click", ".delete-button", function(e) {
       type: 'DELETE',
       url: url,
       beforeSend: function() {
-        parent.css("background-color", "#E6E6FA");
+        parent.css("background-color", "#fff5b1");
       },
       success: function() {
         parent.slideUp(300,function() {

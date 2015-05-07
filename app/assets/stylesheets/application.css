@@ -11,9 +11,7 @@
  *= require_self
  *= require_tree .
  */
-.rule-title {
-  text-align: center;
-}
+
 
 .event-title {
   text-align: center;
@@ -94,19 +92,6 @@ form.item_issue {
 
 #edit-house-manager-form-div {
     display: none;
-}
-
-.rule-table {
-  width: 100%;
-}
-
-.rule-content {
-  width: 70%;
-  font-size: 20px;
-}
-
-.rule-parts {
-  width: 10%;
 }
 
 meta.foundation-version {

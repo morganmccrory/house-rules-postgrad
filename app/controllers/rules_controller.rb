@@ -64,12 +64,15 @@ skip_before_action :authenticate_user_from_token!
     if @user = current_user
       @house = House.find(params[:house_id])
       @rule = Rule.find_by(id: params[:id])
-      if @rule.destroy
+      if request.xhr?
+        @rule.destroy
         @notification = Notification.create(alert: "#{current_user.first_name} has deleted #{@rule.content}.", category: "rules", house_id: @house.id)
         HousingAssignment.where(house_id: @house.id).select do |assignment|
           assignment.user.user_notifications.create(notification: @notification)
+        render :nothing => true, :status => 200
         end
-        redirect_to house_rules_path
+      else
+        redirect_to house_messages_path(@house)
       end
     else
       redirect_to '/login'
