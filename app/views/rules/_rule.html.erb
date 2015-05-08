@@ -1,22 +1,14 @@
 <table class="rule-table">
 <tr>
   <td class="rule-content"><%= rule.content %><br>
-    <%= form_for :issue, url: "/houses/#{@house.id}/rules/#{rule.id}/issue", html: { class: "rule-issue-form"} do |f| %>
+    <%= form_for [@house, rule, @issue || Issue.new], remote: true, html: { class: "rule-issue-form"} do |f| %>
       <%= f.text_area :reason, :placeholder => "Why don't you like this rule?" %>
       <%= f.submit "Submit Issue", class: "button tiny" %>
     <% end %>
     <div class="rule-issue">
-      <% if rule.issues.count == 1 %>
-        <p>There is 1 issue with this rule.<br>
-        Can you talk it out?</p>
-        <b><% rule.issues.each do |issue| %>
-          <%= issue.reason %><br>
-        <% end %></b>
-      <% elsif rule.issues.count > 1 %>
-        <p>There are <%= rule.issues.count %> issues with this rule.<br>
-        Can you talk them out?</p>
-        <b><% rule.issues.each do |issue| %>
-          <%= issue.reason %><br>
+      <% if rule.issues.count >= 1 %>
+        <% rule.issues.each do |issue| %>
+          <b><%= issue.reason %></b><br>
         <% end %></b>
       <% else %>
         <p>There are no issues to display!</p>

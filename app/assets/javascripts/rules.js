@@ -29,21 +29,34 @@ var viewIssueCount = 1
     }
   });
 
+  $(".options-parts").on("click", ".issue-button", function(e) {
+    e.preventDefault();
+    if( viewIssueCount%2 != 0 ){
+    $(this).parent().parent().parent().parent().parent().find(".rule-issue").slideDown(200);
+    viewIssueCount += 1
+    } else {
+    $(this).parent().parent().parent().parent().parent().find(".rule-issue").slideUp(200);
+    viewIssueCount += 1
+    }
+  });
+
   $("form.rule-issue-form").submit(function(e){
-   e.preventDefault();
-   var form = $(this);
-   var list = form.parent().parent().find("div.rule-issue");
-   $.ajax({
-     url: form.attr("action"),
-     method: form.attr("method"),
-     data: form.serialize(),
-     success: function(response){
-       list.prepend(response);
-       form[0].reset();
-       form.css("display","none");
-     }
-   });
- });
+    e.preventDefault();
+    e.stopPropagation();
+    var form = $(this);
+    var issueList = form.parent().parent().find("div.rule-issue");
+    $.ajax({
+      url: form.attr("action"),
+      method: form.attr("method"),
+      data: $(this).serialize()
+    }).success(function(response){
+      form.hide();
+      issueList.show();
+      issueList.find("p").hide();
+      issueList.prepend("<font color='green'>Your issue has been added!</font><br><br>");
+      issueList.append(response.issue.reason + "<br>").css({ 'font-weight': 'bold' });
+    });
+  });
 
   var list = $("#rule-list")
 
@@ -74,16 +87,5 @@ var viewIssueCount = 1
         });
       }
     });
-  });
-
-  $(".options-parts").on("click", ".issue-button", function(e) {
-    e.preventDefault();
-    if( viewIssueCount%2 != 0 ){
-    $(this).parent().parent().parent().parent().parent().find(".rule-issue").slideDown(200);
-    viewIssueCount += 1
-    } else {
-    $(this).parent().parent().parent().parent().parent().find(".rule-issue").slideUp(200);
-    viewIssueCount += 1
-  }
   });
 });

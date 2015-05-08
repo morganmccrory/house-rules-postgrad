@@ -1,16 +1,18 @@
 class IssuesController < ApplicationController
 
-  def rule_issue_create
+  def create
     @user = current_user
-    @house = House.find_by(id: params[:house_id])
-    @rule = Rule.find_by(id: params[:rule_id])
+    @house = House.find(params[:house_id])
+    @rule = Rule.find(params[:rule_id])
     @issue = @rule.issues.create(reason: params[:issue][:reason], user_id: @user.id)
       @notification = Notification.create(alert: "#{current_user.first_name} has an issue with #{@rule.content}.", category: "rules", house_id: @house.id)
       HousingAssignment.where(house_id: @house.id).select do |assignment|
         assignment.user.user_notifications.create(notification: @notification)
       end
     if request.xhr?
-      render partial: "rules/issue", locals: { issue: @issue }, layout: false
+      render :json => {
+            :issue => @issue
+        }
     else
       redirect_to house_rules_path(@house)
     end

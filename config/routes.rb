@@ -23,7 +23,9 @@ Rails.application.routes.draw do
   resources :houses do
     resources :property_managers
     resources :messages
-    resources :rules
+    resources :rules do
+      resources :issues, only: [:create, :destroy]
+    end
     resources :communal_items
     resources :events
     resources :chores, shallow: true do
@@ -44,21 +46,10 @@ Rails.application.routes.draw do
   post '/houses/:house_id/communal_items/:communal_item_id/promise' => 'user_promises#create'
   post '/houses/:house_id/communal_items/:communal_item_id/promise_fulfilled' => 'user_promises#update'
 
-  post '/houses/:house_id/communal_items/:communal_item_id/issue' => 'issues#item_issue_create'
-  post '/houses/:house_id/rules/:rule_id/issue' => 'issues#rule_issue_create'
-  post '/houses/:house_id/events/:event_id/issue' => 'issues#event_issue_create'
-  post '/houses/:house_id/chores/:chore_id/issue' => 'issues#chore_issue_create'
-
-
   get '/houses/search/:keyword' => 'houses#search'
 
   post '/chores/:id/promise' => "user_promises#chore_promise_create"
   post '/chores/:id/promise/update' => "user_promises#chore_promise_update"
-
-  delete '/houses/:house_id/communal_items/:communal_item_id/issues/:id' => 'issues#item_issue_delete'
-  delete '/houses/:house_id/rules/:rule_id/issues/:id' => 'issues#rule_issue_delete'
-  delete '/houses/:house_id/events/:event_id/issues/:id' => 'issues#event_issue_delete'
-  delete '/houses/:house_id/chores/:chore_id/issues/:id' => 'issues#chore_issue_delete'
 
   get "/houses/:id/bills" => "bills#index"
 
