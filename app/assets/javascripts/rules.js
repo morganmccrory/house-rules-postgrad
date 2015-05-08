@@ -5,7 +5,7 @@ var issueFormCount = 1
 var viewIssueCount = 1
 var editCount = 1
 
-  $(".options-button").on("click", function(e){ // binding onclick
+  $("body").on("click", ".options-button", function(e){ // binding onclick
         e.preventDefault();
         if( optionsCount%2 != 0 ){
           $(this).next(".options-parts").slideDown(200);
@@ -19,7 +19,7 @@ var editCount = 1
          e.stopPropagation();
      });
 
-  $(".options-parts").on("click", ".rule-edit-button", function(e) {
+  $("body").on("click", ".rule-edit-button", function(e) {
     e.preventDefault();
     if( editCount%2 != 0 ){
       $(this).parent().parent().parent().parent().parent().parent().find(".rule-edit-form").slideDown(200);
@@ -31,7 +31,7 @@ var editCount = 1
     e.stopPropagation();
   });
 
-  $(".options-parts").on("click", ".rule-issue-button", function(e) {
+  $("body").on("click", ".rule-issue-button", function(e) {
     e.preventDefault();
     if( issueFormCount%2 != 0 ){
       $(this).parent().parent().parent().parent().parent().parent().find(".rule-issue-form").slideDown(200);
@@ -43,7 +43,7 @@ var editCount = 1
     e.stopPropagation();
   });
 
-  $(".options-parts").on("click", ".issue-button", function(e) {
+  $("body").on("click", ".issue-button", function(e) {
     e.preventDefault();
     if( viewIssueCount%2 != 0 ){
     $(this).parent().parent().parent().parent().parent().find(".rule-issue").slideDown(200);
@@ -55,9 +55,8 @@ var editCount = 1
     e.stopPropagation();
   });
 
-  $("form.rule-edit-form").submit(function(e){
+  $("body").on("submit", "form.rule-edit-form", function(e){
     e.preventDefault();
-    e.stopPropagation();
     var form = $(this);
     var ruleTitle = form.parent();
     $.ajax({
@@ -69,11 +68,11 @@ var editCount = 1
       ruleTitle.html("")
       ruleTitle.append(response.rule.content);
     });
+    e.stopPropagation();
   });
 
-  $("form.rule-issue-form").submit(function(e){
+  $("body").on("submit", "form.rule-issue-form", function(e){
     e.preventDefault();
-    e.stopPropagation();
     var form = $(this);
     var issueList = form.parent().parent().find("div.rule-issue");
     $.ajax({
@@ -87,6 +86,7 @@ var editCount = 1
       issueList.prepend("<font color='green'>Your issue has been added!</font><br><br>");
       issueList.append(response.issue.reason + "<br>").css({ 'font-weight': 'bold' });
     });
+    e.stopPropagation();
   });
 
   var list = $("#rule-list")
@@ -100,9 +100,10 @@ var editCount = 1
     $(".rule-length").css("display", "none")
   }).on("ajax:error", function(e, xhr, status, error) {
     return $("#new_rule").prepend("<p class='rule-length'>Must be a length of 6 or greater.</p>");
+    e.stopPropagation();
   });
 
-  $(".options-parts").on("click", ".delete-button", function(e) {
+  $("body").on("click", ".delete-button", function(e) {
     e.preventDefault();
     var parent = $(this).parent().parent().parent().parent().parent().parent().parent();
     var url = $(this).attr("id")
