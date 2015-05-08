@@ -68,3 +68,8 @@ form.rule-issue-form {
   display: none;
   margin-top: 1em;
 }
+
+form.rule-edit-form {
+  display: none;
+  margin-top: 1em;
+}

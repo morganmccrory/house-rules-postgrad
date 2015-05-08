@@ -1,6 +1,10 @@
 <table class="rule-table">
 <tr>
   <td class="rule-content"><%= rule.content %><br>
+    <%= form_for [@house, rule], remote: true, html: { class: "rule-edit-form"} do |f| %>
+      <%= f.text_area :content, :placeholder => rule.content %>
+      <%= f.submit "Edit Rule", class: "button tiny" %>
+    <% end %>
     <%= form_for [@house, rule, @issue || Issue.new], remote: true, html: { class: "rule-issue-form"} do |f| %>
       <%= f.text_area :reason, :placeholder => "Why don't you like this rule?" %>
       <%= f.submit "Submit Issue", class: "button tiny" %>
@@ -18,7 +22,7 @@
   <td class="rule-parts"><%= link_to "Options", house_rule_path(@house, rule), class: "options-button", remote: true %>
     <div class="options-parts">
     <ul>
-      <li>Edit</li>
+      <li><%= link_to "Edit", house_rule_path(@house, rule), class: "rule-edit-button", remote: true %></li>
       <li><%= link_to "Delete", house_rule_path(@house, rule), class: "delete-button",  id:"/houses/#{@house.id}/rules/#{rule.id}", remote: true %></li>
       <li><%= link_to "View Issues", house_path(@house), class: "issue-button", remote: true %></li>
       <li><%= link_to "Create Issue", house_path(@house), class: "rule-issue-button", remote: true %></li>

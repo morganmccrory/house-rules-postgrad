@@ -3,6 +3,7 @@ $(document).ready(function() {
 var optionsCount = 1
 var issueFormCount = 1
 var viewIssueCount = 1
+var editCount = 1
 
   $(".options-button").on("click", function(e){ // binding onclick
         e.preventDefault();
@@ -18,6 +19,18 @@ var viewIssueCount = 1
          e.stopPropagation();
      });
 
+  $(".options-parts").on("click", ".rule-edit-button", function(e) {
+    e.preventDefault();
+    if( editCount%2 != 0 ){
+      $(this).parent().parent().parent().parent().parent().parent().find(".rule-edit-form").slideDown(200);
+      editCount += 1;
+    } else {
+      $(this).parent().parent().parent().parent().parent().parent().find(".rule-edit-form").slideUp(200);
+      editCount += 1;
+    }
+    e.stopPropagation();
+  });
+
   $(".options-parts").on("click", ".rule-issue-button", function(e) {
     e.preventDefault();
     if( issueFormCount%2 != 0 ){
@@ -27,6 +40,7 @@ var viewIssueCount = 1
       $(this).parent().parent().parent().parent().parent().parent().find(".rule-issue-form").slideUp(200);
       issueFormCount += 1;
     }
+    e.stopPropagation();
   });
 
   $(".options-parts").on("click", ".issue-button", function(e) {
@@ -38,6 +52,23 @@ var viewIssueCount = 1
     $(this).parent().parent().parent().parent().parent().find(".rule-issue").slideUp(200);
     viewIssueCount += 1
     }
+    e.stopPropagation();
+  });
+
+  $("form.rule-edit-form").submit(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var form = $(this);
+    var ruleTitle = form.parent();
+    $.ajax({
+      url: form.attr("action"),
+      method: form.attr("method"),
+      data: $(this).serialize()
+    }).success(function(response){
+      form.hide();
+      ruleTitle.html("")
+      ruleTitle.append(response.rule.content);
+    });
   });
 
   $("form.rule-issue-form").submit(function(e){
