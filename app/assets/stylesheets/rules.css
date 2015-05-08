@@ -25,11 +25,16 @@
 
 .rule-table {
   width: 100%;
+  position: relative;
 }
 
 .rule-content {
   width: 70%;
   font-size: 20px;
+  position: absolute;
+  margin-top: 0;
+  max-height: 150px;
+  overflow: scroll;
 }
 
 .rule-parts {
@@ -55,8 +60,11 @@
 
 .rule-issue {
   display: none;
+  margin-top: 1em;
+  font-size: 11pt;
 }
 
-form.rule_issue {
+form.rule-issue-form {
   display: none;
+  margin-top: 1em;
 }

@@ -1,15 +1,23 @@
 <table class="rule-table">
 <tr>
-  <td><span class="rule-content"><%= rule.content %></span><br>
-    <%= form_for :issue, url: "/houses/#{@house.id}/rules/#{rule.id}/issue", html: { class: "rule_issue"} do |f| %>
-      <%= f.text_area :reason, :placeholder => "Reason" %>
+  <td class="rule-content"><%= rule.content %><br>
+    <%= form_for :issue, url: "/houses/#{@house.id}/rules/#{rule.id}/issue", html: { class: "rule-issue-form"} do |f| %>
+      <%= f.text_area :reason, :placeholder => "Why don't you like this rule?" %>
       <%= f.submit "Submit Issue", class: "button tiny" %>
     <% end %>
     <div class="rule-issue">
-      <% if rule.issues %>
-        <% rule.issues.each do |issue| %>
-          <%= render partial: "issue", locals: { issue: issue} %>
-        <% end %>
+      <% if rule.issues.count == 1 %>
+        <p>There is 1 issue with this rule.<br>
+        Can you talk it out?</p>
+        <b><% rule.issues.each do |issue| %>
+          <%= issue.reason %><br>
+        <% end %></b>
+      <% elsif rule.issues.count > 1 %>
+        <p>There are <%= rule.issues.count %> issues with this rule.<br>
+        Can you talk them out?</p>
+        <b><% rule.issues.each do |issue| %>
+          <%= issue.reason %><br>
+        <% end %></b>
       <% else %>
         <p>There are no issues to display!</p>
       <% end %>
@@ -20,8 +28,8 @@
     <ul>
       <li>Edit</li>
       <li><%= link_to "Delete", house_rule_path(@house, rule), class: "delete-button",  id:"/houses/#{@house.id}/rules/#{rule.id}", remote: true %></li>
-      <li><%= link_to "View Issues", house_rule_path(@house, rule), class: "issue-button", remote: true %></li>
-      <li>Create Issue</li>
+      <li><%= link_to "View Issues", house_path(@house), class: "issue-button", remote: true %></li>
+      <li><%= link_to "Create Issue", house_path(@house), class: "rule-issue-button", remote: true %></li>
     </ul>
   </div>
   </td>
