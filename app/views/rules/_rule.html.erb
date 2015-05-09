@@ -1,6 +1,7 @@
 <table class="rule-table">
 <tr>
-  <td class="rule-content"><%= rule.content %><br>
+  <td class="rule-content">
+    <span class="rule-title"><%= rule.content %></span><br>
     <%= form_for [@house, rule], remote: true, html: { class: "rule-edit-form"} do |f| %>
       <%= f.text_area :content, :placeholder => rule.content %>
       <%= f.submit "Edit Rule", class: "button tiny" %>

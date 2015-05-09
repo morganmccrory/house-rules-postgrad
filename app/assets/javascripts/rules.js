@@ -53,7 +53,7 @@ $(document).ready(function() {
   $("body").on("submit", "form.rule-edit-form", function(e){
     e.preventDefault();
     var form = $(this);
-    var ruleTitle = form.parent();
+    var ruleTitle = form.parent().find(".rule-title");
     $.ajax({
       url: form.attr("action"),
       method: form.attr("method"),
