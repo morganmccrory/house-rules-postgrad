@@ -100,19 +100,25 @@ $(document).ready(function() {
 
   $("body").on("click", ".delete-button", function(e) {
     e.preventDefault();
+    e.stopPropagation();
+
     var parent = $(this).parent().parent().parent().parent().parent().parent().parent();
     var url = $(this).attr("id")
-    $.ajax({
-      type: 'DELETE',
-      url: url,
-      beforeSend: function() {
-        parent.css("background-color", "#fff5b1");
-      },
-      success: function() {
-        parent.slideUp(300,function() {
-          parent.remove();
-        });
-      }
-    });
+    var confirmed = confirm("Are you sure?");
+
+    if(confirmed) {
+      $.ajax({
+        type: 'DELETE',
+        url: url,
+        beforeSend: function() {
+          parent.css("background-color", "#fff5b1");
+        },
+        success: function() {
+          parent.slideUp(300,function() {
+            parent.remove();
+          });
+        }
+      });
+    }
   });
 });
