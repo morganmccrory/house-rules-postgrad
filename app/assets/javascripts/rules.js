@@ -1,56 +1,51 @@
 $(document).ready(function() {
 
-var optionsCount = 1
-var issueFormCount = 1
-var viewIssueCount = 1
-var editCount = 1
-
   $("body").on("click", ".options-button", function(e){ // binding onclick
         e.preventDefault();
-        if( optionsCount%2 != 0 ){
-          $(this).next(".options-parts").slideDown(200);
-          optionsCount += 1;
+        var optionsMenu = $(this).next(".options-parts")
+        if(optionsMenu.css("display") == "none"){
+          optionsMenu.slideDown(200);
         } else {
-          $(this).next(".options-parts").slideUp(100);
-          $(this).parent().parent().parent().parent().parent().parent().find(".rule-issue-form").hide();
-          $(this).parent().parent().parent().parent().parent().find(".rule-issue").hide();
-          optionsCount += 1;
+          optionsMenu.slideUp(100);
+          $(this).parent().parent().parent().parent().find(".rule-edit-form").hide();
+          $(this).parent().parent().parent().parent().find(".rule-issue-form").hide();
+          $(this).parent().parent().parent().parent().find(".rule-issue").hide();
         }
          e.stopPropagation();
      });
 
   $("body").on("click", ".rule-edit-button", function(e) {
     e.preventDefault();
-    if( editCount%2 != 0 ){
-      $(this).parent().parent().parent().parent().parent().parent().find(".rule-edit-form").slideDown(200);
-      editCount += 1;
+    var ruleEditForm = $(this).parent().parent().parent().parent().parent().parent().find(".rule-edit-form")
+
+    if(ruleEditForm.css("display") == "none"){
+      ruleEditForm.slideDown(200);
     } else {
-      $(this).parent().parent().parent().parent().parent().parent().find(".rule-edit-form").slideUp(200);
-      editCount += 1;
+      ruleEditForm.slideUp(200);
     }
     e.stopPropagation();
   });
 
   $("body").on("click", ".rule-issue-button", function(e) {
     e.preventDefault();
-    if( issueFormCount%2 != 0 ){
-      $(this).parent().parent().parent().parent().parent().parent().find(".rule-issue-form").slideDown(200);
-      issueFormCount += 1;
+    var ruleIssueForm = $(this).parent().parent().parent().parent().parent().parent().find(".rule-issue-form")
+
+    if(ruleIssueForm.css("display") == "none"){
+      ruleIssueForm.slideDown(200);
     } else {
-      $(this).parent().parent().parent().parent().parent().parent().find(".rule-issue-form").slideUp(200);
-      issueFormCount += 1;
+      ruleIssueForm.slideUp(200);
     }
     e.stopPropagation();
   });
 
   $("body").on("click", ".issue-button", function(e) {
     e.preventDefault();
-    if( viewIssueCount%2 != 0 ){
-    $(this).parent().parent().parent().parent().parent().find(".rule-issue").slideDown(200);
-    viewIssueCount += 1
+    var ruleIssue = $(this).parent().parent().parent().parent().parent().find(".rule-issue")
+
+    if(ruleIssue.css("display") == "none"){
+      ruleIssue.slideDown(200);
     } else {
-    $(this).parent().parent().parent().parent().parent().find(".rule-issue").slideUp(200);
-    viewIssueCount += 1
+      ruleIssue.slideUp(200);
     }
     e.stopPropagation();
   });
