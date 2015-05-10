@@ -1,0 +1,11 @@
+/usr/local/bin/ruby extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling generator.c
+make: gcc-4.2: No such file or directory
+make: *** [generator.o] Error 1
+
+make failed, exit code 2

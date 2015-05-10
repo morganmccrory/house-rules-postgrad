@@ -1,5 +1,9 @@
 $(document).ready(function() {
 
+  $('#calendar').fullCalendar({
+    // put your options and callbacks here
+  });
+
   $(document).on("click", ".issue-mark", function(e){
   	e.preventDefault();
   	var form = $(this).parent().find("form.event_issue");
