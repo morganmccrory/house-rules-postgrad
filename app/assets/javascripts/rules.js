@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  $("body").on("click", ".options-button", function(e){ // binding onclick
+  $("#rule-list").on("click", ".options-button", function(e){ // binding onclick
         e.preventDefault();
         var optionsMenu = $(this).next(".options-parts")
         if(optionsMenu.css("display") == "none"){

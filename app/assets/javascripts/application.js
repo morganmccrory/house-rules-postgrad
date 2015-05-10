@@ -23,9 +23,8 @@
 
 //= require underscore
 
-//= require fullcalendar
-//= require fullcalendar/gcal
 //= require moment
+//= require fullcalendar
 
 
 $(function(){
