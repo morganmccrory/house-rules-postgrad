@@ -5,8 +5,7 @@ skip_before_action :authenticate_user_from_token!, only: [:index, :edit, :create
     @house = House.find(params[:house_id])
     if @user = current_user
       if @user.houses.first == @house
-        @events = @house.events.order('date desc')
-        @events_by_date = @events.all.group_by(&:date)
+        @events = @house.events
         @today = Date.today
       else
         render :nothing => true, :status => 400
@@ -16,17 +15,28 @@ skip_before_action :authenticate_user_from_token!, only: [:index, :edit, :create
     end
   end
 
+  def new
+    @house = House.find(params[:house_id])
+    @event = Event.new
+  end
+
   def create
     @user = current_user
-    @house = House.find_by(id: params[:house_id])
+    @house = House.find(params[:house_id])
     @event = @house.events.new(event_params)
     @event.save
-    @notification = Notification.create(alert: "#{current_user.first_name} has added #{@event.name} to Events.", category: "events", house_id: @house.id)
+    @notification = Notification.create(alert: "#{current_user.first_name} has added #{@event.title} to Events.", category: "events", house_id: @house.id)
         HousingAssignment.where(house_id: @house.id).select do |assignment|
           assignment.user.user_notifications.create(notification: @notification)
         end
     @event.update_attributes(user_id: @user.id)
     redirect_to house_events_path(@house)
+  end
+
+  def source
+    @house = House.find(params[:id])
+    @events = @house.events
+      render :json => @events
   end
 
   def edit
@@ -67,7 +77,7 @@ skip_before_action :authenticate_user_from_token!, only: [:index, :edit, :create
   private
 
   def event_params
-    params.require(:event).permit(:description, :date, :name)
+    params.require(:event).permit(:title, :start, :end, :all_day, :overlap, :description)
   end
 
 end

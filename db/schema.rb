@@ -62,8 +62,11 @@ ActiveRecord::Schema.define(version: 20150423031307) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "name"
-    t.datetime "date"
+    t.string   "title"
+    t.datetime "start"
+    t.datetime "end"
+    t.boolean  "all_day"
+    t.boolean  "overlap"
     t.string   "description"
     t.integer  "house_id"
     t.datetime "created_at",  null: false
