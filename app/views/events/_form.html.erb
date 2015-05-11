@@ -4,14 +4,16 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </div>
-  <div class="event-fields">
     <%= f.label :start %><br />
-    <%= f.datetime_select :start %>
+  <div class="date-form-field">
+    <%= f.datetime_select :start, :ampm => true, :minute_step => 15 %>
   </div>
-  <div class="event-fields">
+  <br>
     <%= f.label :end %><br />
-    <%= f.datetime_select :end %>
+  <div class="date-form-field">
+    <%= f.datetime_select :end, :ampm => true, :minute_step => 15 %>
   </div>
+  <br>
   <div class="event-fields">
     <%= f.label :all_day %><br />
     <%= f.check_box :all_day %>

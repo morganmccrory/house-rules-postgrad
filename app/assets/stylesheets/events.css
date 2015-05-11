@@ -5,3 +5,10 @@
 div.fc-left h2 {
   font-size: 14pt;
 }
+
+.date-form-field select {
+  display: inline;
+  width: 5em;
+  margin-right: .5em;
+  margin-left: .5em;
+}
