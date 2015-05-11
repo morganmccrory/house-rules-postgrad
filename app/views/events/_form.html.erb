@@ -1,30 +1,36 @@
+<div id="dialog" title="New Event">
+
 <%= form_for([@house, @event]) do |f| %>
 
-  <div class="event-fields">
-    <%= f.label :title %><br />
+  <%= f.label :start, "Starts at:" %><br />
+  <div class="date-form-field">
+    <%= f.datetime_select :start, :order => [:month, :day, :year], :ampm => true, :minute_step => 15 %>
+  </div>
+  <br>
+    <%= f.label :end, "Ends at:" %><br />
+  <div class="date-form-field">
+    <%= f.datetime_select :end, :order => [:month, :day, :year], :ampm => true, :minute_step => 15 %>
+  </div>
+  <br>
+  <div class="event-field">
+    <%= f.label :title, "Title:" %><br />
     <%= f.text_field :title %>
   </div>
-    <%= f.label :start %><br />
-  <div class="date-form-field">
-    <%= f.datetime_select :start, :ampm => true, :minute_step => 15 %>
-  </div>
-  <br>
-    <%= f.label :end %><br />
-  <div class="date-form-field">
-    <%= f.datetime_select :end, :ampm => true, :minute_step => 15 %>
-  </div>
-  <br>
-  <div class="event-fields">
-    <%= f.label :all_day %><br />
-    <%= f.check_box :all_day %>
-  </div>
-  <div class="event-fields">
-    <%= f.label :overlap %><br />
-    <%= f.check_box :overlap %>
-  </div>
-  <div class="event-fields">
-    <%= f.label :description %><br />
+  <div class="event-field">
+    <%= f.label :description, "Description:" %><br />
     <%= f.text_area :description %>
   </div>
-    <%= f.submit "Submit", :class => "button" %>
+  <div class="event-check-field">
+    <%= f.label :all_day, "Is this an all-day event?" %>
+    <%= f.check_box :all_day %>
+  </div>
+  <br>
+  <br>
+  <div class="event-check-field">
+    <%= f.label :overlap, "Can another event be scheduled at the house during this time?" %>
+    <%= f.check_box :overlap, checked: true %>
+  </div>
+  <br><br>
+  <%= f.submit "Submit", :class => "button" %>
 <% end %>
+</div>

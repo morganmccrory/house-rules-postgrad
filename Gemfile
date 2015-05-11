@@ -18,6 +18,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem 'react-rails', '~> 1.0.0.pre', github: 'reactjs/react-rails'
 gem 'react-router-rails'

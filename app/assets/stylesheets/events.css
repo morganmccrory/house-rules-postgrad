@@ -6,9 +6,25 @@ div.fc-left h2 {
   font-size: 14pt;
 }
 
+#dialog {
+  display: none;
+}
+
 .date-form-field select {
   display: inline;
   width: 5em;
   margin-right: .5em;
   margin-left: .5em;
+}
+
+.event-check-field {
+  display: inline-block;
+}
+
+.event-field {
+  clear: both;
+}
+
+.event-field label {
+  display: inline;
 }

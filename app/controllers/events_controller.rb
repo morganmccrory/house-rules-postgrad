@@ -3,6 +3,7 @@ skip_before_action :authenticate_user_from_token!, only: [:index, :edit, :create
 
   def index
     @house = House.find(params[:house_id])
+    @event = Event.new
     if @user = current_user
       if @user.houses.first == @house
         @events = @house.events
