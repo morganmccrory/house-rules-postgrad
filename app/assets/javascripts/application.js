@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/dialog
+//= require jquery-ui/datepicker
+//= require jquery-ui/datepicker-pt-BR
 
 //= require react
 //= require react_ujs

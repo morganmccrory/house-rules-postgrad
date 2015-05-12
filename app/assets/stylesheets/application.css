@@ -11,6 +11,7 @@
  *= require_self
  *= require fullcalendar
  *= require jquery-ui/dialog
+ *= require jquery-ui/datepicker
  *= require_tree .
  */
 

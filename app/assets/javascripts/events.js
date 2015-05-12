@@ -21,8 +21,16 @@ $(document).ready(function() {
       url: '/houses/'+getSegment(houseID, 2)+'/events/source',
     }],
 
-    dayClick: function(start, end, allDay) {
+    dayClick: function(date, jsEvent, view) {
     $("#dialog").dialog("open");
+
+    $("#event_start_2i").val(date.month()+1);
+    $("#event_start_3i").val(date.date());
+    $("#event_start_1i").val(date.year());
+
+    $("#event_end_2i").val(date.month()+1);
+    $("#event_end_3i").val(date.date());
+    $("#event_end_1i").val(date.year());
 
     if (title) {
         calendar.fullCalendar('renderEvent',
