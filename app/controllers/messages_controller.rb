@@ -74,6 +74,7 @@ class MessagesController < ApplicationController
         @message.destroy
         render :nothing => true, :status => 200
       else
+        @message.destroy
         redirect_to house_messages_path(@house)
       end
     else

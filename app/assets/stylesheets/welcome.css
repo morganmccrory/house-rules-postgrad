@@ -1,0 +1,27 @@
+.creator_image{
+	margin-right: 50px;
+}
+
+.creator_name_1{
+	margin-left: 30px;
+}
+
+.creator_name_2{
+	margin-left: 125px;
+}
+
+.creator_name_3{
+	margin-left: 150px;
+}
+
+.creator_name_4{
+	margin-left: 130px;
+}
+
+.circular {
+	width: 180px;
+	height: 180px;
+	border-radius: 50px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+}

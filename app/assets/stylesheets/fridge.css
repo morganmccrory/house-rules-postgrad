@@ -1,0 +1,7 @@
+a.message-delete-button {
+  color: #FF9900;
+}
+
+a.message-delete-button:hover {
+  color: #FFDE00;
+}
