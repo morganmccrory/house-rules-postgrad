@@ -47,6 +47,7 @@ margin: .5%;
 position: relative;
 float: right;
 margin: .5%;
+background-color: #FFAD32;
 }
 #chore_title {
 position: relative;
@@ -60,12 +61,14 @@ margin-left: auto;
 margin-right: auto;
 border-collapse: collapse;
 padding-bottom: 1em;
+
 }
 .user_chore_count  th{
-background-color: #4E99A3;
+color: white;
+background-color: #FFAD32;
 }
 .user_chore_count tr{
-background-color: #0BBCE3;
+background-color: white;
 }
 .user_chore_count td {
 text-align: center;
