@@ -99,7 +99,6 @@ var Header = React.createClass({
             <MenuItem hash={"/houses/"+this.props.houseID+"/chores"}>Chores</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID+"/events"}>Events</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID+"/communal_items"}>Inventory</MenuItem>
-            <MenuItem hash={"/houses/"+this.props.houseID+"/bills"}>Bills</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID+"/rules"}>Rules</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID+"/roommates"}>Roommates</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID}>House Info</MenuItem>

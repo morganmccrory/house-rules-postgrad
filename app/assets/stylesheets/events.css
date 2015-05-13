@@ -37,3 +37,19 @@ div.fc-left h2 {
 button .today {
   background-color: #6bc78a
 }
+
+button.fc-button.fc-state-default {
+  background-color: #6bc78a;
+}
+
+button.fc-button.fc-state-default:hover {
+  background-color: #FFAD32;
+}
+
+.event-changes {
+  float: right;
+}
+
+.event-changes a {
+  color: #FFAD32;
+}

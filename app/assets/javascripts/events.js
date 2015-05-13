@@ -80,6 +80,8 @@ $(document).ready(function() {
       viewEvent.append("<b>Description:</b> "+calEvent.description+"<br>");
       viewEvent.append("<b>All day event?</b> "+calEvent.allDay+"<br>");
       viewEvent.append("<b>Overlap?</b> "+calEvent.overlap+"<br>");
+      viewEvent.append("<div class='event-changes'><a href='#'>Edit </a></div><br>");
+      viewEvent.append("<div class='event-changes'><a href='#'> Delete</a></div>");
     }
 
   });
