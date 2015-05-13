@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   resources :houses do
     resources :property_managers
     resources :messages
-    resources :rules, except: [:edit] do
+    resources :rules, except: [:edit, :show] do
       resources :issues, only: [:create, :destroy]
     end
     resources :communal_items

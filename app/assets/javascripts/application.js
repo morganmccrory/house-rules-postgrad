@@ -13,8 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/dialog
-//= require jquery-ui/datepicker
-//= require jquery-ui/datepicker-pt-BR
 
 //= require react
 //= require react_ujs
@@ -22,12 +20,12 @@
 
 //= require rails-timeago
 
-//= require_tree ./
-
 //= require underscore
 
 //= require moment
 //= require fullcalendar
+
+//= require_tree ./
 
 
 $(function(){
