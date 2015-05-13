@@ -1,6 +1,9 @@
 
-user = User.create(first_name: "Paul", last_name: "clegg", email: "paul@paul.com", password: "123456", phone: "773-355-1422")
-user2 = User.create(first_name: "Zach", last_name: "Harris", email: "z@z.com", password: "123456")
+user = User.create(first_name: "Paul", last_name: "clegg", email: "paul@paul.com", password: "password", phone: "773-355-1422")
+user2 = User.create(first_name: "Zach", last_name: "Harris", email: "z@z.com", password: "password")
+user3 = User.create(first_name: "Morgan", last_name: "McCroy", email: "morgan@morgan.com", password: "password")
+user4 = User.create(first_name: "Sara", last_name: "Chen", email: "sara@sara.com", password: "password") 
+
 address1 = Address.create(street: "1462 W Carmen Ave Apt 2", city: "Chicago", state: "IL", zip_code: "60640")
 address2 = Address.create(street: "4950 N Marine Dr Apt 103", city: "Chicago", state: "IL", zip_code: "60640")
 property_manager = PropertyManager.create(name: "tom", phone: "773-606-6186", email: "tom@tom.com", address: address1)
@@ -25,3 +28,10 @@ chore4 = Chore.create(task: "Get out of my face", house_id: 1)
 chore5 = Chore.create(task: "Say hello like a fucking normal person", house_id: 1)
 
 Notification.create(alert: "You have no new notifications.", category: "")
+
+m1 = Message.create(content: "I love my roommates", house_id: 1, author: user2)
+m1.update_attribute(created_at: (rand*5).days.ago )
+m2 = Message.create(content: "This app is so cool!", house_id: 1, author: user3)
+m2.update_attribute(created_at: (rand*10).days.ago )
+m3 = Message.create(content: "We should have a party!", house_id: 1, author: user4)
+m3.update_attribute(created_at: (rand*2).days.ago )
