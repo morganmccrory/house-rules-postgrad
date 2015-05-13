@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     @house = House.find(params[:house_id])
     if @user = current_user
       if @user.houses.first == @house
-        @messages = @house.messages
+        @messages = @house.messages.to_a.reverse!
       else
         render :nothing => true, :status => 400
       end

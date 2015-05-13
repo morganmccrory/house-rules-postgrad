@@ -1,0 +1,735 @@
+
+
+Started GET "/houses/1" for ::1 at 2015-05-13 15:28:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (1.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HousesController#show as HTML
+  Parameters: {"id"=>"1"}
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (1.9ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mAddress Load (1.0ms)[0m  [1mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."addressable_id" = $1 AND "addresses"."addressable_type" = $2 LIMIT 1[0m  [["addressable_id", 1], ["addressable_type", "House"]]
+  [1m[35mHousingAssignment Load (0.5ms)[0m  SELECT  "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."user_id" = $1 AND "housing_assignments"."house_id" = $2 LIMIT 1  [["user_id", 1], ["house_id", 1]]
+  [1m[36mPropertyManager Load (0.6ms)[0m  [1mSELECT  "property_managers".* FROM "property_managers" WHERE "property_managers"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered houses/_form.html (665.1ms)
+  [1m[35mAddress Load (0.8ms)[0m  SELECT  "addresses".* FROM "addresses" WHERE "addresses"."addressable_id" = $1 AND "addresses"."addressable_type" = $2 LIMIT 1  [["addressable_id", 1], ["addressable_type", "PropertyManager"]]
+  Rendered property_managers/_form.html.erb (24.8ms)
+  Rendered houses/show.html.erb within layouts/application (756.5ms)
+  [1m[36m (1.1ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mNotification Load (21.5ms)[0m  SELECT  "notifications".* FROM "notifications"  ORDER BY "notifications"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 6203ms (Views: 5620.5ms | ActiveRecord: 110.3ms)
+
+
+Started GET "/assets/fullcalendar.self-bfd1e733800d14d6124c551399fa09d9fb4108c7623ad7bd2cf351ef92704af5.css?body=1" for ::1 at 2015-05-13 15:28:17 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-9a05097a0bf60f489f0c89e95e5e12dd9a092332f4a18e2e835bc94fe7ca0ffd.css?body=1" for ::1 at 2015-05-13 15:28:17 -0500
+
+
+Started GET "/assets/application.self-d3a2bd9749e852763790a29740f421e954c07e08a290a91e148e6ed0d9d3b3ff.css?body=1" for ::1 at 2015-05-13 15:28:17 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-843e8fe41275fac7212c1564bf97a092377791b8a5b84a92df14d560d1a21dff.css?body=1" for ::1 at 2015-05-13 15:28:17 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-a75cc687d9086ab502f231ccbb3f33998d146a2be70c042de3b367fad3e266bc.css?body=1" for ::1 at 2015-05-13 15:28:17 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-bb8031f2e196f26c242e6093ff5be2facad271ecca7299661d2abdd544734ed7.css?body=1" for ::1 at 2015-05-13 15:28:17 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-2f7c47a18c55495b988ae9761c56a5ca745f17940314b28adbdfd5473c14d9bc.css?body=1" for ::1 at 2015-05-13 15:28:17 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-97d90451ed5c9406f435380037255f44bb266b4d2142b618c6c43f875c07ad3d.css?body=1" for ::1 at 2015-05-13 15:28:17 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-4ef8e935d5844661de4f30a3b86a8559093c04a0638cd1281d509878046cf089.css?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/custom.self-69dce264b1cd1c23780a10141c264fb3236b69d584f0a1f4727529e857633a50.css?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/events.self-28d88dbd775bdf4e0a9b19bf3e240f9b30d2f45849ae488be423ff32542fc8c4.css?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/main.self-2df229f048f5516d7d27e0c87f7e5f95f3a64647cf0bf557f57a56c7685bda08.css?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/rules.self-6cc6c362827b77e95d85d8c6e12b0e64353c06e3e6085fc9c1473eb26cdd4be5.css?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-3477df232aaefa9b0aa3e3551c09f4195acf8e07ab1a82073caeaa6822fe5297.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-c3805ba4caf7d6a835e14230e1da60de2827598f5db5becfa06d0a4b6b2daf72.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-18a8d048b203a446b234a59e1b1daeccfce707183171c16826a7761c8bd1af39.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-ce66b060b6de64ac8efd0b8794647ab61311f6d1edfc200de94e8a8d38b1d929.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/moment.self-14a05e94cca93048a2a57289c5b322ce9bf419e4689a57a7b33fae4066d867e9.js?body=1" for ::1 at 2015-05-13 15:28:18 -0500
+
+
+Started GET "/assets/fullcalendar.self-8668c2e6be32331fb05b9c8cb047adeb64ae3d0575ba9d2f029b9a4cb37ec3f5.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/application.self-ccffe6fd52491dec74b8ee158b7bc86b03abe9132bb6be9e16b295bc33e49e56.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/events.self-a62e652f50cb9a368fddcaeb4a588baf7e5f0ba0b5322fe9beae0887aa33cd87.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/fridge.self-db88b881aab05fc737d8e608fb38a8013f3069cb5f27affca2a930a720874312.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-2429d36795b285dd6b47d30d081c747214de877317cf8e7f563eea929fe00736.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/rules.self-ac291bee72562f6ca3c484bc3d626782c71941c613be6265a480fc5945f94501.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2015-05-13 15:28:19 -0500
+
+
+Started GET "/houses/1/chores" for ::1 at 2015-05-13 15:28:46 -0500
+Processing by ChoresController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (7.5ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (1.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (2.9ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mHousingAssignment Load (0.5ms)[0m  SELECT  "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1 AND "housing_assignments"."user_id" = $2 LIMIT 1  [["house_id", 1], ["user_id", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "housing_assignments" ON "users"."id" = "housing_assignments"."user_id" WHERE "housing_assignments"."house_id" = $1[0m  [["house_id", 1]]
+  [1m[35mChore Exists (1.3ms)[0m  SELECT  1 AS one FROM "chores" WHERE "chores"."house_id" = $1 LIMIT 1  [["house_id", 1]]
+  [1m[36mChore Load (0.6ms)[0m  [1mSELECT "chores".* FROM "chores" WHERE "chores"."house_id" = $1[0m  [["house_id", 1]]
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2  [["user_id", 1], ["chore_id", 2]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2[0m  [["user_id", 2], ["chore_id", 2]]
+  [1m[35mIssue Load (1.1ms)[0m  SELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2  [["issuable_id", 2], ["issuable_type", "Chore"]]
+  [1m[36mUserPromise Load (1.6ms)[0m  [1mSELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1[0m  [["promisable_id", 2], ["promisable_type", "Chore"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2[0m  [["user_id", 1], ["chore_id", 3]]
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2  [["user_id", 2], ["chore_id", 3]]
+  [1m[36mIssue Load (0.5ms)[0m  [1mSELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2[0m  [["issuable_id", 3], ["issuable_type", "Chore"]]
+  [1m[35mUserPromise Load (0.6ms)[0m  SELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1  [["promisable_id", 3], ["promisable_type", "Chore"]]
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2[0m  [["user_id", 1], ["chore_id", 4]]
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2  [["user_id", 2], ["chore_id", 4]]
+  [1m[36mIssue Load (0.5ms)[0m  [1mSELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2[0m  [["issuable_id", 4], ["issuable_type", "Chore"]]
+  [1m[35mUserPromise Load (0.5ms)[0m  SELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1  [["promisable_id", 4], ["promisable_type", "Chore"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2[0m  [["user_id", 1], ["chore_id", 5]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2  [["user_id", 2], ["chore_id", 5]]
+  [1m[36mIssue Load (0.7ms)[0m  [1mSELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2[0m  [["issuable_id", 5], ["issuable_type", "Chore"]]
+  [1m[35mUserPromise Load (0.6ms)[0m  SELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1  [["promisable_id", 5], ["promisable_type", "Chore"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2[0m  [["user_id", 1], ["chore_id", 6]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2  [["user_id", 2], ["chore_id", 6]]
+  [1m[36mIssue Load (0.5ms)[0m  [1mSELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2[0m  [["issuable_id", 6], ["issuable_type", "Chore"]]
+  [1m[35mUserPromise Load (0.8ms)[0m  SELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1  [["promisable_id", 6], ["promisable_type", "Chore"]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2[0m  [["user_id", 1], ["chore_id", 7]]
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "chore_logs" WHERE "chore_logs"."user_id" = $1 AND "chore_logs"."chore_id" = $2  [["user_id", 2], ["chore_id", 7]]
+  [1m[36mIssue Load (0.6ms)[0m  [1mSELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2[0m  [["issuable_id", 7], ["issuable_type", "Chore"]]
+  [1m[35mUserPromise Load (0.5ms)[0m  SELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1  [["promisable_id", 7], ["promisable_type", "Chore"]]
+  Rendered chores/_form.html.erb (2.0ms)
+  Rendered chores/index.html.erb within layouts/application (192.6ms)
+  [1m[36m (1.2ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mNotification Load (0.8ms)[0m  SELECT  "notifications".* FROM "notifications"  ORDER BY "notifications"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 1328ms (Views: 1237.6ms | ActiveRecord: 41.9ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-13 15:28:48 -0500
+
+
+Started GET "/houses/1/communal_items" for ::1 at 2015-05-13 15:28:50 -0500
+Processing by CommunalItemsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.8ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (1.1ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCommunalItem Load (15.5ms)[0m  SELECT "communal_items".* FROM "communal_items" WHERE "communal_items"."house_id" = $1  [["house_id", 1]]
+  [1m[36mUserPromise Load (0.5ms)[0m  [1mSELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1[0m  [["promisable_id", 1], ["promisable_type", "CommunalItem"]]
+  [1m[35mIssue Load (0.5ms)[0m  SELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2  [["issuable_id", 1], ["issuable_type", "CommunalItem"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered communal_items/_issue.html.erb (4.5ms)
+  Rendered communal_items/_item.html.erb (32.5ms)
+  Rendered communal_items/index.html.erb within layouts/application (71.7ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.6ms)[0m  [1mSELECT  "notifications".* FROM "notifications"  ORDER BY "notifications"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 1001ms (Views: 930.4ms | ActiveRecord: 36.4ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-13 15:28:52 -0500
+
+
+Started GET "/houses/1/communal_items" for ::1 at 2015-05-13 15:31:17 -0500
+Processing by CommunalItemsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[35mHouse Load (0.6ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.8ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCommunalItem Load (0.5ms)[0m  [1mSELECT "communal_items".* FROM "communal_items" WHERE "communal_items"."house_id" = $1[0m  [["house_id", 1]]
+  [1m[35mUserPromise Load (0.5ms)[0m  SELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1  [["promisable_id", 1], ["promisable_type", "CommunalItem"]]
+  [1m[36mIssue Load (0.4ms)[0m  [1mSELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2[0m  [["issuable_id", 1], ["issuable_type", "CommunalItem"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered communal_items/_issue.html.erb (1.4ms)
+  Rendered communal_items/_item.html.erb (10.5ms)
+  Rendered communal_items/index.html.erb within layouts/application (19.2ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mNotification Load (0.6ms)[0m  SELECT  "notifications".* FROM "notifications"  ORDER BY "notifications"."id" ASC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 984ms (Views: 967.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/application.self-0a8bd8973e1bb742588661683fea5421334fc34d683588ae8e7818585ad59da7.css?body=1" for ::1 at 2015-05-13 15:31:18 -0500
+
+
+Started GET "/assets/fullcalendar.self-bfd1e733800d14d6124c551399fa09d9fb4108c7623ad7bd2cf351ef92704af5.css?body=1" for ::1 at 2015-05-13 15:31:18 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-9a05097a0bf60f489f0c89e95e5e12dd9a092332f4a18e2e835bc94fe7ca0ffd.css?body=1" for ::1 at 2015-05-13 15:31:18 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-843e8fe41275fac7212c1564bf97a092377791b8a5b84a92df14d560d1a21dff.css?body=1" for ::1 at 2015-05-13 15:31:18 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-bb8031f2e196f26c242e6093ff5be2facad271ecca7299661d2abdd544734ed7.css?body=1" for ::1 at 2015-05-13 15:31:18 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-a75cc687d9086ab502f231ccbb3f33998d146a2be70c042de3b367fad3e266bc.css?body=1" for ::1 at 2015-05-13 15:31:18 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-2f7c47a18c55495b988ae9761c56a5ca745f17940314b28adbdfd5473c14d9bc.css?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-97d90451ed5c9406f435380037255f44bb266b4d2142b618c6c43f875c07ad3d.css?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-4ef8e935d5844661de4f30a3b86a8559093c04a0638cd1281d509878046cf089.css?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/events.self-28d88dbd775bdf4e0a9b19bf3e240f9b30d2f45849ae488be423ff32542fc8c4.css?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/custom.self-69dce264b1cd1c23780a10141c264fb3236b69d584f0a1f4727529e857633a50.css?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/main.self-2df229f048f5516d7d27e0c87f7e5f95f3a64647cf0bf557f57a56c7685bda08.css?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/rules.self-6cc6c362827b77e95d85d8c6e12b0e64353c06e3e6085fc9c1473eb26cdd4be5.css?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-c3805ba4caf7d6a835e14230e1da60de2827598f5db5becfa06d0a4b6b2daf72.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-18a8d048b203a446b234a59e1b1daeccfce707183171c16826a7761c8bd1af39.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-3477df232aaefa9b0aa3e3551c09f4195acf8e07ab1a82073caeaa6822fe5297.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-ce66b060b6de64ac8efd0b8794647ab61311f6d1edfc200de94e8a8d38b1d929.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/moment.self-14a05e94cca93048a2a57289c5b322ce9bf419e4689a57a7b33fae4066d867e9.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/fullcalendar.self-8668c2e6be32331fb05b9c8cb047adeb64ae3d0575ba9d2f029b9a4cb37ec3f5.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/application.self-ccffe6fd52491dec74b8ee158b7bc86b03abe9132bb6be9e16b295bc33e49e56.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/events.self-a62e652f50cb9a368fddcaeb4a588baf7e5f0ba0b5322fe9beae0887aa33cd87.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/rules.self-ac291bee72562f6ca3c484bc3d626782c71941c613be6265a480fc5945f94501.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-13 15:31:19 -0500
+
+
+Started GET "/assets/fridge.self-db88b881aab05fc737d8e608fb38a8013f3069cb5f27affca2a930a720874312.js?body=1" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-2429d36795b285dd6b47d30d081c747214de877317cf8e7f563eea929fe00736.js?body=1" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/assets/issue-mark-not-square-498a845104930c1eb4c4cd2315b5092464e2a900c81d30325d08be61eb96d506.png" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2015-05-13 15:31:20 -0500
+
+
+Started GET "/houses/1/communal_items" for ::1 at 2015-05-13 15:31:24 -0500
+Processing by CommunalItemsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.7ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (1.1ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCommunalItem Load (0.6ms)[0m  SELECT "communal_items".* FROM "communal_items" WHERE "communal_items"."house_id" = $1  [["house_id", 1]]
+  [1m[36mUserPromise Load (0.5ms)[0m  [1mSELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1[0m  [["promisable_id", 1], ["promisable_type", "CommunalItem"]]
+  [1m[35mIssue Load (0.4ms)[0m  SELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2  [["issuable_id", 1], ["issuable_type", "CommunalItem"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered communal_items/_issue.html.erb (1.1ms)
+  Rendered communal_items/_item.html.erb (9.1ms)
+  Rendered communal_items/index.html.erb within layouts/application (16.2ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.7ms)[0m  [1mSELECT  "notifications".* FROM "notifications"  ORDER BY "notifications"."id" ASC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 691ms (Views: 678.5ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/fullcalendar.self-bfd1e733800d14d6124c551399fa09d9fb4108c7623ad7bd2cf351ef92704af5.css?body=1" for ::1 at 2015-05-13 15:31:24 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-9a05097a0bf60f489f0c89e95e5e12dd9a092332f4a18e2e835bc94fe7ca0ffd.css?body=1" for ::1 at 2015-05-13 15:31:24 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-bb8031f2e196f26c242e6093ff5be2facad271ecca7299661d2abdd544734ed7.css?body=1" for ::1 at 2015-05-13 15:31:24 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-a75cc687d9086ab502f231ccbb3f33998d146a2be70c042de3b367fad3e266bc.css?body=1" for ::1 at 2015-05-13 15:31:24 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-843e8fe41275fac7212c1564bf97a092377791b8a5b84a92df14d560d1a21dff.css?body=1" for ::1 at 2015-05-13 15:31:24 -0500
+
+
+Started GET "/assets/custom.self-69dce264b1cd1c23780a10141c264fb3236b69d584f0a1f4727529e857633a50.css?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-2f7c47a18c55495b988ae9761c56a5ca745f17940314b28adbdfd5473c14d9bc.css?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-4ef8e935d5844661de4f30a3b86a8559093c04a0638cd1281d509878046cf089.css?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-97d90451ed5c9406f435380037255f44bb266b4d2142b618c6c43f875c07ad3d.css?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/application.self-0a8bd8973e1bb742588661683fea5421334fc34d683588ae8e7818585ad59da7.css?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/events.self-28d88dbd775bdf4e0a9b19bf3e240f9b30d2f45849ae488be423ff32542fc8c4.css?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/main.self-2df229f048f5516d7d27e0c87f7e5f95f3a64647cf0bf557f57a56c7685bda08.css?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/rules.self-6cc6c362827b77e95d85d8c6e12b0e64353c06e3e6085fc9c1473eb26cdd4be5.css?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-18a8d048b203a446b234a59e1b1daeccfce707183171c16826a7761c8bd1af39.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-c3805ba4caf7d6a835e14230e1da60de2827598f5db5becfa06d0a4b6b2daf72.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-3477df232aaefa9b0aa3e3551c09f4195acf8e07ab1a82073caeaa6822fe5297.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-ce66b060b6de64ac8efd0b8794647ab61311f6d1edfc200de94e8a8d38b1d929.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/moment.self-14a05e94cca93048a2a57289c5b322ce9bf419e4689a57a7b33fae4066d867e9.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/fullcalendar.self-8668c2e6be32331fb05b9c8cb047adeb64ae3d0575ba9d2f029b9a4cb37ec3f5.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-13 15:31:25 -0500
+
+
+Started GET "/assets/application.self-ccffe6fd52491dec74b8ee158b7bc86b03abe9132bb6be9e16b295bc33e49e56.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/fridge.self-db88b881aab05fc737d8e608fb38a8013f3069cb5f27affca2a930a720874312.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/events.self-a62e652f50cb9a368fddcaeb4a588baf7e5f0ba0b5322fe9beae0887aa33cd87.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/rules.self-ac291bee72562f6ca3c484bc3d626782c71941c613be6265a480fc5945f94501.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/user.self-f1fc41bba6ee1e80786c7bd2a5ec5be66a9a28d2c0feed735bad9c56f6daca35.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-2429d36795b285dd6b47d30d081c747214de877317cf8e7f563eea929fe00736.js?body=1" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/issue-mark-not-square-498a845104930c1eb4c4cd2315b5092464e2a900c81d30325d08be61eb96d506.png" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2015-05-13 15:31:26 -0500
+
+
+Started POST "/houses/1/communal_items/1/promise_fulfilled" for ::1 at 2015-05-13 15:32:51 -0500
+Processing by UserPromisesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4UUdEebsPFJr8mQF9HjEl969HGgOJHrQFabp3Fo4mV9zYNRGlo36oUTWNx3j34kM3QVkUS2UIUVLBdW7he3RyA==", "commit"=>"I Got It!", "house_id"=>"1", "communal_item_id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.6ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCommunalItem Load (11.5ms)[0m  SELECT  "communal_items".* FROM "communal_items" WHERE "communal_items"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE "communal_items" SET "stock_level" = $1, "updated_at" = $2 WHERE "communal_items"."id" = $3  [["stock_level", "high"], ["updated_at", "2015-05-13 20:32:51.435622"], ["id", 1]]
+  [1m[36m (2.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUserPromise Load (0.5ms)[0m  SELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1  [["promisable_id", 1], ["promisable_type", "CommunalItem"]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "user_promises" WHERE "user_promises"."id" = $1  [["id", 2]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "notifications" ("alert", "category", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["alert", "Paul got toilet paper and it is in stock."], ["category", "communal_items"], ["house_id", 1], ["created_at", "2015-05-13 20:32:51.473344"], ["updated_at", "2015-05-13 20:32:51.473344"]]
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36mHousingAssignment Load (0.7ms)[0m  [1mSELECT "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1[0m  [["house_id", 1]]
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (5.2ms)[0m  INSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["notification_id", 71], ["user_id", 1], ["created_at", "2015-05-13 20:32:51.523160"], ["updated_at", "2015-05-13 20:32:51.523160"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  INSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["notification_id", 71], ["user_id", 2], ["created_at", "2015-05-13 20:32:51.555763"], ["updated_at", "2015-05-13 20:32:51.555763"]]
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/houses/1/communal_items
+Completed 302 Found in 154ms (ActiveRecord: 33.9ms)
+
+
+Started GET "/houses/1/communal_items" for ::1 at 2015-05-13 15:32:51 -0500
+Processing by CommunalItemsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (1.3ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCommunalItem Load (0.9ms)[0m  [1mSELECT "communal_items".* FROM "communal_items" WHERE "communal_items"."house_id" = $1[0m  [["house_id", 1]]
+  [1m[35mIssue Load (0.5ms)[0m  SELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2  [["issuable_id", 1], ["issuable_type", "CommunalItem"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered communal_items/_issue.html.erb (1.5ms)
+  Rendered communal_items/_item.html.erb (14.2ms)
+  Rendered communal_items/index.html.erb within layouts/application (30.9ms)
+  [1m[35m (3.3ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (2.9ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 1491ms (Views: 1468.6ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-13 15:32:53 -0500
+
+
+Started POST "/houses/1/communal_items/1/low" for ::1 at 2015-05-13 15:32:55 -0500
+Processing by CommunalItemsController#low as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ns9UvQLR6kTH8JyllGQO0juL101B5inR0+uqqNCWmPmk6p3qcrAst+jUz72Dw0NJODOvdGJWckSNSJbPD0PQbg==", "commit"=>"low", "house_id"=>"1", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCommunalItem Load (0.5ms)[0m  SELECT  "communal_items".* FROM "communal_items" WHERE "communal_items"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "communal_items" SET "stock_level" = $1, "updated_at" = $2 WHERE "communal_items"."id" = $3  [["stock_level", "low"], ["updated_at", "2015-05-13 20:32:55.870345"], ["id", 1]]
+  [1m[36m (8.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/houses/1/communal_items
+Completed 302 Found in 17ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/houses/1/communal_items" for ::1 at 2015-05-13 15:32:55 -0500
+Processing by CommunalItemsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCommunalItem Load (0.5ms)[0m  [1mSELECT "communal_items".* FROM "communal_items" WHERE "communal_items"."house_id" = $1[0m  [["house_id", 1]]
+  [1m[35mUserPromise Load (1.1ms)[0m  SELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1  [["promisable_id", 1], ["promisable_type", "CommunalItem"]]
+  [1m[36mIssue Load (1.6ms)[0m  [1mSELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2[0m  [["issuable_id", 1], ["issuable_type", "CommunalItem"]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered communal_items/_issue.html.erb (1.5ms)
+  Rendered communal_items/_item.html.erb (14.0ms)
+  Rendered communal_items/index.html.erb within layouts/application (21.7ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mSELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mNotification Load (0.8ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 71]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 867ms (Views: 854.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-13 15:32:57 -0500
+
+
+Started POST "/houses/1/communal_items/1/promise" for ::1 at 2015-05-13 15:32:59 -0500
+Processing by UserPromisesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ei1e7K8P/oHegM4f5vhyVq1bxzyUgJuBSGyfcg4p/eXoCJe73244cvGknQfxXz/NruO/BbcwwBQWz6MV0fy1cg==", "commit"=>"I'll get it next!", "house_id"=>"1", "communal_item_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mCommunalItem Load (0.5ms)[0m  [1mSELECT  "communal_items".* FROM "communal_items" WHERE "communal_items"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "user_promises" ("user_id", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["user_id", 1], ["created_at", "2015-05-13 20:32:59.337727"], ["updated_at", "2015-05-13 20:32:59.337727"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUserPromise Load (0.3ms)[0m  [1mSELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1[0m  [["promisable_id", 1], ["promisable_type", "CommunalItem"]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "user_promises" SET "promisable_id" = $1, "promisable_type" = $2, "updated_at" = $3 WHERE "user_promises"."id" = $4[0m  [["promisable_id", 1], ["promisable_type", "CommunalItem"], ["updated_at", "2015-05-13 20:32:59.343565"], ["id", 4]]
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "notifications" ("alert", "category", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["alert", "Paul will get the next toilet paper."], ["category", "communal_items"], ["house_id", 1], ["created_at", "2015-05-13 20:32:59.347955"], ["updated_at", "2015-05-13 20:32:59.347955"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mHousingAssignment Load (0.5ms)[0m  SELECT "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1  [["house_id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 72], ["user_id", 1], ["created_at", "2015-05-13 20:32:59.356015"], ["updated_at", "2015-05-13 20:32:59.356015"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 72], ["user_id", 2], ["created_at", "2015-05-13 20:32:59.362357"], ["updated_at", "2015-05-13 20:32:59.362357"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/houses/1/communal_items
+Completed 302 Found in 34ms (ActiveRecord: 10.7ms)
+
+
+Started GET "/houses/1/communal_items" for ::1 at 2015-05-13 15:32:59 -0500
+Processing by CommunalItemsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCommunalItem Load (0.5ms)[0m  SELECT "communal_items".* FROM "communal_items" WHERE "communal_items"."house_id" = $1  [["house_id", 1]]
+  [1m[36mUserPromise Load (0.5ms)[0m  [1mSELECT  "user_promises".* FROM "user_promises" WHERE "user_promises"."promisable_id" = $1 AND "user_promises"."promisable_type" = $2 LIMIT 1[0m  [["promisable_id", 1], ["promisable_type", "CommunalItem"]]
+  [1m[35mIssue Load (0.4ms)[0m  SELECT "issues".* FROM "issues" WHERE "issues"."issuable_id" = $1 AND "issues"."issuable_type" = $2  [["issuable_id", 1], ["issuable_type", "CommunalItem"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered communal_items/_issue.html.erb (1.3ms)
+  Rendered communal_items/_item.html.erb (10.0ms)
+  Rendered communal_items/index.html.erb within layouts/application (18.7ms)
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (1.3ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 686ms (Views: 675.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-13 15:33:01 -0500
+
+
+Started GET "/houses/1/messages" for ::1 at 2015-05-13 15:33:16 -0500
+Processing by MessagesController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (3.2ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.7ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mMessage Exists (1.0ms)[0m  SELECT  1 AS one FROM "messages" WHERE "messages"."house_id" = $1 LIMIT 1  [["house_id", 1]]
+  [1m[36mMessage Load (0.4ms)[0m  [1mSELECT "messages".* FROM "messages" WHERE "messages"."house_id" = $1 AND (created_at >= '2015-05-13 00:00:00.000000')[0m  [["house_id", 1]]
+  Rendered messages/index.html.erb within layouts/application (40.8ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.9ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mNotification Load (0.8ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 1104ms (Views: 1071.9ms | ActiveRecord: 13.1ms)
+
+
+Started GET "/assets/house-rules.jpg" for ::1 at 2015-05-13 15:33:18 -0500
