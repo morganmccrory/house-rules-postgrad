@@ -79,7 +79,10 @@ class HousesController < ApplicationController
 
   def destroy
     if @user = current_user
-      @house = House.find(params[:id])
+      @house = House.find_by(id: params[:id])
+      if @user.houses
+        @user.houses = []
+      end
       redirect_to user_path(@user)
     else
       redirect_to '/login'
