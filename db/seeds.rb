@@ -30,8 +30,8 @@ chore5 = Chore.create(task: "Say hello like a fucking normal person", house_id: 
 Notification.create(alert: "You have no new notifications.", category: "")
 
 m1 = Message.create(content: "I love my roommates", house_id: 1, author: user2)
-m1.update_attribute(created_at: (rand*5).days.ago )
+m1.update_attributes(created_at: (rand*5).days.ago )
 m2 = Message.create(content: "This app is so cool!", house_id: 1, author: user3)
-m2.update_attribute(created_at: (rand*10).days.ago )
+m2.update_attributes(created_at: (rand*10).days.ago )
 m3 = Message.create(content: "We should have a party!", house_id: 1, author: user4)
-m3.update_attribute(created_at: (rand*2).days.ago )
+m3.update_attributes(created_at: (rand*2).days.ago )
