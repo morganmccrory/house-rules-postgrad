@@ -53,3 +53,9 @@ button.fc-button.fc-state-default:hover {
 .event-changes a {
   color: #FFAD32;
 }
+
+.ui-dialog-titlebar {
+  color: white;
+  background-image: none;
+  background-color: #6bc78a;
+}
