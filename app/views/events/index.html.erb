@@ -8,6 +8,8 @@
 <div id='calendar'></div>
 </div>
 <br><br>
+<%= link_to 'New Event', new_house_event_path %>
+<br><br>
 
 <div id="dialog" title="New Event">
 <%= form_for([@house, @event]) do |f| %>
@@ -39,6 +41,4 @@
   </div>
   <%= f.submit "Submit", :class => "button" %>
 <% end %>
-</div>
-<div id="view_event" title="View Event">
 </div>

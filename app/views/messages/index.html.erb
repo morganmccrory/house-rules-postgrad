@@ -6,12 +6,13 @@
       <% if @messages.empty? %>
         <h3 class="header-empty">Nothing is posted to the fridge.<br>
         Did you move in yesterday or do you just not like each other?</h3>
-      <% else %>  
+      <% else %>
 
         <% @messages.each do |message| %>
             <%= render message %>
             <% end %>
           </div>
+
         <% end %>
 
     </div>

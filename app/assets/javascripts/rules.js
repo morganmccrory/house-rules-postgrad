@@ -98,8 +98,8 @@ $(document).ready(function() {
     e.stopPropagation();
   });
 
-  $("#rule-list").on("click", ".delete-button", function(e) {
-    e.preventDefault;
+  $("body").on("click", ".delete-button", function(e) {
+    e.preventDefault();
     e.stopPropagation();
 
     var parent = $(this).parent().parent().parent().parent().parent().parent().parent();
@@ -115,11 +115,10 @@ $(document).ready(function() {
         },
         success: function() {
           parent.slideUp(300,function() {
-          parent.remove();
+            parent.remove();
           });
         }
       });
-    };
-    e.stopPropagation();
+    }
   });
 });

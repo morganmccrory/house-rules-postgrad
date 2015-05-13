@@ -8,7 +8,7 @@
   <%= message.content %></td>
   <td valign="bottom" class="message-delete">
     <% if message.author == current_user %>
-  <%= link_to "Delete", house_message_path(@house, message), class: "delete-button", id:"/houses/#{@house.id}/messages/#{message.id}", remote: true %></td>
+  <%= link_to "Delete", house_message_path(@house, message), class: "message-delete-button", id:"/houses/#{@house.id}/messages/#{message.id}", remote: true %></td>
   <% end %>
 </tr>
 </table>

@@ -10,10 +10,6 @@ div.fc-left h2 {
   display: none;
 }
 
-#view_event {
-  display: none;
-}
-
 .date-form-field select {
   display: inline;
   width: 5em;
@@ -32,30 +28,4 @@ div.fc-left h2 {
 
 .event-field label {
   display: inline;
-}
-
-button .today {
-  background-color: #6bc78a
-}
-
-button.fc-button.fc-state-default {
-  background-color: #6bc78a;
-}
-
-button.fc-button.fc-state-default:hover {
-  background-color: #FFAD32;
-}
-
-.event-changes {
-  float: right;
-}
-
-.event-changes a {
-  color: #FFAD32;
-}
-
-.ui-dialog-titlebar {
-  color: white;
-  background-image: none;
-  background-color: #6bc78a;
 }
