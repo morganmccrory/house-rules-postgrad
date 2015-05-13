@@ -1,19 +1,15 @@
-<div class="row">
-  <div class="large-3 columns"><br />
-  </div>
-    <% if @chores.empty? %>
-        <% @zip = Address.find_by(addressable_id: @house.id, addressable_type: "House").zip_code %>
-        <h3 class="header-empty">You don't have a chore chart.<br>
-        <%= link_to "Would you rather hire a cleaning service?", "http://lmgtfy.com/?q=cleaning+services+near+#{@zip}" %></h3>
-    <% else %>
-    <div id="chore_title"><h4>Chores</h4></div>
+<% if @chores.empty? %>
+  <% @zip = Address.find_by(addressable_id: @house.id, addressable_type: "House").zip_code %>
+  <h3 class="header-empty">You don't have a chore chart.<br>
+  <%= link_to "Would you rather hire a cleaning service?", "http://lmgtfy.com/?q=cleaning+services+near+#{@zip}" %></h3>
+<% else %>
 
   <div id="chore_list" >
 
     <% @chores.each do |chore| %>
     <div class="chore">
       <% log = @user.chore_logs.where(chore_id: chore.id ) %>
-      <%= button_to "Delete", chore_path(chore), method: :delete, :class => ["button tiny", "button alert", "delete_chore"], data: {confirm: "Are you sure?"}  %>
+      <%= button_to "Delete", chore_path(chore), method: :delete, :class => ["button tiny", "delete_chore"], data: {confirm: "Are you sure?"}  %>
       <%= image_tag("issue-mark-not-square.png", size: "50x50", class: "issue-mark")%>
       <%= form_for :issue, url: " /houses/#{@house.id}/chores/#{chore.id}/issue", html: { class: "chore_issue"} do |f| %>
       <%= f.text_area :reason, :placeholder => "Reason" %>
@@ -69,5 +65,3 @@
       <div id="chore_form">
         <%= render 'chores/form' %>
       </div>
-      <div class="large-3 columns"><br /></div>
-    </div>
