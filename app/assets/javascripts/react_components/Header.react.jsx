@@ -116,7 +116,7 @@ var Header = React.createClass({
         <section className="top-bar-section">
           {leftNav}
           {rightNav}
-          <div className="top-logo"><a href="/"><img src={"/assets/house-rules.jpg"} /></a></div>
+          <div className="top-logo"><a href="/"><img src="http://i.imgur.com/OjXcIZb.jpg" /></a></div>
         </section>
       </nav>
     );
