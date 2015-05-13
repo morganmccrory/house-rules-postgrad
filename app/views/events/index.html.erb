@@ -10,20 +10,18 @@
 <br><br>
 <%= link_to 'New Event', new_house_event_path %>
 <br><br>
-<div id="dialog" title="New Event">
 
+<div id="dialog" title="New Event">
 <%= form_for([@house, @event]) do |f| %>
 
   <%= f.label :start, "Starts at:" %><br />
   <div class="date-form-field">
     <%= f.datetime_select :start, :order => [:month, :day, :year], :ampm => true, :minute_step => 15 %>
   </div>
-  <br>
     <%= f.label :end, "Ends at:" %><br />
   <div class="date-form-field">
     <%= f.datetime_select :end, :order => [:month, :day, :year], :ampm => true, :minute_step => 15 %>
   </div>
-  <br>
   <div class="event-field">
     <%= f.label :title, "Title:" %><br />
     <%= f.text_field :title %>
@@ -37,12 +35,10 @@
     <%= f.check_box :all_day %>
   </div>
   <br>
-  <br>
   <div class="event-check-field">
     <%= f.label :overlap, "Can another event be scheduled at the house during this time?" %>
     <%= f.check_box :overlap, checked: true %>
   </div>
-  <br><br>
   <%= f.submit "Submit", :class => "button" %>
 <% end %>
 </div>

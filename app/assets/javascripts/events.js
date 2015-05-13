@@ -8,7 +8,9 @@ $(document).ready(function() {
   }
 
   $("#dialog").dialog({
-    autoOpen: false
+    autoOpen: false,
+    maxWidth:800,
+    width: 800
   });
 
   calendar.fullCalendar({
@@ -38,7 +40,9 @@ $(document).ready(function() {
                 title: title,
                 start: start,
                 end: end,
-                allDay: allDay
+                description: description,
+                allDay: allDay,
+                overlap: overlap
             },
             true // make the event "stick"
         );
@@ -51,7 +55,9 @@ $(document).ready(function() {
                 title: title,
                 start: start,
                 end: end,
-                allDay: allDay
+                description: description,
+                allDay: allDay,
+                overlap: overlap
             }
         );
     }
