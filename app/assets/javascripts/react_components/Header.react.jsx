@@ -74,7 +74,7 @@ var Header = React.createClass({
           </button>
 
           <Menu ref="right" alignment="right">
-            <MenuItem hash={"#"}><form action={ "/notifications/all"} method="post"><input type="hidden" name="_method" value="delete"/><button className="right-links" type="submit">Clear All Notifications</button></form></MenuItem>
+            <MenuItem hash={""}><form action={ "/notifications/all"} method="post"><input type="hidden" name="_method" value="delete"/><button className="right-links" type="submit">Clear All Notifications</button></form></MenuItem>
               { this.props.notifications.map(function(object, i){
                 return <MenuItem hash={"#"}><form action={"/notifications/" + object.id } method="post"><input type="hidden" name="_method" value="delete"/><button className="right-links" type="submit">{ object.alert }</button></form></MenuItem>
               })}
@@ -99,7 +99,6 @@ var Header = React.createClass({
             <MenuItem hash={"/houses/"+this.props.houseID+"/chores"}>Chores</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID+"/events"}>Events</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID+"/communal_items"}>Inventory</MenuItem>
-            <MenuItem hash={"/houses/"+this.props.houseID+"/bills"}>Bills</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID+"/rules"}>Rules</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID+"/roommates"}>Roommates</MenuItem>
             <MenuItem hash={"/houses/"+this.props.houseID}>House Info</MenuItem>
@@ -122,4 +121,3 @@ var Header = React.createClass({
     );
   }
 });
-

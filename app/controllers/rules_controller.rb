@@ -53,21 +53,15 @@ skip_before_action :authenticate_user_from_token!
   end
 
   def destroy
-    if @user = current_user
-      @house = House.find(params[:house_id])
-      @rule = Rule.find_by(id: params[:id])
-      if request.xhr?
-        @rule.destroy
-        @notification = Notification.create(alert: "#{current_user.first_name} has deleted #{@rule.content}.", category: "rules", house_id: @house.id)
-        HousingAssignment.where(house_id: @house.id).select do |assignment|
-          assignment.user.user_notifications.create(notification: @notification)
-        render :nothing => true, :status => 200
-        end
-      else
-        redirect_to house_messages_path(@house)
+    @house = House.find(params[:house_id])
+    @rule = Rule.find(params[:id])
+    if request.xhr?
+      @rule.destroy
+      @notification = Notification.create(alert: "#{current_user.first_name} has deleted #{@rule.content}.", category: "rules", house_id: @house.id)
+      HousingAssignment.where(house_id: @house.id).select do |assignment|
+        assignment.user.user_notifications.create(notification: @notification)
       end
-    else
-      redirect_to '/login'
+    render :nothing => true, :status => 200
     end
   end
 
