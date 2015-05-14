@@ -22,7 +22,7 @@ $(document).ready(function() {
       type: 'DELETE',
       url: url,
       beforeSend: function() {
-        parent.css("background-color", "#E6E6FA");
+        parent.css("background-color", "#fff5b1");
       },
       success: function() {
         parent.slideUp(300,function() {

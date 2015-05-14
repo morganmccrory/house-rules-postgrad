@@ -28,6 +28,8 @@ $(document).ready(function() {
 
     eventSources: [{
       url: '/houses/'+getSegment(houseID, 2)+'/events/source',
+      backgroundColor: '#fe9800',
+      borderColor: '#ffad32',
     }],
 
     dayClick: function(date, jsEvent, view) {

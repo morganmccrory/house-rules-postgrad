@@ -99,8 +99,7 @@ $(document).ready(function() {
   });
 
   $("#rule-list").on("click", ".delete-button", function(e) {
-    e.preventDefault;
-    e.stopPropagation();
+    e.preventDefault();
 
     var parent = $(this).parent().parent().parent().parent().parent().parent().parent();
     var url = $(this).attr("id")
@@ -119,7 +118,7 @@ $(document).ready(function() {
           });
         }
       });
+      e.stopPropagation();
     };
-    e.stopPropagation();
   });
 });
