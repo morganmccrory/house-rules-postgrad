@@ -67,3 +67,7 @@ button.fc-button.fc-state-default:hover {
   background-image: none;
   background-color: #6bc78a;
 }
+
+.event-edit-form {
+  display: none;
+}

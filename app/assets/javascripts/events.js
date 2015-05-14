@@ -4,6 +4,7 @@ $(document).ready(function() {
   var segment = window.location.href.split("/")
   var calendar = $('#calendar')
   var viewEvent = $("#view_event")
+  var editEvent = $(".event-edit-form")
 
   var getSegment = function (url, index) {
    return url.replace(/^https?:\/\//, '').split('/')[index];
@@ -16,6 +17,12 @@ $(document).ready(function() {
   });
 
   viewEvent.dialog({
+    autoOpen: false,
+    maxWidth:800,
+    width: 800
+  });
+
+  editEvent.dialog({
     autoOpen: false,
     maxWidth:800,
     width: 800
@@ -88,20 +95,28 @@ $(document).ready(function() {
     }
   });
 
-  viewEvent.on("click", ".event-delete", function(e) {
+  $("body").unbind("click").on("click", ".event-edit", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    viewEvent.dialog("close");
+    editEvent.dialog("open");
+  });
+
+  viewEvent.unbind("click").on("click", ".event-delete", function(e) {
     e.preventDefault();
     e.stopPropagation();
 
     var url = $(this).children().attr("id")
     var confirmed = confirm("Are you sure?");
+    var eventID = $(this).children().attr("id").split("/")[4]
 
     if(confirmed) {
       $.ajax({
         type: 'DELETE',
         url: url,
         success: function() {
-          alert("Yay!")
           viewEvent.dialog("close");
+          calendar.fullCalendar( 'removeEvents', [ eventID ] );
         }
       });
     };
