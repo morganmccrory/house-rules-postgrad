@@ -66,12 +66,13 @@ skip_before_action :authenticate_user_from_token!, only: [:index, :edit, :create
   def destroy
     @event = Event.find(params[:id])
     @house = House.find(params[:house_id])
-    if @event.destroy
-        @notification = Notification.create(alert: "#{current_user.first_name} has deleted #{@event.name}.", category: "events", house_id: @house.id)
-        HousingAssignment.where(house_id: @house.id).select do |assignment|
-          assignment.user.user_notifications.create(notification: @notification)
-        end
-      redirect_to house_events_path
+    if request.xhr?
+      @event.destroy
+      @notification = Notification.create(alert: "#{current_user.first_name} has deleted #{@event.title}.", category: "events", house_id: @house.id)
+      HousingAssignment.where(house_id: @house.id).select do |assignment|
+        assignment.user.user_notifications.create(notification: @notification)
+      end
+      render :nothing => true, :status => 200
     end
   end
 

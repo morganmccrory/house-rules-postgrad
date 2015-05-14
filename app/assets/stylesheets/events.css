@@ -46,11 +46,19 @@ button.fc-button.fc-state-default:hover {
   background-color: #FFAD32;
 }
 
-.event-changes {
+.event-edit {
   float: right;
 }
 
-.event-changes a {
+.event-delete {
+  float: right;
+}
+
+.event-edit a {
+  color: #FFAD32;
+}
+
+.event-delete a {
   color: #FFAD32;
 }
 

@@ -1,6 +1,7 @@
 $(document).ready(function() {
 
   var houseID = window.location.href
+  var segment = window.location.href.split("/")
   var calendar = $('#calendar')
   var viewEvent = $("#view_event")
 
@@ -28,7 +29,7 @@ $(document).ready(function() {
 
     eventSources: [{
       url: '/houses/'+getSegment(houseID, 2)+'/events/source',
-      backgroundColor: '#fe9800',
+      backgroundColor: '#e58900',
       borderColor: '#ffad32',
     }],
 
@@ -82,9 +83,27 @@ $(document).ready(function() {
       viewEvent.append("<b>Description:</b> "+calEvent.description+"<br>");
       viewEvent.append("<b>All day event?</b> "+calEvent.allDay+"<br>");
       viewEvent.append("<b>Overlap?</b> "+calEvent.overlap+"<br>");
-      viewEvent.append("<div class='event-changes'><a href='#'>Edit </a></div><br>");
-      viewEvent.append("<div class='event-changes'><a href='#'> Delete</a></div>");
+      viewEvent.append("<div class='event-edit'><a href='#'>Edit </a></div><br>");
+      viewEvent.append("<div class='event-delete'><div id='/houses/"+segment[4]+"/events/"+calEvent.id+"'><a href='#'> Delete</a></div></div>");
     }
+  });
 
+  viewEvent.on("click", ".event-delete", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var url = $(this).children().attr("id")
+    var confirmed = confirm("Are you sure?");
+
+    if(confirmed) {
+      $.ajax({
+        type: 'DELETE',
+        url: url,
+        success: function() {
+          alert("Yay!")
+          viewEvent.dialog("close");
+        }
+      });
+    };
   });
 });
