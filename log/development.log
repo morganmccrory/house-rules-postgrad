@@ -43018,3 +43018,1853 @@ Processing by EventsController#update as */*
   [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 148], ["user_id", 2], ["created_at", "2015-05-15 18:49:24.273480"], ["updated_at", "2015-05-15 18:49:24.273480"]]
   [1m[35m (0.5ms)[0m  COMMIT
 Completed 200 OK in 86ms (Views: 0.7ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/houses/1/events" for ::1 at 2015-05-15 13:50:37 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (1.1ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1409.7ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.5ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 73]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 74]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 76]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 78]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 79]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 80]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 81]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 82]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 83]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 84]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 85]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 86]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 87]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 88]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 89]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 90]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 92]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 93]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 94]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 95]]
+  [1m[35mNotification Load (0.2ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 96]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 97]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 98]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 99]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 100]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 101]]
+  [1m[35mNotification Load (0.2ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 102]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 103]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 105]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 106]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 107]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 108]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 109]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 110]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 111]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 112]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 116]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 120]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 121]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 122]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 123]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 124]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 126]]
+  [1m[36mNotification Load (0.6ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 128]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 129]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 130]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 132]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 133]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 134]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 136]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 138]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 139]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 140]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 141]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 142]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 144]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 146]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 147]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 2271ms (Views: 2233.8ms | ActiveRecord: 26.5ms)
+
+
+Started GET "/assets/fullcalendar.self-bfd1e733800d14d6124c551399fa09d9fb4108c7623ad7bd2cf351ef92704af5.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-9a05097a0bf60f489f0c89e95e5e12dd9a092332f4a18e2e835bc94fe7ca0ffd.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-843e8fe41275fac7212c1564bf97a092377791b8a5b84a92df14d560d1a21dff.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-bb8031f2e196f26c242e6093ff5be2facad271ecca7299661d2abdd544734ed7.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-a75cc687d9086ab502f231ccbb3f33998d146a2be70c042de3b367fad3e266bc.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/application.self-0a8bd8973e1bb742588661683fea5421334fc34d683588ae8e7818585ad59da7.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-2f7c47a18c55495b988ae9761c56a5ca745f17940314b28adbdfd5473c14d9bc.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-97d90451ed5c9406f435380037255f44bb266b4d2142b618c6c43f875c07ad3d.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-4ef8e935d5844661de4f30a3b86a8559093c04a0638cd1281d509878046cf089.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/events.self-5bbd298a812b591af9787b273a349a1bbee875630a15a44c32b0fa9af5d7d56d.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/fridge.self-5a992583eabf28e67405ef857de847bf0bff167bc5f34335903d6d9720667169.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/main.self-8988b123b62415d1cf5e6bd4d3ce72a7b2038240e857e6a74ce94d0e76043c12.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/rules.self-6cc6c362827b77e95d85d8c6e12b0e64353c06e3e6085fc9c1473eb26cdd4be5.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/welcome.self-53d49c7bc4cdc5b257af006e1060132a8ca65564fd9b74929075050b245d1390.css?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-15 13:50:39 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-18a8d048b203a446b234a59e1b1daeccfce707183171c16826a7761c8bd1af39.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-c3805ba4caf7d6a835e14230e1da60de2827598f5db5becfa06d0a4b6b2daf72.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-ce66b060b6de64ac8efd0b8794647ab61311f6d1edfc200de94e8a8d38b1d929.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-3477df232aaefa9b0aa3e3551c09f4195acf8e07ab1a82073caeaa6822fe5297.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/moment.self-14a05e94cca93048a2a57289c5b322ce9bf419e4689a57a7b33fae4066d867e9.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/fullcalendar.self-8668c2e6be32331fb05b9c8cb047adeb64ae3d0575ba9d2f029b9a4cb37ec3f5.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/application.self-7f5e5987d2fec50f3a4365495f34f0caa93fbf5e62be8711229d180c0e58f980.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/events.self-e61d6efdda85ff894c684b0bba42d43e027ea64872510392fcc3db4b57ad190d.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/fridge.self-88b171bda105a4fa7e18cb52c03229b7ac1d516ac5d0d2d1011268e6dd575d4a.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-9e75e6dbce8a119a385a3c66ad2fdfa8b53c17e7447a5fe59929d26ba5000292.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/rules.self-5fa1ec349e098a426bd990d1876929aa6e4405354dc24b4e6120f50d197276fc.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/user.self-62be85a9d24f27e40224ea2b32c5fcee4d43354ba07fc08a2ccb7ddd3a6f47e5.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-15 13:50:40 -0500
+
+
+Started GET "/houses/1/events/source?start=2015-04-26&end=2015-06-07&_=1431715840966" for ::1 at 2015-05-15 13:50:41 -0500
+Processing by EventsController#source as JSON
+  Parameters: {"start"=>"2015-04-26", "end"=>"2015-06-07", "_"=>"1431715840966", "id"=>"1"}
+  [1m[36mHouse Load (1.1ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (1.6ms)[0m  SELECT "events".* FROM "events" WHERE "events"."house_id" = $1  [["house_id", 1]]
+Completed 200 OK in 13ms (Views: 8.6ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2015-05-15 13:50:42 -0500
+
+
+Started GET "/houses/1/events" for ::1 at 2015-05-15 13:57:51 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.7ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1339.8ms)
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 73]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 74]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 76]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 78]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 79]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 80]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 81]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 82]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 83]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 84]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 85]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 86]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 87]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 88]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 89]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 90]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 92]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 93]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 94]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 95]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 96]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 97]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 98]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 99]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 100]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 101]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 102]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 103]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 105]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 106]]
+  [1m[36mNotification Load (0.5ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 107]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 108]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 109]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 110]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 111]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 112]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 116]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 120]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 121]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 122]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 123]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 124]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 126]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 128]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 129]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 130]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 132]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 133]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 134]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 136]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 138]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 139]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 140]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 141]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 142]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 144]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 146]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 147]]
+  [1m[35mNotification Load (0.5ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 2165ms (Views: 2129.1ms | ActiveRecord: 31.4ms)
+
+
+Started GET "/assets/fullcalendar.self-bfd1e733800d14d6124c551399fa09d9fb4108c7623ad7bd2cf351ef92704af5.css?body=1" for ::1 at 2015-05-15 13:57:53 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-843e8fe41275fac7212c1564bf97a092377791b8a5b84a92df14d560d1a21dff.css?body=1" for ::1 at 2015-05-15 13:57:53 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-9a05097a0bf60f489f0c89e95e5e12dd9a092332f4a18e2e835bc94fe7ca0ffd.css?body=1" for ::1 at 2015-05-15 13:57:53 -0500
+
+
+Started GET "/assets/application.self-0a8bd8973e1bb742588661683fea5421334fc34d683588ae8e7818585ad59da7.css?body=1" for ::1 at 2015-05-15 13:57:53 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-bb8031f2e196f26c242e6093ff5be2facad271ecca7299661d2abdd544734ed7.css?body=1" for ::1 at 2015-05-15 13:57:53 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-a75cc687d9086ab502f231ccbb3f33998d146a2be70c042de3b367fad3e266bc.css?body=1" for ::1 at 2015-05-15 13:57:53 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-2f7c47a18c55495b988ae9761c56a5ca745f17940314b28adbdfd5473c14d9bc.css?body=1" for ::1 at 2015-05-15 13:57:53 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-97d90451ed5c9406f435380037255f44bb266b4d2142b618c6c43f875c07ad3d.css?body=1" for ::1 at 2015-05-15 13:57:53 -0500
+
+
+Started GET "/assets/events.self-5bbd298a812b591af9787b273a349a1bbee875630a15a44c32b0fa9af5d7d56d.css?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/fridge.self-5a992583eabf28e67405ef857de847bf0bff167bc5f34335903d6d9720667169.css?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-4ef8e935d5844661de4f30a3b86a8559093c04a0638cd1281d509878046cf089.css?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/main.self-8988b123b62415d1cf5e6bd4d3ce72a7b2038240e857e6a74ce94d0e76043c12.css?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/rules.self-6cc6c362827b77e95d85d8c6e12b0e64353c06e3e6085fc9c1473eb26cdd4be5.css?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/welcome.self-53d49c7bc4cdc5b257af006e1060132a8ca65564fd9b74929075050b245d1390.css?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-c3805ba4caf7d6a835e14230e1da60de2827598f5db5becfa06d0a4b6b2daf72.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-18a8d048b203a446b234a59e1b1daeccfce707183171c16826a7761c8bd1af39.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-3477df232aaefa9b0aa3e3551c09f4195acf8e07ab1a82073caeaa6822fe5297.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-ce66b060b6de64ac8efd0b8794647ab61311f6d1edfc200de94e8a8d38b1d929.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/moment.self-14a05e94cca93048a2a57289c5b322ce9bf419e4689a57a7b33fae4066d867e9.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/fullcalendar.self-8668c2e6be32331fb05b9c8cb047adeb64ae3d0575ba9d2f029b9a4cb37ec3f5.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/application.self-7f5e5987d2fec50f3a4365495f34f0caa93fbf5e62be8711229d180c0e58f980.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/events.self-550d2dc385890ad87ab5d6fed3913fe75e42fb8847eb1c5b8cd3bbdea45c2d70.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/fridge.self-88b171bda105a4fa7e18cb52c03229b7ac1d516ac5d0d2d1011268e6dd575d4a.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-9e75e6dbce8a119a385a3c66ad2fdfa8b53c17e7447a5fe59929d26ba5000292.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/rules.self-5fa1ec349e098a426bd990d1876929aa6e4405354dc24b4e6120f50d197276fc.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/user.self-62be85a9d24f27e40224ea2b32c5fcee4d43354ba07fc08a2ccb7ddd3a6f47e5.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-15 13:57:54 -0500
+
+
+Started GET "/houses/1/events/source?start=2015-04-26&end=2015-06-07&_=1431716275114" for ::1 at 2015-05-15 13:57:55 -0500
+Processing by EventsController#source as JSON
+  Parameters: {"start"=>"2015-04-26", "end"=>"2015-06-07", "_"=>"1431716275114", "id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events" WHERE "events"."house_id" = $1  [["house_id", 1]]
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2015-05-15 13:57:56 -0500
+
+
+Started POST "/houses/1/events" for ::1 at 2015-05-15 13:58:02 -0500
+Processing by EventsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VLJT+h484lYL2dqn2cS4Y5Di8B0kxIggeJIOj/DNkz7Gl5qtbl0kpST9ib/OY/X4k1qIJAd007UmMTLoLxjbqQ==", "event"=>{"start(2i)"=>"5", "start(3i)"=>"15", "start(1i)"=>"2015", "start(4i)"=>"18", "start(5i)"=>"00", "end(2i)"=>"5", "end(3i)"=>"15", "end(1i)"=>"2015", "end(4i)"=>"18", "end(5i)"=>"00", "title"=>"perfect code", "description"=>"", "all_day"=>"0", "overlap"=>"1"}, "house_id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.6ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "events" ("title", "all_day", "overlap", "description", "start", "end", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "perfect code"], ["all_day", "f"], ["overlap", "t"], ["description", ""], ["start", "2015-05-15 18:00:00.000000"], ["end", "2015-05-15 18:00:00.000000"], ["house_id", 1], ["created_at", "2015-05-15 18:58:02.850020"], ["updated_at", "2015-05-15 18:58:02.850020"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "notifications" ("alert", "category", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["alert", "Paul has added perfect code to Events."], ["category", "events"], ["house_id", 1], ["created_at", "2015-05-15 18:58:02.859506"], ["updated_at", "2015-05-15 18:58:02.859506"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mHousingAssignment Load (0.4ms)[0m  [1mSELECT "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1[0m  [["house_id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  INSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["notification_id", 149], ["user_id", 1], ["created_at", "2015-05-15 18:58:02.869167"], ["updated_at", "2015-05-15 18:58:02.869167"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  INSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["notification_id", 149], ["user_id", 2], ["created_at", "2015-05-15 18:58:02.877345"], ["updated_at", "2015-05-15 18:58:02.877345"]]
+  [1m[36m (9.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "events" SET "user_id" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["user_id", 1], ["updated_at", "2015-05-15 18:58:02.892944"], ["id", 36]]
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/houses/1/events
+Completed 302 Found in 83ms (ActiveRecord: 22.5ms)
+
+
+Started GET "/houses/1/events" for ::1 at 2015-05-15 13:58:02 -0500
+Processing by EventsController#index as */*
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (683.8ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 73]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 74]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 76]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 78]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 79]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 80]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 81]]
+  [1m[35mNotification Load (0.2ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 82]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 83]]
+  [1m[35mNotification Load (0.2ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 84]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 85]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 86]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 87]]
+  [1m[35mNotification Load (0.2ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 88]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 89]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 90]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mNotification Load (0.2ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 92]]
+  [1m[36mNotification Load (0.2ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 93]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 94]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 95]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 96]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 97]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 98]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 99]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 100]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 101]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 102]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 103]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 105]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 106]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 107]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 108]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 109]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 110]]
+  [1m[36mNotification Load (0.8ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 111]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 112]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 116]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 120]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 121]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 122]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 123]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 124]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 126]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 128]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 129]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 130]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 132]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 133]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 134]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 136]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 138]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 139]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 140]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 141]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 142]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 144]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 146]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 147]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 149]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 1564ms (Views: 1534.1ms | ActiveRecord: 25.2ms)
+
+
+Started GET "/houses/1/events" for ::1 at 2015-05-15 13:58:23 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[35mHouse Load (0.7ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.6ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1365.7ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36m (0.6ms)[0m  [1mSELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35mNotification Load (0.5ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 71]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 72]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 73]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 74]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 75]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 76]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 77]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 78]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 79]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 80]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 81]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 82]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 83]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 84]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 85]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 86]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 87]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 88]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 89]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 90]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 91]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 92]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 93]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 94]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 95]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 96]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 97]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 98]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 99]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 100]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 101]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 102]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 103]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 104]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 105]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 106]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 107]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 108]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 109]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 110]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 111]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 112]]
+  [1m[35mNotification Load (0.9ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 113]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 114]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 115]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 116]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 117]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 118]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 119]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 120]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 121]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 122]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 123]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 124]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 125]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 126]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 127]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 128]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 129]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 130]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 131]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 132]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 133]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 134]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 135]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 136]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 137]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 138]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 139]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 140]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 141]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 142]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 143]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 144]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 145]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 146]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 147]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 148]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 149]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 2197ms (Views: 2163.2ms | ActiveRecord: 26.8ms)
+
+
+Started GET "/assets/fullcalendar.self-bfd1e733800d14d6124c551399fa09d9fb4108c7623ad7bd2cf351ef92704af5.css?body=1" for ::1 at 2015-05-15 13:58:25 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-bb8031f2e196f26c242e6093ff5be2facad271ecca7299661d2abdd544734ed7.css?body=1" for ::1 at 2015-05-15 13:58:25 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-843e8fe41275fac7212c1564bf97a092377791b8a5b84a92df14d560d1a21dff.css?body=1" for ::1 at 2015-05-15 13:58:25 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-9a05097a0bf60f489f0c89e95e5e12dd9a092332f4a18e2e835bc94fe7ca0ffd.css?body=1" for ::1 at 2015-05-15 13:58:25 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-a75cc687d9086ab502f231ccbb3f33998d146a2be70c042de3b367fad3e266bc.css?body=1" for ::1 at 2015-05-15 13:58:25 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-2f7c47a18c55495b988ae9761c56a5ca745f17940314b28adbdfd5473c14d9bc.css?body=1" for ::1 at 2015-05-15 13:58:25 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-97d90451ed5c9406f435380037255f44bb266b4d2142b618c6c43f875c07ad3d.css?body=1" for ::1 at 2015-05-15 13:58:25 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-4ef8e935d5844661de4f30a3b86a8559093c04a0638cd1281d509878046cf089.css?body=1" for ::1 at 2015-05-15 13:58:25 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-15 13:58:25 -0500
+
+
+Started GET "/assets/events.self-5bbd298a812b591af9787b273a349a1bbee875630a15a44c32b0fa9af5d7d56d.css?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/fridge.self-5a992583eabf28e67405ef857de847bf0bff167bc5f34335903d6d9720667169.css?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/main.self-8988b123b62415d1cf5e6bd4d3ce72a7b2038240e857e6a74ce94d0e76043c12.css?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/application.self-0a8bd8973e1bb742588661683fea5421334fc34d683588ae8e7818585ad59da7.css?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/rules.self-6cc6c362827b77e95d85d8c6e12b0e64353c06e3e6085fc9c1473eb26cdd4be5.css?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/welcome.self-53d49c7bc4cdc5b257af006e1060132a8ca65564fd9b74929075050b245d1390.css?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/events.self-a8c86844982929a5ddb137edf3327e9056e66f3843379a2b39ee65d8c55d126a.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-c3805ba4caf7d6a835e14230e1da60de2827598f5db5becfa06d0a4b6b2daf72.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-18a8d048b203a446b234a59e1b1daeccfce707183171c16826a7761c8bd1af39.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-3477df232aaefa9b0aa3e3551c09f4195acf8e07ab1a82073caeaa6822fe5297.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-ce66b060b6de64ac8efd0b8794647ab61311f6d1edfc200de94e8a8d38b1d929.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/moment.self-14a05e94cca93048a2a57289c5b322ce9bf419e4689a57a7b33fae4066d867e9.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/fullcalendar.self-8668c2e6be32331fb05b9c8cb047adeb64ae3d0575ba9d2f029b9a4cb37ec3f5.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/application.self-7f5e5987d2fec50f3a4365495f34f0caa93fbf5e62be8711229d180c0e58f980.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/fridge.self-88b171bda105a4fa7e18cb52c03229b7ac1d516ac5d0d2d1011268e6dd575d4a.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-9e75e6dbce8a119a385a3c66ad2fdfa8b53c17e7447a5fe59929d26ba5000292.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/rules.self-5fa1ec349e098a426bd990d1876929aa6e4405354dc24b4e6120f50d197276fc.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/user.self-62be85a9d24f27e40224ea2b32c5fcee4d43354ba07fc08a2ccb7ddd3a6f47e5.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-15 13:58:26 -0500
+
+
+Started GET "/houses/1/events/source?start=2015-04-26&end=2015-06-07&_=1431716307216" for ::1 at 2015-05-15 13:58:28 -0500
+Processing by EventsController#source as JSON
+  Parameters: {"start"=>"2015-04-26", "end"=>"2015-06-07", "_"=>"1431716307216", "id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events" WHERE "events"."house_id" = $1  [["house_id", 1]]
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2015-05-15 13:58:28 -0500
+
+
+Started POST "/houses/1/events" for ::1 at 2015-05-15 13:58:34 -0500
+Processing by EventsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qk4AW+qEIubrtpDFkdZ/z2h0lr6ksJpI0yZ0epnb36I4a8kMmuXkFcSSw92GcTJUa8zuh4cAwd2NhUgdRg6XNQ==", "event"=>{"start(2i)"=>"5", "start(3i)"=>"20", "start(1i)"=>"2015", "start(4i)"=>"18", "start(5i)"=>"00", "end(2i)"=>"5", "end(3i)"=>"20", "end(1i)"=>"2015", "end(4i)"=>"18", "end(5i)"=>"00", "title"=>"perfect", "description"=>"", "all_day"=>"0", "overlap"=>"1"}, "house_id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "events" ("title", "all_day", "overlap", "description", "start", "end", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "perfect"], ["all_day", "f"], ["overlap", "t"], ["description", ""], ["start", "2015-05-20 18:00:00.000000"], ["end", "2015-05-20 18:00:00.000000"], ["house_id", 1], ["created_at", "2015-05-15 18:58:34.144208"], ["updated_at", "2015-05-15 18:58:34.144208"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "notifications" ("alert", "category", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["alert", "Paul has added perfect to Events."], ["category", "events"], ["house_id", 1], ["created_at", "2015-05-15 18:58:34.163077"], ["updated_at", "2015-05-15 18:58:34.163077"]]
+  [1m[35m (1.7ms)[0m  COMMIT
+  [1m[36mHousingAssignment Load (0.6ms)[0m  [1mSELECT "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1[0m  [["house_id", 1]]
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["notification_id", 150], ["user_id", 1], ["created_at", "2015-05-15 18:58:34.175937"], ["updated_at", "2015-05-15 18:58:34.175937"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (2.6ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["notification_id", 150], ["user_id", 2], ["created_at", "2015-05-15 18:58:34.187312"], ["updated_at", "2015-05-15 18:58:34.187312"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE "events" SET "user_id" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["user_id", 1], ["updated_at", "2015-05-15 18:58:34.192066"], ["id", 37]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/houses/1/events
+Completed 302 Found in 98ms (ActiveRecord: 14.9ms)
+
+
+Started GET "/houses/1/events" for ::1 at 2015-05-15 13:58:34 -0500
+Processing by EventsController#index as */*
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1199.4ms)
+  [1m[35m (1.1ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.6ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.8ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 73]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 74]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 76]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 78]]
+  [1m[36mNotification Load (0.7ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 79]]
+  [1m[35mNotification Load (0.5ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 80]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 81]]
+  [1m[35mNotification Load (0.5ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 82]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 83]]
+  [1m[35mNotification Load (0.7ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 84]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 85]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 86]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 87]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 88]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 89]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 90]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 92]]
+  [1m[36mNotification Load (0.6ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 93]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 94]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 95]]
+  [1m[35mNotification Load (0.5ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 96]]
+  [1m[36mNotification Load (1.0ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 97]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 98]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 99]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 100]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 101]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 102]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 103]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 105]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 106]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 107]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 108]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 109]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 110]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 111]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 112]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 116]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 120]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 121]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 122]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 123]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 124]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 126]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 128]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 129]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 130]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 132]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 133]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 134]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 136]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 138]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 139]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 140]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 141]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 142]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 144]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 146]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 147]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 149]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 150]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 2192ms (Views: 2156.5ms | ActiveRecord: 31.0ms)
+
+
+Started GET "/houses/1/events" for ::1 at 2015-05-15 14:00:34 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1162.2ms)
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 73]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 74]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 76]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 78]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 79]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 80]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 81]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 82]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 83]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 84]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 85]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 86]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 87]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 88]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 89]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 90]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 92]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 93]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 94]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 95]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 96]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 97]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 98]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 99]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 100]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 101]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 102]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 103]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 105]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 106]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 107]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 108]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 109]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 110]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 111]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 112]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 116]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mNotification Load (0.6ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 120]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 121]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 122]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 123]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 124]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 126]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 128]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 129]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 130]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 132]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 133]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 134]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 136]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 138]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 139]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 140]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 141]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 142]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 144]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 146]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 147]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 149]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 150]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 2080ms (Views: 1917.1ms | ActiveRecord: 39.6ms)
+
+
+Started GET "/assets/application.self-0a8bd8973e1bb742588661683fea5421334fc34d683588ae8e7818585ad59da7.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/fullcalendar.self-bfd1e733800d14d6124c551399fa09d9fb4108c7623ad7bd2cf351ef92704af5.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-9a05097a0bf60f489f0c89e95e5e12dd9a092332f4a18e2e835bc94fe7ca0ffd.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-2f7c47a18c55495b988ae9761c56a5ca745f17940314b28adbdfd5473c14d9bc.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-97d90451ed5c9406f435380037255f44bb266b4d2142b618c6c43f875c07ad3d.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-bb8031f2e196f26c242e6093ff5be2facad271ecca7299661d2abdd544734ed7.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/events.self-5bbd298a812b591af9787b273a349a1bbee875630a15a44c32b0fa9af5d7d56d.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/fridge.self-5a992583eabf28e67405ef857de847bf0bff167bc5f34335903d6d9720667169.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/main.self-8988b123b62415d1cf5e6bd4d3ce72a7b2038240e857e6a74ce94d0e76043c12.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/rules.self-6cc6c362827b77e95d85d8c6e12b0e64353c06e3e6085fc9c1473eb26cdd4be5.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-4ef8e935d5844661de4f30a3b86a8559093c04a0638cd1281d509878046cf089.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/welcome.self-53d49c7bc4cdc5b257af006e1060132a8ca65564fd9b74929075050b245d1390.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-a75cc687d9086ab502f231ccbb3f33998d146a2be70c042de3b367fad3e266bc.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-843e8fe41275fac7212c1564bf97a092377791b8a5b84a92df14d560d1a21dff.css?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-c3805ba4caf7d6a835e14230e1da60de2827598f5db5becfa06d0a4b6b2daf72.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-18a8d048b203a446b234a59e1b1daeccfce707183171c16826a7761c8bd1af39.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-3477df232aaefa9b0aa3e3551c09f4195acf8e07ab1a82073caeaa6822fe5297.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-ce66b060b6de64ac8efd0b8794647ab61311f6d1edfc200de94e8a8d38b1d929.js?body=1" for ::1 at 2015-05-15 14:00:37 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/fullcalendar.self-8668c2e6be32331fb05b9c8cb047adeb64ae3d0575ba9d2f029b9a4cb37ec3f5.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/application.self-7f5e5987d2fec50f3a4365495f34f0caa93fbf5e62be8711229d180c0e58f980.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/moment.self-14a05e94cca93048a2a57289c5b322ce9bf419e4689a57a7b33fae4066d867e9.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/events.self-a8c86844982929a5ddb137edf3327e9056e66f3843379a2b39ee65d8c55d126a.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/fridge.self-88b171bda105a4fa7e18cb52c03229b7ac1d516ac5d0d2d1011268e6dd575d4a.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-9e75e6dbce8a119a385a3c66ad2fdfa8b53c17e7447a5fe59929d26ba5000292.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/rules.self-5fa1ec349e098a426bd990d1876929aa6e4405354dc24b4e6120f50d197276fc.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/user.self-62be85a9d24f27e40224ea2b32c5fcee4d43354ba07fc08a2ccb7ddd3a6f47e5.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-15 14:00:38 -0500
+
+
+Started GET "/houses/1/events/source?start=2015-04-26&end=2015-06-07&_=1431716439240" for ::1 at 2015-05-15 14:00:40 -0500
+Processing by EventsController#source as JSON
+  Parameters: {"start"=>"2015-04-26", "end"=>"2015-06-07", "_"=>"1431716439240", "id"=>"1"}
+  [1m[36mHouse Load (1.4ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (2.2ms)[0m  SELECT "events".* FROM "events" WHERE "events"."house_id" = $1  [["house_id", 1]]
+Completed 200 OK in 45ms (Views: 38.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2015-05-15 14:00:40 -0500
+
+
+Started POST "/houses/1/events" for ::1 at 2015-05-15 14:00:52 -0500
+Processing by EventsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wnvaq7gVqKYQxg0FePmBghFkmNW6WCyvutj5H/DNhvRQXhP8yHRuVT/iXh1vXswZEtzg7Jnodzrke8V4LxjOYw==", "event"=>{"start(2i)"=>"5", "start(3i)"=>"15", "start(1i)"=>"2015", "start(4i)"=>"19", "start(5i)"=>"00", "end(2i)"=>"5", "end(3i)"=>"15", "end(1i)"=>"2015", "end(4i)"=>"19", "end(5i)"=>"30", "title"=>"more perfection", "description"=>"", "all_day"=>"0", "overlap"=>"1"}, "house_id"=>"1"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (1.8ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "events" ("title", "all_day", "overlap", "description", "start", "end", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["title", "more perfection"], ["all_day", "f"], ["overlap", "t"], ["description", ""], ["start", "2015-05-15 19:00:00.000000"], ["end", "2015-05-15 19:30:00.000000"], ["house_id", 1], ["created_at", "2015-05-15 19:00:52.917205"], ["updated_at", "2015-05-15 19:00:52.917205"]]
+  [1m[36m (11.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "notifications" ("alert", "category", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["alert", "Paul has added more perfection to Events."], ["category", "events"], ["house_id", 1], ["created_at", "2015-05-15 19:00:52.933565"], ["updated_at", "2015-05-15 19:00:52.933565"]]
+  [1m[35m (5.3ms)[0m  COMMIT
+  [1m[36mHousingAssignment Load (0.4ms)[0m  [1mSELECT "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1[0m  [["house_id", 1]]
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["notification_id", 151], ["user_id", 1], ["created_at", "2015-05-15 19:00:52.987929"], ["updated_at", "2015-05-15 19:00:52.987929"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["notification_id", 151], ["user_id", 2], ["created_at", "2015-05-15 19:00:52.994710"], ["updated_at", "2015-05-15 19:00:52.994710"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE "events" SET "user_id" = $1, "updated_at" = $2 WHERE "events"."id" = $3[0m  [["user_id", 1], ["updated_at", "2015-05-15 19:00:52.998567"], ["id", 38]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Completed 200 OK in 97ms (Views: 0.7ms | ActiveRecord: 30.1ms)
+
+
+Started GET "/houses/1/events" for ::1 at 2015-05-15 14:01:20 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+DEPRECATION WARNING: Currently, Active Record suppresses errors raised within `after_rollback`/`after_commit` callbacks and only print them to the logs. In the next version, these errors will no longer be suppressed. Instead, the errors will propagate normally just like in other Active Record callbacks.
+
+You can opt into the new behavior and remove this warning by setting:
+
+  config.active_record.raise_in_transactional_callbacks = true
+
+ (called from <class:User> at /Users/morganmccrory/Desktop/Dev_Bootcamp/portfolio/house-rules-postgrad/app/models/user.rb:4)
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (1363.2ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.5ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mNotification Load (0.5ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 73]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 74]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 76]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 78]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 79]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 80]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 81]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 82]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 83]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 84]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 85]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 86]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 87]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 88]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 89]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 90]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 92]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 93]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 94]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 95]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 96]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 97]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 98]]
+  [1m[36mNotification Load (0.5ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 99]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 100]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 101]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 102]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 103]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 105]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 106]]
+  [1m[36mNotification Load (0.6ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 107]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 108]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 109]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 110]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 111]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 112]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 116]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 120]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 121]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 122]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 123]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 124]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 126]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 128]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 129]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 130]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 132]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 133]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 134]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 136]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 138]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 139]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 140]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 141]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 142]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 144]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 146]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 147]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 149]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 150]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 151]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+Completed 200 OK in 2521ms (Views: 2373.9ms | ActiveRecord: 43.8ms)
+
+
+Started GET "/assets/application.self-0a8bd8973e1bb742588661683fea5421334fc34d683588ae8e7818585ad59da7.css?body=1" for ::1 at 2015-05-15 14:01:24 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-9a05097a0bf60f489f0c89e95e5e12dd9a092332f4a18e2e835bc94fe7ca0ffd.css?body=1" for ::1 at 2015-05-15 14:01:24 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-a75cc687d9086ab502f231ccbb3f33998d146a2be70c042de3b367fad3e266bc.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/fullcalendar.self-bfd1e733800d14d6124c551399fa09d9fb4108c7623ad7bd2cf351ef92704af5.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-843e8fe41275fac7212c1564bf97a092377791b8a5b84a92df14d560d1a21dff.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/fridge.self-5a992583eabf28e67405ef857de847bf0bff167bc5f34335903d6d9720667169.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/main.self-8988b123b62415d1cf5e6bd4d3ce72a7b2038240e857e6a74ce94d0e76043c12.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/rules.self-6cc6c362827b77e95d85d8c6e12b0e64353c06e3e6085fc9c1473eb26cdd4be5.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-4ef8e935d5844661de4f30a3b86a8559093c04a0638cd1281d509878046cf089.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-97d90451ed5c9406f435380037255f44bb266b4d2142b618c6c43f875c07ad3d.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-2f7c47a18c55495b988ae9761c56a5ca745f17940314b28adbdfd5473c14d9bc.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-bb8031f2e196f26c242e6093ff5be2facad271ecca7299661d2abdd544734ed7.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/events.self-5bbd298a812b591af9787b273a349a1bbee875630a15a44c32b0fa9af5d7d56d.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/welcome.self-53d49c7bc4cdc5b257af006e1060132a8ca65564fd9b74929075050b245d1390.css?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/events.self-e064ce580f0e5f3ecafb0d284cfce806cd6e74ed8141c1398cd40adfc1c3f039.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-18a8d048b203a446b234a59e1b1daeccfce707183171c16826a7761c8bd1af39.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-c3805ba4caf7d6a835e14230e1da60de2827598f5db5becfa06d0a4b6b2daf72.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-ce66b060b6de64ac8efd0b8794647ab61311f6d1edfc200de94e8a8d38b1d929.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-3477df232aaefa9b0aa3e3551c09f4195acf8e07ab1a82073caeaa6822fe5297.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/fullcalendar.self-8668c2e6be32331fb05b9c8cb047adeb64ae3d0575ba9d2f029b9a4cb37ec3f5.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/application.self-7f5e5987d2fec50f3a4365495f34f0caa93fbf5e62be8711229d180c0e58f980.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/moment.self-14a05e94cca93048a2a57289c5b322ce9bf419e4689a57a7b33fae4066d867e9.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/fridge.self-88b171bda105a4fa7e18cb52c03229b7ac1d516ac5d0d2d1011268e6dd575d4a.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-9e75e6dbce8a119a385a3c66ad2fdfa8b53c17e7447a5fe59929d26ba5000292.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/rules.self-5fa1ec349e098a426bd990d1876929aa6e4405354dc24b4e6120f50d197276fc.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/user.self-62be85a9d24f27e40224ea2b32c5fcee4d43354ba07fc08a2ccb7ddd3a6f47e5.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-15 14:01:25 -0500
+
+
+Started GET "/houses/1/events/source?start=2015-04-26&end=2015-06-07&_=1431716486331" for ::1 at 2015-05-15 14:01:27 -0500
+Processing by EventsController#source as JSON
+  Parameters: {"start"=>"2015-04-26", "end"=>"2015-06-07", "_"=>"1431716486331", "id"=>"1"}
+  [1m[35mHouse Load (0.5ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events" WHERE "events"."house_id" = $1[0m  [["house_id", 1]]
+Completed 200 OK in 24ms (Views: 20.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2015-05-15 14:01:28 -0500
+
+
+Started POST "/houses/1/events" for ::1 at 2015-05-15 14:01:34 -0500
+Processing by EventsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0/hE61cJnEkDvV9aRyBYZGvBGyGreIsV5hJK3I3R/fZB3Y28J2hauiyZDEJQhxX/aHljGIjI0IC4sXa7UgS1YQ==", "event"=>{"start(2i)"=>"5", "start(3i)"=>"21", "start(1i)"=>"2015", "start(4i)"=>"19", "start(5i)"=>"00", "end(2i)"=>"5", "end(3i)"=>"21", "end(1i)"=>"2015", "end(4i)"=>"19", "end(5i)"=>"45", "title"=>"cool", "description"=>"", "all_day"=>"0", "overlap"=>"1"}, "house_id"=>"1"}
+  [1m[35mUser Load (3.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (6.2ms)[0m  [1mINSERT INTO "events" ("title", "all_day", "overlap", "description", "start", "end", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "cool"], ["all_day", "f"], ["overlap", "t"], ["description", ""], ["start", "2015-05-21 19:00:00.000000"], ["end", "2015-05-21 19:45:00.000000"], ["house_id", 1], ["created_at", "2015-05-15 19:01:34.586844"], ["updated_at", "2015-05-15 19:01:34.586844"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "notifications" ("alert", "category", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["alert", "Paul has added cool to Events."], ["category", "events"], ["house_id", 1], ["created_at", "2015-05-15 19:01:34.601052"], ["updated_at", "2015-05-15 19:01:34.601052"]]
+  [1m[36m (8.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mHousingAssignment Load (0.4ms)[0m  SELECT "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1  [["house_id", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 152], ["user_id", 1], ["created_at", "2015-05-15 19:01:34.652929"], ["updated_at", "2015-05-15 19:01:34.652929"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 152], ["user_id", 2], ["created_at", "2015-05-15 19:01:34.660791"], ["updated_at", "2015-05-15 19:01:34.660791"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE "events" SET "user_id" = $1, "updated_at" = $2 WHERE "events"."id" = $3  [["user_id", 1], ["updated_at", "2015-05-15 19:01:34.664719"], ["id", 39]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 98ms (Views: 0.6ms | ActiveRecord: 30.2ms)
+
+
+Started GET "/houses/1/events/39/edit" for ::1 at 2015-05-15 14:01:38 -0500
+Processing by EventsController#edit as HTML
+  Parameters: {"house_id"=>"1", "id"=>"39"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.3ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.3ms)[0m  SELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1  [["id", 39]]
+  Rendered events/edit.html.erb (10.3ms)
+Completed 200 OK in 36ms (Views: 31.3ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/houses/1/events/39" for ::1 at 2015-05-15 14:01:43 -0500
+Processing by EventsController#update as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"E6bwIFgLm7nUdExUifFnbyJNIsJuNsNAGEmce3D1+hCBgzl3KGpdSvtQH0yeVir0IfVa+02GmNVG6qAcryCyhw==", "event"=>{"start(2i)"=>"5", "start(3i)"=>"21", "start(1i)"=>"2015", "start(4i)"=>"19", "start(5i)"=>"00", "end(2i)"=>"5", "end(3i)"=>"21", "end(1i)"=>"2015", "end(4i)"=>"19", "end(5i)"=>"45", "title"=>"cool :)", "description"=>"", "all_day"=>"0", "overlap"=>"1"}, "house_id"=>"1", "id"=>"39"}
+  [1m[36mEvent Load (1.1ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 39]]
+  [1m[35mHouse Load (6.0ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  UPDATE "events" SET "title" = $1, "updated_at" = $2 WHERE "events"."id" = $3  [["title", "cool :)"], ["updated_at", "2015-05-15 19:01:43.865600"], ["id", 39]]
+  [1m[36m (8.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  INSERT INTO "notifications" ("alert", "category", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["alert", "Paul has updated cool :)"], ["category", "events"], ["house_id", 1], ["created_at", "2015-05-15 19:01:43.881407"], ["updated_at", "2015-05-15 19:01:43.881407"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mHousingAssignment Load (5.9ms)[0m  SELECT "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1  [["house_id", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.9ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 153], ["user_id", 1], ["created_at", "2015-05-15 19:01:43.901006"], ["updated_at", "2015-05-15 19:01:43.901006"]]
+  [1m[35m (4.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 153], ["user_id", 2], ["created_at", "2015-05-15 19:01:43.915411"], ["updated_at", "2015-05-15 19:01:43.915411"]]
+  [1m[35m (5.8ms)[0m  COMMIT
+Completed 200 OK in 76ms (Views: 0.8ms | ActiveRecord: 40.5ms)
+
+
+Started DELETE "/houses/1/events/39" for ::1 at 2015-05-15 14:01:48 -0500
+Processing by EventsController#destroy as */*
+  Parameters: {"house_id"=>"1", "id"=>"39"}
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT  "events".* FROM "events" WHERE "events"."id" = $1 LIMIT 1[0m  [["id", 39]]
+  [1m[35mHouse Load (0.4ms)[0m  SELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM "events" WHERE "events"."id" = $1  [["id", 39]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "notifications" ("alert", "category", "house_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["alert", "Paul has deleted cool :)."], ["category", "events"], ["house_id", 1], ["created_at", "2015-05-15 19:01:48.811799"], ["updated_at", "2015-05-15 19:01:48.811799"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mHousingAssignment Load (0.3ms)[0m  SELECT "housing_assignments".* FROM "housing_assignments" WHERE "housing_assignments"."house_id" = $1  [["house_id", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 154], ["user_id", 1], ["created_at", "2015-05-15 19:01:48.820469"], ["updated_at", "2015-05-15 19:01:48.820469"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "user_notifications" ("notification_id", "user_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["notification_id", 154], ["user_id", 2], ["created_at", "2015-05-15 19:01:48.829311"], ["updated_at", "2015-05-15 19:01:48.829311"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+  Rendered text template (0.0ms)
+Completed 200 OK in 31ms (Views: 0.5ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/houses/1/events" for ::1 at 2015-05-15 14:01:51 -0500
+Processing by EventsController#index as HTML
+  Parameters: {"house_id"=>"1"}
+  [1m[36mHouse Load (0.5ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  [1m[36mHouse Load (0.4ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  Rendered events/index.html.erb within layouts/application (876.8ms)
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "user_notifications" WHERE "user_notifications"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[35m (0.7ms)[0m  SELECT "user_notifications"."notification_id" FROM "user_notifications" WHERE "user_notifications"."user_id" = $1  [["user_id", 1]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 71]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 72]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 73]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 74]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 75]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 76]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 78]]
+  [1m[36mNotification Load (0.6ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 79]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 80]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 81]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 82]]
+  [1m[36mNotification Load (0.5ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 83]]
+  [1m[35mNotification Load (0.8ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 84]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 85]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 86]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 87]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 88]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 89]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 90]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 92]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 93]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 94]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 95]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 96]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 97]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 98]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 99]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 100]]
+  [1m[36mNotification Load (0.6ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 101]]
+  [1m[35mNotification Load (0.7ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 102]]
+  [1m[36mNotification Load (0.5ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 103]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 104]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 105]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 106]]
+  [1m[36mNotification Load (0.9ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 107]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 108]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 109]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 110]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 111]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 112]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 113]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 114]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 115]]
+  [1m[35mNotification Load (0.5ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 116]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 117]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 118]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 119]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 120]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 121]]
+  [1m[35mNotification Load (0.8ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 122]]
+  [1m[36mNotification Load (0.5ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 123]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 124]]
+  [1m[36mNotification Load (0.5ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 125]]
+  [1m[35mNotification Load (0.9ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 126]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 127]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 128]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 129]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 130]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 131]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 132]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 133]]
+  [1m[35mNotification Load (0.4ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 134]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 135]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 136]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 137]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 138]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 139]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 140]]
+  [1m[36mNotification Load (0.4ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 141]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 142]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 143]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 144]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 145]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 146]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 147]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 148]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 149]]
+  [1m[35mNotification Load (0.3ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 150]]
+  [1m[36mNotification Load (0.3ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 151]]
+  [1m[35mNotification Load (0.9ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 152]]
+  [1m[36mNotification Load (1.5ms)[0m  [1mSELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1[0m  [["id", 153]]
+  [1m[35mNotification Load (0.5ms)[0m  SELECT  "notifications".* FROM "notifications" WHERE "notifications"."id" = $1 LIMIT 1  [["id", 154]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1[0m  [["user_id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "houses".* FROM "houses" INNER JOIN "housing_assignments" ON "houses"."id" = "housing_assignments"."house_id" WHERE "housing_assignments"."user_id" = $1  ORDER BY "houses"."id" ASC LIMIT 1  [["user_id", 1]]
+Completed 200 OK in 1904ms (Views: 1863.4ms | ActiveRecord: 36.3ms)
+
+
+Started GET "/assets/fullcalendar.self-bfd1e733800d14d6124c551399fa09d9fb4108c7623ad7bd2cf351ef92704af5.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-843e8fe41275fac7212c1564bf97a092377791b8a5b84a92df14d560d1a21dff.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/theme.self-9a05097a0bf60f489f0c89e95e5e12dd9a092332f4a18e2e835bc94fe7ca0ffd.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-bb8031f2e196f26c242e6093ff5be2facad271ecca7299661d2abdd544734ed7.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-a75cc687d9086ab502f231ccbb3f33998d146a2be70c042de3b367fad3e266bc.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-2f7c47a18c55495b988ae9761c56a5ca745f17940314b28adbdfd5473c14d9bc.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-97d90451ed5c9406f435380037255f44bb266b4d2142b618c6c43f875c07ad3d.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/datepicker.self-4ef8e935d5844661de4f30a3b86a8559093c04a0638cd1281d509878046cf089.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/application.self-0a8bd8973e1bb742588661683fea5421334fc34d683588ae8e7818585ad59da7.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/custom.self-8a6140c16dffc7a55eb5cbc9d7d7c5228aafbe30fc82978c1655fb8127bd503c.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/events.self-5bbd298a812b591af9787b273a349a1bbee875630a15a44c32b0fa9af5d7d56d.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/fridge.self-5a992583eabf28e67405ef857de847bf0bff167bc5f34335903d6d9720667169.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/main.self-8988b123b62415d1cf5e6bd4d3ce72a7b2038240e857e6a74ce94d0e76043c12.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/rules.self-6cc6c362827b77e95d85d8c6e12b0e64353c06e3e6085fc9c1473eb26cdd4be5.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery_ujs.self-8e98a7a072a6cee1372d19fff9ff3e6aa1e39a37d89d6f06861637d061113ee7.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery.self-bf785b27e893224c6fc5533ebfeefbd133e6a12aced2acb2012507995ad7cb3b.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/core.self-64b590c2d0d95f30c6c4dd0af09f0cde19509c8eff801516c80c98e01ae1b823.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/widget.self-19ca8b140af7fc380cccad5abadcf070daf4952f1402cb83b6199c37549b6d13.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/button.self-c3805ba4caf7d6a835e14230e1da60de2827598f5db5becfa06d0a4b6b2daf72.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/mouse.self-430fd8d1d675b348c742731d5d4f6c91ce8eec3ce751c6783f889f33e9689412.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/draggable.self-18a8d048b203a446b234a59e1b1daeccfce707183171c16826a7761c8bd1af39.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/position.self-a22a5a606ac183da99ec7ad8c8aaed4dddeb7d148975c7cd3f65ddffe89f5d8e.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/welcome.self-53d49c7bc4cdc5b257af006e1060132a8ca65564fd9b74929075050b245d1390.css?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/resizable.self-3477df232aaefa9b0aa3e3551c09f4195acf8e07ab1a82073caeaa6822fe5297.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery-ui/dialog.self-ce66b060b6de64ac8efd0b8794647ab61311f6d1edfc200de94e8a8d38b1d929.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/react_ujs.self-9e59229b64f3630c4c2a3811ede5c049c720faf2cb91112e255eead642284727.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/react.self-952894f8ed1f4ab2724d7552303d508b4e8e22aabce7fb02424bdf511872bf50.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/react_router.self-39adb84e3fcf56de0b059ba22288fc455c1a72689b6e0da66551dcf30c847b63.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/jquery.timeago.self-4ed8d4e2b0f295b2d1c5efa86a7bbdef3a87f2a44181d61d7e24f259a4c4adc9.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/rails-timeago.self-b7c810e153f1dc818aa6fc0f53785913cb96e5e975d5f601ba51d12af7dcce5c.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/underscore.self-b84a7a5ac0e8afc4f176b95606590bfc56044eeae9286097bdee013a6909fde5.js?body=1" for ::1 at 2015-05-15 14:01:53 -0500
+
+
+Started GET "/assets/moment.self-14a05e94cca93048a2a57289c5b322ce9bf419e4689a57a7b33fae4066d867e9.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/fullcalendar.self-8668c2e6be32331fb05b9c8cb047adeb64ae3d0575ba9d2f029b9a4cb37ec3f5.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/chores.self-154808c84cb369bae3172d0058b955fa359e01cbf16d29841d78e768da23e067.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/communal_items.self-036ca937cbeeae7926752f250a4d4325e44e89dfbcc0dd8644b4a86fdb4b39e5.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/application.self-7f5e5987d2fec50f3a4365495f34f0caa93fbf5e62be8711229d180c0e58f980.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/events.self-e064ce580f0e5f3ecafb0d284cfce806cd6e74ed8141c1398cd40adfc1c3f039.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/foundation.min.self-1cd90a02c4b6da9b6ff29ccae54da619bb4554be3a37e170fb532b5e2186b4c0.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-a11d53a5f478013eb25c61c800e9d6dfe29a4dec2b1c6659e9cd31a17b0ab5d4.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/foundation/foundation.self-2c3718981abe8e272e410af80c59228c254172ea8448e678e5dbf9cd1b051067.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/fridge.self-88b171bda105a4fa7e18cb52c03229b7ac1d516ac5d0d2d1011268e6dd575d4a.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/houses.self-c988fbcdeb59c3d99a029cfc0bd6d352b2f72ac8b746d780a962b96a0d6d3d2d.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/react_components/Header.react.self-9e75e6dbce8a119a385a3c66ad2fdfa8b53c17e7447a5fe59929d26ba5000292.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/rules.self-5fa1ec349e098a426bd990d1876929aa6e4405354dc24b4e6120f50d197276fc.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/search_house.self-8f90de0524e207f7280940746645115b39bc6ba478c5ff2f51703a5cd4a6e6e7.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/user.self-62be85a9d24f27e40224ea2b32c5fcee4d43354ba07fc08a2ccb7ddd3a6f47e5.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/assets/components.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.js?body=1" for ::1 at 2015-05-15 14:01:54 -0500
+
+
+Started GET "/houses/1/events/source?start=2015-04-26&end=2015-06-07&_=1431716514659" for ::1 at 2015-05-15 14:01:55 -0500
+Processing by EventsController#source as JSON
+  Parameters: {"start"=>"2015-04-26", "end"=>"2015-06-07", "_"=>"1431716514659", "id"=>"1"}
+  [1m[36mHouse Load (0.7ms)[0m  [1mSELECT  "houses".* FROM "houses" WHERE "houses"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events" WHERE "events"."house_id" = $1  [["house_id", 1]]
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/assets/favicon.ico" for ::1 at 2015-05-15 14:01:56 -0500

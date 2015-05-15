@@ -31,7 +31,11 @@ skip_before_action :authenticate_user_from_token!, only: [:index, :edit, :create
           assignment.user.user_notifications.create(notification: @notification)
         end
     @event.update_attributes(user_id: @user.id)
-    redirect_to house_events_path(@house)
+    if request.xhr?
+      render :json => {
+        :event => @event
+      }
+    end
   end
 
   def source

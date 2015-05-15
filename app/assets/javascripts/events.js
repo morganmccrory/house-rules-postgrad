@@ -51,40 +51,13 @@ $(document).ready(function() {
     $("#event_end_3i").val(date.date());
     $("#event_end_1i").val(date.year());
 
-    if (title) {
-        calendar.fullCalendar('renderEvent',
-            {
-                title: title,
-                start: start,
-                end: end,
-                description: description,
-                allDay: allDay,
-                overlap: overlap
-            },
-            true // make the event "stick"
-        );
-        /**
-         * ajax call to store event in DB
-         */
-        jQuery.post(
-            '/houses/'+getSegment(eventHouseID, 2)+'/events/source', // your url
-            { // re-use event's data
-                title: title,
-                start: start,
-                end: end,
-                description: description,
-                allDay: allDay,
-                overlap: overlap
-            }
-        );
-    }
-      calendar.fullCalendar('unselect');
+    calendar.fullCalendar('unselect');
     },
 
     eventClick: function(calEvent, jsEvent, view) {
       viewEvent.dialog("open");
       viewEvent.html("")
-      viewEvent.append("<b>Title:</b> <span class='event-title'>"+calEvent.title+"</span><br>");
+      viewEvent.append("<b>Title:</b> "+calEvent.title+"<br>");
       viewEvent.append("<b>Starts at:</b> "+calEvent.start._d+"<br>");
       viewEvent.append("<b>Ends at:</b> "+calEvent.end._d+"<br>");
       viewEvent.append("<b>Description:</b> "+calEvent.description+"<br>");
@@ -95,12 +68,39 @@ $(document).ready(function() {
     }
   });
 
+    $("#dialog").unbind("click").on("click", "#create-event-button", function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      var url = $(this).parent().attr("action")
+
+      $.ajax({
+        url: url,
+        method: 'POST',
+        data: $(this).parent().serialize(),
+        success: function(theEvent) {
+          $("#dialog").dialog("close");
+
+          calendar.fullCalendar( 'renderEvent', {
+              id: theEvent.event.id,
+              title: theEvent.event.title,
+              start: theEvent.event.start,
+              end: theEvent.event.end,
+              description: theEvent.event.description,
+              allDay: theEvent.event.allDay,
+              overlap: theEvent.event.overlap,
+              backgroundColor: '#e58900',
+              borderColor: '#ffad32'
+          }, true );
+        }
+      });
+  });
+
   $("body").unbind("click").on("click", ".event-edit", function(e) {
     e.preventDefault();
     e.stopPropagation();
 
     var eventID = $(this).parent().find(".event-delete").children().attr("id").split("/")[4]
-    var title = $(this).parent().find("span.event-title").text()
 
     viewEvent.dialog("close");
     editEvent.load("/houses/"+segment[4]+"/events/"+eventID+"/edit", function() {
