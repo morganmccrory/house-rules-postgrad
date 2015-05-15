@@ -38,6 +38,7 @@ $(document).ready(function() {
       url: '/houses/'+getSegment(eventHouseID, 2)+'/events/source',
       backgroundColor: '#e58900',
       borderColor: '#ffad32',
+      editable: true,
     }],
 
     dayClick: function(date, jsEvent, view) {

@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui/dialog
+//= require jquery-ui/draggable
+//= require jquery-ui/resizable
 
 //= require react
 //= require react_ujs
