@@ -120,9 +120,20 @@ $(document).ready(function() {
       url: url,
       method: 'POST',
       data: $(this).parent().serialize(),
-      success: function() {
+      success: function(theEvent) {
         editEvent.dialog("close");
-        calendar.fullCalendar('updateEvent', event );
+        calendar.fullCalendar( 'removeEvents', [ eventID ] );
+        calendar.fullCalendar( 'renderEvent', {
+            id: eventID,
+            title: theEvent.event.title,
+            start: theEvent.event.start,
+            end: theEvent.event.end,
+            description: theEvent.event.description,
+            allDay: theEvent.event.allDay,
+            overlap: theEvent.event.overlap,
+            backgroundColor: '#e58900',
+            borderColor: '#ffad32'
+        }, true );
       }
     });
   });
