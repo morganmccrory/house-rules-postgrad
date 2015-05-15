@@ -54,6 +54,7 @@ $(document).ready(function() {
     e.preventDefault();
     var form = $(this);
     var ruleTitle = form.parent().find(".rule-title");
+
     $.ajax({
       url: form.attr("action"),
       method: form.attr("method"),

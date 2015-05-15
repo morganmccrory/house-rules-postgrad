@@ -37,29 +37,30 @@ skip_before_action :authenticate_user_from_token!, only: [:index, :edit, :create
   def source
     @house = House.find(params[:id])
     @events = @house.events
-      render :json => @events
+    render :json => @events
   end
 
   def edit
     @user = current_user
-    @house = House.find_by(id: params[:house_id])
-    @housing_assignment = HousingAssignment.find_by(house_id: @house.id, user_id: @user.id)
-    @event = Event.find_by(id: params[:id])
+    @house = House.find(params[:house_id])
+    @event = Event.find(params[:id])
+    respond_to do |wants|
+      wants.html { render :layout => false }
+    end
   end
 
   def update
-    if @user = current_user
-      @event = Event.find_by(id: params[:id])
-      @house = House.find(params[:house_id])
-      if @event.update_attributes(event_params)
-        @notification = Notification.create(alert: "#{current_user.first_name} has updated #{@event.name}", category: "events", house_id: @house.id)
-        HousingAssignment.where(house_id: @house.id).select do |assignment|
-          assignment.user.user_notifications.create(notification: @notification)
-        end
-        redirect_to house_events_path(@house)
+    @event = Event.find(params[:id])
+    @house = House.find(params[:house_id])
+    if request.xhr?
+      @event.update_attributes(event_params)
+      @notification = Notification.create(alert: "#{current_user.first_name} has updated #{@event.title}", category: "events", house_id: @house.id)
+      HousingAssignment.where(house_id: @house.id).select do |assignment|
+        assignment.user.user_notifications.create(notification: @notification)
       end
-    else
-      redirect_to '/login'
+    render :json => {
+      :event => @event
+    }
     end
   end
 

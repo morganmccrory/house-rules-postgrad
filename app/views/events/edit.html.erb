@@ -1,19 +1,29 @@
-<div class="row">
-<div class="large-3 columns"><br />
+  <%= form_for([@house, @event]) do |f| %>
+
+  <%= f.label :start, "Starts at:" %><br />
+  <div class="date-form-field">
+    <%= f.datetime_select :start, :placeholder => @event.start, :order => [:month, :day, :year], :ampm => true, :minute_step => 15 %>
   </div>
-  <div class="large-6 columns">
-<%= form_for [@house, @event], method: :patch do |f| %>
-<fieldset>
-    <legend>Edit this Event</legend>
-  <%= f.label :name, "Event name" %>
-  <%= f.text_field :name %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.label :date %>
-  <%= f.datetime_local_field :date %>
-  <%= f.submit "Update Event", :class => "button"  %>
-  </fieldset>
-  <% end %>
+    <%= f.label :end, "Ends at:" %><br />
+  <div class="date-form-field">
+    <%= f.datetime_select :end, :order => [:month, :day, :year], :ampm => true, :minute_step => 15, :placeholder => @event.end %>
   </div>
-  <div class="large-3 columns"><br /></div>
-</div>
+  <div class="event-field">
+    <%= f.label :title, "Title:" %><br />
+    <%= f.text_field :title, :placeholder => @event.title %>
+  </div>
+  <div class="event-field">
+    <%= f.label :description, "Description:" %><br />
+    <%= f.text_area :description, :placeholder => @event.description %>
+  </div>
+  <div class="event-check-field">
+    <%= f.label :all_day, "Is this an all-day event?" %>
+    <%= f.check_box :all_day, :placeholder => @event.all_day %>
+  </div>
+  <br>
+  <div class="event-check-field">
+    <%= f.label :overlap, "Can another event be scheduled at the house during this time?" %>
+    <%= f.check_box :overlap, :placeholder => @event.overlap %>
+  </div>
+  <%= f.submit "Update Event", :class => "button", :id => "update-event-button" %>
+<% end %>

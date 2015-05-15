@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var houseID = window.location.href
+  var eventHouseID = window.location.href
   var segment = window.location.href.split("/")
   var calendar = $('#calendar')
   var viewEvent = $("#view_event")
@@ -35,7 +35,7 @@ $(document).ready(function() {
     },
 
     eventSources: [{
-      url: '/houses/'+getSegment(houseID, 2)+'/events/source',
+      url: '/houses/'+getSegment(eventHouseID, 2)+'/events/source',
       backgroundColor: '#e58900',
       borderColor: '#ffad32',
     }],
@@ -67,7 +67,7 @@ $(document).ready(function() {
          * ajax call to store event in DB
          */
         jQuery.post(
-            '/houses/'+getSegment(houseID, 2)+'/events/source', // your url
+            '/houses/'+getSegment(eventHouseID, 2)+'/events/source', // your url
             { // re-use event's data
                 title: title,
                 start: start,
@@ -84,7 +84,7 @@ $(document).ready(function() {
     eventClick: function(calEvent, jsEvent, view) {
       viewEvent.dialog("open");
       viewEvent.html("")
-      viewEvent.append("<b>Title:</b> "+calEvent.title+"<br>");
+      viewEvent.append("<b>Title:</b> <span class='event-title'>"+calEvent.title+"</span><br>");
       viewEvent.append("<b>Starts at:</b> "+calEvent.start._d+"<br>");
       viewEvent.append("<b>Ends at:</b> "+calEvent.end._d+"<br>");
       viewEvent.append("<b>Description:</b> "+calEvent.description+"<br>");
@@ -98,8 +98,33 @@ $(document).ready(function() {
   $("body").unbind("click").on("click", ".event-edit", function(e) {
     e.preventDefault();
     e.stopPropagation();
+
+    var eventID = $(this).parent().find(".event-delete").children().attr("id").split("/")[4]
+    var title = $(this).parent().find("span.event-title").text()
+
     viewEvent.dialog("close");
-    editEvent.dialog("open");
+    editEvent.load("/houses/"+segment[4]+"/events/"+eventID+"/edit", function() {
+        editEvent.dialog("open");
+    });
+
+  });
+
+  editEvent.unbind("click").on("click", "#update-event-button", function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var url = $(this).parent().attr("action")
+    var eventID = $(this).parent().attr("action").split("/")[4]
+
+    $.ajax({
+      url: url,
+      method: 'POST',
+      data: $(this).parent().serialize(),
+      success: function() {
+        editEvent.dialog("close");
+        calendar.fullCalendar('updateEvent', event );
+      }
+    });
   });
 
   viewEvent.unbind("click").on("click", ".event-delete", function(e) {
