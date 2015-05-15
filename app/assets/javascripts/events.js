@@ -73,9 +73,12 @@ $(document).ready(function() {
       e.preventDefault();
       e.stopPropagation();
 
+      var startHour = $(this).parent().find("#event_start_4i").val()
+      var endHour = $(this).parent().find("#event_end_4i").val()
       var url = $(this).parent().attr("action")
 
-      $.ajax({
+      if( startHour != endHour ){
+        $.ajax({
         url: url,
         method: 'POST',
         data: $(this).parent().serialize(),
@@ -95,6 +98,9 @@ $(document).ready(function() {
           }, true );
         }
       });
+      } else {
+        alert("Events must be longer than one hour.")
+      }
   });
 
   $("body").unbind("click").on("click", ".event-edit", function(e) {
